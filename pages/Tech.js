@@ -14,9 +14,9 @@ const Tech = () => {
           Technology
         </h1>
         
-        <TechSection techType={frontEnd} tech={tech}/>
-        <TechSection techType={backEnd} tech={tech}/>
-        <TechSection techType={other} tech={tech}/>
+        <TechSection techType={frontEnd}/>
+        <TechSection techType={backEnd}/>
+        <TechSection techType={other}/>
        
       </div>
     </Element>
