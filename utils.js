@@ -1,41 +1,66 @@
-const ztech = [{ techName: '', type: '', icon: '', colour: '' }];
+import {
+  DiCss3,
+  DiJsBadge,
+  DiPostgresql,
+  DiReact,
+  DiGithubBadge,
+  DiGoogleAnalytics,
+  DiHeroku,
+  DiMongodb,
+} from 'react-icons/di';
+import {
+  SiTypescript,
+  SiSvelte,
+  SiExpress,
+  SiNodedotjs,
+  SiJest,
+  SiGoogletagmanager,
+} from 'react-icons/si';
+import { AiFillHtml5 } from 'react-icons/ai';
+import { FaGit } from 'react-icons/fa';
+import { DiLinux } from 'react-icons/di';
 
-const tech = [
-  { techName: 'JavaScript', type: 'Front End', icon: 'DiJsBadge', colour: '' },
+export const tech = [
+  {
+    techName: 'JavaScript',
+    type: 'Front End',
+    icon: DiJsBadge,
+    colour: 'yellow',
+  },
   {
     techName: 'TypeScript',
     type: 'Front End',
-    icon: 'SiTypescript',
-    colour: '',
+    icon: SiTypescript,
+    colour: 'blue',
   },
-  { techName: 'React', type: 'Front End', icon: 'DiReact', colour: '' },
-  { techName: 'Svelte', type: 'Front End', icon: 'SiSvelte', colour: '' },
-  { techName: 'HTML', type: 'Front End', icon: 'AiFillHtml5', colour: '' },
-  { techName: 'CSS', type: 'Front End', icon: 'DiCss3', colour: '' },
+  { techName: 'React', type: 'Front End', icon: DiReact, colour: 'blue' },
+  { techName: 'Svelte', type: 'Front End', icon: SiSvelte, colour: 'red' },
+  { techName: 'HTML', type: 'Front End', icon: AiFillHtml5, colour: 'green' },
+  { techName: 'CSS', type: 'Front End', icon: DiCss3, colour: 'blue' },
   {
     techName: 'PostgreSQL',
     type: 'Back End',
-    icon: 'DiPostgresql',
-    colour: '',
+    icon: DiPostgresql,
+    colour: 'green',
   },
-  { techName: 'Express', type: 'Back End', icon: 'SiExpress', colour: '' },
-  { techName: 'Node.js', type: 'Back End', icon: 'SiNodedotjs', colour: '' },
-  { techName: 'MongoDB', type: 'Back End', icon: 'DiMongodb', colour: '' },
-  { techName: 'Jest', type: 'Other', icon: 'SiJest', colour: '' },
-  { techName: 'GitHub', type: 'Other', icon: 'DiGithubBadge', colour: '' },
-  { techName: 'Git', type: 'Other', icon: 'FaGit', colour: '' },
+  { techName: 'Express', type: 'Back End', icon: SiExpress, colour: 'green' },
+  { techName: 'Node.js', type: 'Back End', icon: SiNodedotjs, colour: 'green' },
+  { techName: 'MongoDB', type: 'Back End', icon: DiMongodb, colour: 'green' },
+  { techName: 'Jest', type: 'Other', icon: SiJest, colour: 'green' },
+  { techName: 'GitHub', type: 'Other', icon: DiGithubBadge, colour: 'green' },
+  { techName: 'Git', type: 'Other', icon: FaGit, colour: 'green' },
   {
     techName: 'Google Analytics',
     type: 'Other',
-    icon: 'DiGoogleAnalytics',
-    colour: '',
+    icon: DiGoogleAnalytics,
+    colour: 'green',
   },
   {
     techName: 'Google Tag Manager',
     type: 'Other',
-    icon: 'SiGoogletagmanager',
-    colour: '',
+    icon: SiGoogletagmanager,
+    colour: 'green',
   },
-  { techName: 'Heroku', type: 'Other', icon: 'DiHeroku', colour: '' },
-  { techName: 'Linux', type: 'Other', icon: 'DiLinux', colour: '' },
+  { techName: 'Heroku', type: 'Other', icon: DiHeroku, colour: 'green' },
+  { techName: 'Linux', type: 'Other', icon: DiLinux, colour: 'green' },
 ];
