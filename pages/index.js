@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import HomePage from './HomePage';
 import Tech from './Tech';
-import Projects from './Projects';
+import Projects from './projects/Projects';
 
 export default function Home() {
   return (
@@ -14,8 +14,8 @@ export default function Home() {
       </Head>
       <Navbar />
       <HomePage />
-      <Tech />
       <Projects />
+      <Tech />
     </div>
   );
 }
