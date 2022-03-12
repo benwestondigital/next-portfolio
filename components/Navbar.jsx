@@ -31,6 +31,16 @@ const Navbar = () => {
                     Home
                   </Link>
                   <Link
+                    activeClass='tech'
+                    to='tech'
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
+                  >
+                    Technology
+                  </Link>
+                  <Link
                     activeClass='projects'
                     to='projects'
                     smooth={true}
