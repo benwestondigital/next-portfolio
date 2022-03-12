@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import { Link } from 'react-scroll';
 
-function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -175,6 +175,6 @@ function Navbar() {
       </nav>
     </div>
   );
-}
+};
 
 export default Navbar;
