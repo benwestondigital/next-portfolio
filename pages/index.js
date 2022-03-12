@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import HomePage from './HomePage';
-import Services from './Services';
+import Tech from './Tech';
+import Projects from './Projects';
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       </Head>
       <Navbar />
       <HomePage />
-      <Services />
+      <Tech />
+      <Projects />
     </div>
   );
 }
