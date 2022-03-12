@@ -64,3 +64,5 @@ export const tech = [
   { techName: 'Heroku', type: 'Other', icon: DiHeroku, colour: 'green' },
   { techName: 'Linux', type: 'Other', icon: DiLinux, colour: 'green' },
 ];
+
+export const projects = [{projName: 'WhereTo - Climate Travel App'}, {projName: 'Front-End Reddit'},{projName: 'Back-End Reddit'}]
