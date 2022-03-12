@@ -4,7 +4,7 @@ import { HiColorSwatch } from 'react-icons/hi';
 import { MdDeveloperBoard } from 'react-icons/md';
 import { AiOutlineBlock } from 'react-icons/ai';
 
-const Services = () => {
+const Tech = () => {
   return (
     <Element id='services' name='services'>
       <div className='w-full my-40 h-auto flex flex-col justify-center items-center'>
@@ -75,4 +75,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Tech;
