@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import { Link } from 'react-scroll';
+import { AiFillLinkedin } from 'react-icons/ai';
+import { DiGithubBadge } from 'react-icons/di';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +15,8 @@ const Navbar = () => {
               {/* Logo Section */}
               <div className='flex justify-center items-center flex-shrink-0 ml-10'>
                 <Link
-                  activeClass='home'
-                  to='home'
+                  activeClass='about'
+                  to='about'
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -23,20 +25,34 @@ const Navbar = () => {
                     Ben <span className='text-blue-600'>Weston</span>
                   </h1>
                 </Link>
+                <a
+                  href='https://www.linkedin.com/in/ben-weston-b19420175/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <AiFillLinkedin className='w-10 h-10 m-1 p-1 text-blue-600 hover:text-black' />
+                </a>
+                <a
+                  href='https://github.com/benwestondigital/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <DiGithubBadge className='w-10 h-10 m-1 p-1 text-black hover:text-gray-600' />
+                </a>
               </div>
 
               {/* Link Section */}
               <div className='hidden md:block'>
                 <div className='ml-10 flex items-baseline space-x-4'>
                   <Link
-                    activeClass='home'
-                    to='home'
+                    activeClass='about'
+                    to='about'
                     smooth={true}
                     offset={50}
                     duration={500}
                     className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
                   >
-                    Home
+                    About
                   </Link>
                   <Link
                     activeClass='projects'
@@ -69,13 +85,6 @@ const Navbar = () => {
                     Contact
                   </Link>
                 </div>
-              </div>
-
-              {/* Email Section */}
-              <div className='flex justify-center items-center flex-shrink-0'>
-                <h1 className='font-semibold text-lg cursor-pointer hidden md:block'>
-                  Say <span className='text-blue-600'>hi</span>
-                </h1>
               </div>
             </div>
             {/* Mobile */}
@@ -136,70 +145,54 @@ const Navbar = () => {
           leaveFrom='opacity-100 scale-100'
           leaveTo='opacity-0 scale-95'
         >
-          {ref => (
-            <div className='md:hidden' id='mobile-menu'>
-              <div
-                ref={ref}
-                className='bg-white mx-4 mr-20 pt-4 pb-4 space-y-1'
+          <div className='md:hidden' id='mobile-menu'>
+            <div className='bg-white mx-4 mr-20 pt-4 pb-4 space-y-1'>
+              <Link
+                href='/about'
+                activeClass='about'
+                to='about'
+                smooth={true}
+                offset={50}
+                duration={500}
+                className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
               >
-                <Link
-                  href='/home'
-                  activeClass='home'
-                  to='home'
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                >
-                  Home
-                </Link>
-                <Link
-                  href='/projects'
-                  activeClass='projects'
-                  to='projects'
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                >
-                  Projects
-                </Link>
-                <Link
-                  href='/tech'
-                  activeClass='tech'
-                  to='tech'
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                >
-                  My Skills
-                </Link>
-                <Link
-                  href='/contact'
-                  activeClass='contact'
-                  to='contact'
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                >
-                  Contact
-                </Link>
-                <Link
-                  href='/hi'
-                  activeClass='hi'
-                  to='hi'
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                >
-                  Say <span className='text-black'>Hi</span>
-                </Link>
-              </div>
+                About
+              </Link>
+              <Link
+                href='/projects'
+                activeClass='projects'
+                to='projects'
+                smooth={true}
+                offset={50}
+                duration={500}
+                className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+              >
+                Projects
+              </Link>
+              <Link
+                href='/tech'
+                activeClass='tech'
+                to='tech'
+                smooth={true}
+                offset={50}
+                duration={500}
+                className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+              >
+                My Skills
+              </Link>
+              <Link
+                href='/contact'
+                activeClass='contact'
+                to='contact'
+                smooth={true}
+                offset={50}
+                duration={500}
+                className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+              >
+                Contact
+              </Link>
             </div>
-          )}
+          </div>
         </Transition>
       </nav>
     </div>
