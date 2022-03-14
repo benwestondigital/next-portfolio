@@ -7,9 +7,9 @@ import redditback from '../../public/images/redditback.png'
 
 const Projects = () => {
   const projects = [
-    { projName: 'WhereTo - Climate Travel App', image: whereto, description: 'Love the weather in Sydney? Let WhereTo help you decide your next holiday spot.' },
-    { projName: 'Front-End Reddit', image: redditfront, description: 'Developed a Reddit clone front-end with React.' },
-    { projName: 'Back-End Reddit', image: redditback, description: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.' },
+    { slug: 'whereto-climate-app', projName: 'WhereTo - Climate Travel App', image: whereto, description: 'Love the weather in Sydney? Let WhereTo help you decide your next holiday spot.' },
+    { slug: 'reddit-front-end', projName: 'Front-End Reddit', image: redditfront, description: 'Developed a Reddit clone front-end with React.' },
+    { slug: 'reddit-back-end', projName: 'Back-End Reddit', image: redditback, description: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.' },
   ];
 
   return (
