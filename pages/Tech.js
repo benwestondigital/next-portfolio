@@ -13,11 +13,10 @@ const Tech = () => {
         <h1 className='text-indigo-900 text-6xl font-bold text-center'>
           Technology
         </h1>
-        
-        <TechSection techType={frontEnd}/>
-        <TechSection techType={backEnd}/>
-        <TechSection techType={other}/>
-       
+
+        <TechSection techType={frontEnd} />
+        <TechSection techType={backEnd} />
+        <TechSection techType={other} />
       </div>
     </Element>
   );
