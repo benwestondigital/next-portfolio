@@ -31,16 +31,6 @@ const Navbar = () => {
                     Home
                   </Link>
                   <Link
-                    activeClass='tech'
-                    to='tech'
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
-                  >
-                    Technology
-                  </Link>
-                  <Link
                     activeClass='projects'
                     to='projects'
                     smooth={true}
@@ -49,6 +39,16 @@ const Navbar = () => {
                     className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
                   >
                     Projects
+                  </Link>
+                  <Link
+                    activeClass='tech'
+                    to='tech'
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
+                  >
+                    My Skills
                   </Link>
                   <Link
                     activeClass='contact'
@@ -155,6 +155,17 @@ const Navbar = () => {
                   className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                 >
                   Projects
+                </Link>
+                <Link
+                  href='/tech'
+                  activeClass='tech'
+                  to='tech'
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                >
+                  My Skills
                 </Link>
                 <Link
                   href='/contact'
