@@ -2,9 +2,9 @@ import Image from 'next/image';
 import heroImage from '../public/images/heroimage.jpeg';
 import { Element, Link } from 'react-scroll';
 
-const HomePage = () => {
+const About = () => {
   return (
-    <Element id='home' name='home'>
+    <Element id='About' name='About'>
       <div>
         <div className='flex justify-between text-center md:mx-20 md:pt-32 pt-28'>
           <div className='w-3/4 h-96 shadow-xl rounded-full relative px-10 hidden md:block'>
@@ -21,16 +21,9 @@ const HomePage = () => {
               Hi, I&apos;m <span className='text-indigo-900'>Ben!</span>
             </h1>
             <p className='text-left font-normal font mb-5 flex-wrap'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Perspiciatis, repellendus est incidunt, ea explicabo dolores amet
-              ducimus debitis numquam temporibus eligendi sed quo
-              necessitatibus? Provident animi consequuntur debitis at?
-              Recusandae! Lorem ipsum dolor, sit amet consectetur adipisicing
-              elit. Perspiciatis, repellendus est incidunt, ea explicabo dolores
-              amet ducimus debitis numquam temporibus eligendi sed quo
-              necessitatibus? Provident animi consequuntur debitis at?
-              Recusandae!
+              I am a front-end developer that has recently finished the <a href="https://northcoders.com/" target="_blank" rel="noreferrer" className='font-semibold'>Northcoders</a> software development bootcamp. I am looking for a great Front End Developer role based in London to continue learning and building cool things.
             </p>
+
             <Link
               activeClass='projects'
               to='projects'
@@ -48,4 +41,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default About;
