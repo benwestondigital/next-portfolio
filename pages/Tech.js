@@ -11,7 +11,7 @@ const Tech = () => {
     <Element id='tech' name='tech'>
       <div className='w-full my-40 h-auto flex flex-col justify-center items-center'>
         <h1 className='text-indigo-900 text-6xl font-bold text-center'>
-          Technology
+          My Skills
         </h1>
 
         <TechSection techType={frontEnd} />
