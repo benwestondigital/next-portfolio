@@ -17,13 +17,13 @@ const SingleProject = ({ project }) => {
       <h2 className='text-xl m-2 mt-5 text-indigo-600 font-semibold'>
         {project.projName}
       </h2>
-      <p className='text-center md:text-left font-normal font mx-2 mb-5 flex-wrap'>
+      <p className='text-center font-normal mx-2 mb-5 flex-wrap'>
         {project.description}
       </p>
       <Link
         href={`/projects/${project.slug}`}
       >
-        <a className='uppercase text-left font-normal font mb-5 flex-wrap'>See Project &gt;</a>
+        <a className='uppercase text-center font-normal font mb-5 flex-wrap'>See Project &gt;</a>
       </Link>
     </div>
   );
