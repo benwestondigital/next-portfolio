@@ -15,7 +15,7 @@ const Contact = () => {
               id='email-address'
               autoComplete='email'
               placeholder='abc@xzy.com'
-              className='mt-5 py-1 pl-8 w-full rounded-tl-lg rounded-bl-lg text-blue-800 text-xl border-2 border-indigo-900 h-10'
+              className='mt-5 py-1 pl-2 w-full rounded-tl-lg rounded-bl-lg text-blue-800 text-xl border-2 border-indigo-900 h-10'
             />
             <button className='mt-5 text-xl w-36 h-10 bg-indigo-900 text-white rounded-tr-lg rounded-br-lg hover:bg-black'>
               Submit
