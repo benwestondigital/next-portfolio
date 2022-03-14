@@ -14,7 +14,7 @@ const Projects = () => {
 
   return (
     <Element id='projects' name='projects'>
-      <div className='flex flex-col items-center justify-center w-full h-auto mx-2 my-20 md:items-start'>
+      <div className='flex flex-col items-center justify-center w-full h-auto mx-2 my-20'>
         <h2 className='text-6xl font-bold text-indigo-900'>
           Projects
         </h2>

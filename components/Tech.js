@@ -9,12 +9,12 @@ const Tech = () => {
   return (
     <Element id='tech' name='tech'>
       <div className='flex flex-col items-center justify-center w-full h-auto my-40'>
-        <h1 className='text-6xl font-bold text-indigo-900 md:self-start'>
+        <h1 className='text-6xl font-bold text-indigo-900'>
           My Skills
         </h1>
-        <p className='flex-wrap self-start mt-5 mb-5 font-normal'>
+        <p className='flex-wrap w-1/2 my-5 font-normal'>
           I love to learn new skills, so in addition to my bootcamp I have
-          completed a number of online courses from providers like Codecademy,
+          completed a number of courses from providers like Codecademy,
           such as{' '}
           <a
             className='font-semibold'
