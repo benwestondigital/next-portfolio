@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import HomePage from './HomePage';
 import Tech from './Tech';
 import Projects from './projects/Projects';
+import Contact from './contact';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HomePage />
       <Projects />
       <Tech />
+      <Contact />
     </div>
   );
 }
