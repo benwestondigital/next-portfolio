@@ -17,6 +17,7 @@ const SingleProject = ({ project }) => {
         {project.projName}
       </h2>
       <p className='text-left font-normal font mb-5 flex-wrap'>{project.description}</p>
+      <a href={`/${project.slug}`} className='uppercase text-left font-normal font mb-5 flex-wrap'>See Project</a>
     </div>
   );
 };
