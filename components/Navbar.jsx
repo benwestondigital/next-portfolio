@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import { Link } from 'react-scroll';
-import { AiFillLinkedin } from 'react-icons/ai';
+import { AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { DiGithubBadge } from 'react-icons/di';
 
 const Navbar = () => {
@@ -21,24 +21,33 @@ const Navbar = () => {
                   offset={50}
                   duration={500}
                 >
-                  <h1 className='font-bold text-xl cursor-pointer'>
+                  <h1 className='font-bold text-4xl sm:text-3xl cursor-pointer'>
                     Ben <span className='text-blue-600'>Weston</span>
                   </h1>
                 </Link>
-                <a
-                  href='https://www.linkedin.com/in/ben-weston-b19420175/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <AiFillLinkedin className='w-10 h-10 m-1 p-1 text-blue-600 hover:text-black' />
-                </a>
-                <a
-                  href='https://github.com/benwestondigital/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <DiGithubBadge className='w-10 h-10 m-1 p-1 text-black hover:text-gray-600' />
-                </a>
+                <div className='hidden md:ml-5 md:flex'>
+                  <a
+                    href='https://www.linkedin.com/in/ben-weston-b19420175/'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <AiFillLinkedin className='w-10 h-10 m-1 p-1 text-blue-600 hover:text-gray-600' />
+                  </a>
+                  <a
+                    href='https://github.com/benwestondigital/'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <DiGithubBadge className='w-10 h-10 m-1 p-1 text-black hover:text-gray-600' />
+                  </a>
+                  <a
+                    href='https://twitter.com/benwestononline'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <AiOutlineTwitter className='w-10 h-10 m-1 p-1 text-blue-400 hover:text-gray-600' />
+                  </a>
+                </div>
               </div>
 
               {/* Link Section */}
