@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import About from '../components/About';
-import Tech from '../components/Tech';
+import MySkills from '../components/MySkills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <About />
       <Projects />
-      <Tech />
+      <MySkills />
       <Contact />
     </div>
   );
