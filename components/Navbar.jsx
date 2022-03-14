@@ -12,9 +12,17 @@ const Navbar = () => {
             <div className='flex items-center sm:mx-10 md:mx-20 justify-between w-full'>
               {/* Logo Section */}
               <div className='flex justify-center items-center flex-shrink-0 ml-10'>
-                <h1 className='font-bold text-xl cursor-pointer'>
-                  Ben <span className='text-blue-600'>Weston</span>
-                </h1>
+                <Link
+                  activeClass='home'
+                  to='home'
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  <h1 className='font-bold text-xl cursor-pointer'>
+                    Ben <span className='text-blue-600'>Weston</span>
+                  </h1>
+                </Link>
               </div>
 
               {/* Link Section */}
