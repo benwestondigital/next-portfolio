@@ -16,7 +16,7 @@ const TechSection = ({ techType }) => {
                 <Icon
                   className='w-10 h-10 bg-gray-600 hover:bg-gray-800 text-gray-100 m-3 p-1 shadow-xl rounded-md'
                 />
-                <p className='md:text-base text-gray-400 md:text-center text-center sm:text-left sm:text-sm'>
+                <p className='md:text-base text-gray-400 text-center sm:text-sm'>
                   {item.techName}
                 </p>
               </div>
