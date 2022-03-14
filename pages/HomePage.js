@@ -18,7 +18,7 @@ const HomePage = () => {
           </div>
           <div className='flex flex-col md:ml-20 mx-10 mt-10'>
             <h1 className='font-bold text-7xl text-left mb-5'>
-              Hi! I&apos;m <span className='text-indigo-900'>Ben</span>
+              Hi, I&apos;m <span className='text-indigo-900'>Ben!</span>
             </h1>
             <p className='text-left font-normal font mb-5 flex-wrap'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
