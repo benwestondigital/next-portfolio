@@ -65,4 +65,4 @@ export const tech = [
   { techName: 'Linux', type: 'Other', icon: DiLinux, colour: 'green' },
 ];
 
-export const projects = [{projName: 'WhereTo - Climate Travel App'}, {projName: 'Front-End Reddit'},{projName: 'Back-End Reddit'}]
+
