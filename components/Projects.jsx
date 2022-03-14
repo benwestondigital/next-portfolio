@@ -7,19 +7,19 @@ import redditback from '../public/images/redditback.png'
 
 const Projects = () => {
   const projects = [
-    { slug: 'whereto-climate-app', projName: 'WhereTo - Climate Travel App', image: whereto, description: 'Love the weather in Sydney? Let WhereTo help you decide your next holiday spot.' },
+    { slug: 'whereto-climate-app', projName: 'WhereTo - Climate Travel App', image: whereto, description: 'Miss the weather in your favourite holiday destination? Let WhereTo help you decide on your next vacation spot. Uses Svelte / Svelte Kit.' },
     { slug: 'reddit-front-end', projName: 'Front-End Reddit', image: redditfront, description: 'Developed a Reddit clone front-end with React.' },
     { slug: 'reddit-back-end', projName: 'Back-End Reddit', image: redditback, description: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.' },
   ];
 
   return (
     <Element id='projects' name='projects'>
-      <div className='w-full my-20 h-auto flex flex-col justify-center items-start'>
-        <h2 className='text-indigo-900 text-6xl font-bold text-left'>
+      <div className='flex flex-col items-center justify-center w-full h-auto mx-2 my-20 md:items-start'>
+        <h2 className='text-6xl font-bold text-indigo-900'>
           Projects
         </h2>
-        <p className='text-left font-normal font m-5 flex-wrap'>Here are some of the projects I&apos;ve been working on lately:</p>
-        <div className='md:flex sm:flex-col md:flex-row justify-center items-center gap-10 md:gap-10 sm:pb-10 mt-10'>
+        <p className='mt-5 mb-5 font-normal text-left font'>Here are some of the projects I&apos;ve been working on lately:</p>
+        <div className='items-center justify-center gap-10 mt-10 md:flex sm:flex-col md:flex-row md:items-start md:gap-10 sm:pb-10'>
           {projects.map(project => {
             return <SingleProject key={project.projName} project={project} />;
           })}
