@@ -13,6 +13,37 @@ const Tech = () => {
         <h1 className='text-indigo-900 text-6xl font-bold text-center'>
           My Skills
         </h1>
+        <p className='text-left font-normal font m-5 flex-wrap'>
+          I love to learn new skills, so in addition to my bootcamp I have
+          completed a number of online courses from providers like Codecademy,
+          such as{' '}
+          <a
+            className='font-semibold'
+            href='https://www.codecademy.com/learn/learn-html'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Learn HTML
+          </a>
+          ,{' '}
+          <a
+            className='font-semibold'
+            href='https://www.codecademy.com/learn/introduction-to-javascript'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Learn JavaScript
+          </a>{' '}
+          and{' '}
+          <a
+            className='font-semibold'
+            href='https://www.codecademy.com/learn/learn-typescript'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Learn TypeScript
+          </a>
+        </p>
 
         <TechSection techType={frontEnd} />
         <TechSection techType={backEnd} />
