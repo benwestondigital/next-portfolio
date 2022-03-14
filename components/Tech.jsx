@@ -1,5 +1,5 @@
 import { Element } from 'react-scroll';
-import TechSection from '../components/TechSection';
+import TechSection from './TechSection';
 import { tech } from '../utils';
 
 const Tech = () => {
