@@ -16,7 +16,7 @@ import {
   SiJest,
   SiGoogletagmanager,
   SiNextdotjs,
-  SiTailwindcss
+  SiTailwindcss,
 } from 'react-icons/si';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { FaGit } from 'react-icons/fa';
@@ -37,9 +37,14 @@ export const tech = [
   },
   { techName: 'React', type: 'Front End', icon: DiReact, colour: 'blue' },
   { techName: 'Svelte', type: 'Front End', icon: SiSvelte, colour: 'red' },
+  {
+    techName: 'Tailwind CSS',
+    type: 'Front End',
+    icon: SiTailwindcss,
+    colour: 'blue',
+  },
   { techName: 'HTML', type: 'Front End', icon: AiFillHtml5, colour: 'green' },
   { techName: 'CSS', type: 'Front End', icon: DiCss3, colour: 'blue' },
-  { techName: 'Tailwind CSS', type: 'Front End', icon: SiTailwindcss, colour: 'blue' },
   {
     techName: 'PostgreSQL',
     type: 'Back End',
@@ -48,7 +53,6 @@ export const tech = [
   },
   { techName: 'Express', type: 'Back End', icon: SiExpress, colour: 'green' },
   { techName: 'Node.js', type: 'Back End', icon: SiNodedotjs, colour: 'green' },
-  { techName: 'MongoDB', type: 'Back End', icon: DiMongodb, colour: 'green' },
   { techName: 'SvelteKit', type: 'Back End', icon: SiSvelte, colour: 'green' },
   { techName: 'Next.js', type: 'Back End', icon: SiNextdotjs, colour: 'green' },
   { techName: 'Jest', type: 'Other', icon: SiJest, colour: 'green' },
@@ -69,5 +73,3 @@ export const tech = [
   { techName: 'Heroku', type: 'Other', icon: DiHeroku, colour: 'green' },
   { techName: 'Linux', type: 'Other', icon: DiLinux, colour: 'green' },
 ];
-
-
