@@ -6,7 +6,6 @@ import {
   DiGithubBadge,
   DiGoogleAnalytics,
   DiHeroku,
-  DiMongodb,
 } from 'react-icons/di';
 import {
   SiTypescript,
@@ -24,52 +23,70 @@ import { DiLinux } from 'react-icons/di';
 
 export const tech = [
   {
-    techName: 'JavaScript',
-    type: 'Front End',
-    icon: DiJsBadge,
-    colour: 'yellow',
+    'Front-End': [
+      {
+        techName: 'JavaScript',
+        icon: DiJsBadge,
+      },
+      {
+        techName: 'TypeScript',
+        icon: SiTypescript,
+      },
+      { techName: 'React', icon: DiReact },
+      { techName: 'Svelte', icon: SiSvelte },
+      {
+        techName: 'Tailwind CSS',
+        icon: SiTailwindcss,
+      },
+      {
+        techName: 'HTML',
+        icon: AiFillHtml5,
+      },
+      { techName: 'CSS', icon: DiCss3 },
+    ],
   },
   {
-    techName: 'TypeScript',
-    type: 'Front End',
-    icon: SiTypescript,
-    colour: 'blue',
-  },
-  { techName: 'React', type: 'Front End', icon: DiReact, colour: 'blue' },
-  { techName: 'Svelte', type: 'Front End', icon: SiSvelte, colour: 'red' },
-  {
-    techName: 'Tailwind CSS',
-    type: 'Front End',
-    icon: SiTailwindcss,
-    colour: 'blue',
-  },
-  { techName: 'HTML', type: 'Front End', icon: AiFillHtml5, colour: 'green' },
-  { techName: 'CSS', type: 'Front End', icon: DiCss3, colour: 'blue' },
-  {
-    techName: 'PostgreSQL',
-    type: 'Back End',
-    icon: DiPostgresql,
-    colour: 'green',
-  },
-  { techName: 'Express', type: 'Back End', icon: SiExpress, colour: 'green' },
-  { techName: 'Node.js', type: 'Back End', icon: SiNodedotjs, colour: 'green' },
-  { techName: 'SvelteKit', type: 'Back End', icon: SiSvelte, colour: 'green' },
-  { techName: 'Next.js', type: 'Back End', icon: SiNextdotjs, colour: 'green' },
-  { techName: 'Jest', type: 'Other', icon: SiJest, colour: 'green' },
-  { techName: 'GitHub', type: 'Other', icon: DiGithubBadge, colour: 'green' },
-  { techName: 'Git', type: 'Other', icon: FaGit, colour: 'green' },
-  {
-    techName: 'Google Analytics',
-    type: 'Other',
-    icon: DiGoogleAnalytics,
-    colour: 'green',
+    'Back-End': [
+      {
+        techName: 'PostgreSQL',
+        icon: DiPostgresql,
+      },
+      {
+        techName: 'Express',
+        icon: SiExpress,
+      },
+      {
+        techName: 'Node.js',
+        icon: SiNodedotjs,
+      },
+      {
+        techName: 'SvelteKit',
+        icon: SiSvelte,
+      },
+      {
+        techName: 'Next.js',
+        icon: SiNextdotjs,
+      },
+    ],
   },
   {
-    techName: 'Google Tag Manager',
-    type: 'Other',
-    icon: SiGoogletagmanager,
-    colour: 'green',
+    Other: [
+      { techName: 'Jest', icon: SiJest },
+      {
+        techName: 'GitHub',
+        icon: DiGithubBadge,
+      },
+      { techName: 'Git', icon: FaGit },
+      {
+        techName: 'Google Analytics',
+        icon: DiGoogleAnalytics,
+      },
+      {
+        techName: 'Google Tag Manager',
+        icon: SiGoogletagmanager,
+      },
+      { techName: 'Heroku', icon: DiHeroku },
+      { techName: 'Linux', icon: DiLinux },
+    ],
   },
-  { techName: 'Heroku', type: 'Other', icon: DiHeroku, colour: 'green' },
-  { techName: 'Linux', type: 'Other', icon: DiLinux, colour: 'green' },
 ];
