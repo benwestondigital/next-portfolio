@@ -16,11 +16,11 @@ const About = () => {
               className='hidden rounded-full cursor-pointer md:block'
             />
           </div>
-          <div className='flex flex-col mx-10 mt-10 w-1/2 md:ml-20'>
+          <div className='flex flex-col mx-10 mt-10 md:w-1/2 md:ml-20'>
             <h1 className='mb-5 font-bold text-left text-7xl'>
               Hi, I&apos;m <span className='text-indigo-900'>Ben!</span>
             </h1>
-            <p className='flex-wrap mb-5 w-2/3 font-normal text-left'>
+            <p className='flex-wrap mb-5 md:w-2/3 font-normal text-left'>
               I am a front-end developer that has recently finished the <a href="https://northcoders.com/" target="_blank" rel="noreferrer" className='font-semibold'>Northcoders</a> software development bootcamp. I am looking for a great role based in London to continue learning and building cool things.
             </p>
 
