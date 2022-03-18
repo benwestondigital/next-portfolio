@@ -23,7 +23,7 @@ const SingleProject = ({ project }) => {
       <Link
         href={`/projects/${project.slug}`}
       >
-        <a className='uppercase text-center font-normal font mb-5 flex-wrap'>See Project &gt;</a>
+        <a className='uppercase text-center font-normal font mb-5 flex-wrap'>See Project Details &gt;</a>
       </Link>
     </div>
   );
