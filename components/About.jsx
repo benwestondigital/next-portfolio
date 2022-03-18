@@ -18,10 +18,16 @@ const About = () => {
           </div>
           <div className='flex flex-col mx-10 mt-10 md:w-1/2 md:ml-20'>
             <h1 className='mb-5 font-bold text-left text-7xl'>
-              Hi, I&apos;m <span className='text-indigo-900'>Ben!</span>
+              Hi! I&apos;m <span className='text-indigo-900'>Ben!</span> I love to create interesting projects with code. 
+
             </h1>
             <p className='flex-wrap mb-5 md:w-2/3 font-normal text-left'>
-              I am a front-end developer that has recently finished the <a href="https://northcoders.com/" target="_blank" rel="noreferrer" className='font-semibold'>Northcoders</a> software development bootcamp. I am looking for a great role based in London to continue learning and building cool things.
+              <br/>
+              I first became interested in coding through playing online games when I was a teenager. I saw people creating programs to automate their character&apos;s progress and the possibilities of doing this blew me away. I tried my hand at learning and thought I was a wizard changing the colour of pages with CSS, but I didn&apos;t get any further than that.
+              <br/>
+              While having an amazing time on a working holiday in Australia, I got sick of working dead-end jobs. I always interested in tech, the future of work and how A.I. and machine learning would impact our world. I read &apos;Homo Deus&apos; by Yuval Noah Harari and decided I wanted to change my career to be a part of this revolution. Through self-directed learning I got involved in Digital Marketing, and worked my way into being a Senior Paid Media Executive at Click Consult. I learnt so much during this period and it developed so many of my soft skills, and also how to make analytical, data-led decisions. I was always making tools to speed up my work, and was extremely interested in the Google Ad&apos;s scripts and website tagging, that are implemented using JavaScript. 
+              <br/>
+              I completed the Learn JavaScript Codecademy course during the Winter of 2020 and enjoyed it so much decided to leave my job in March 2021 and fully commit to becoming a software developer. After studying on my own for several months, I enrolled in the <a href="https://northcoders.com/" target="_blank" rel="noreferrer" className='font-semibold'>Northcoders</a> software development bootcamp. I finished in March 2022, one year after I started this journey. I am now looking for a great role based in London where I can help a company achieve their goals and continue my learning journey.
             </p>
 
             <Link
