@@ -90,3 +90,16 @@ export const tech = [
     ],
   },
 ];
+
+export const navLinks = [
+  {
+    name: 'About',
+    path: 'about',
+  },
+  { name: 'Projects', path: 'projects' },
+  {
+    name: 'Skills',
+    path: 'tech',
+  },
+  { name: 'Contact', path: 'contact' },
+];

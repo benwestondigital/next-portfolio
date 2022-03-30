@@ -3,9 +3,13 @@ import { Transition } from '@headlessui/react';
 import { Link } from 'react-scroll';
 import { AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { DiGithubBadge } from 'react-icons/di';
+import { useRouter } from 'next/router';
+import { navLinks } from '../utils';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  console.log(router);
   return (
     <div>
       <nav className='fixed z-20 bg-white w-full'>
@@ -53,46 +57,21 @@ const Navbar = () => {
               {/* Link Section */}
               <div className='hidden md:block'>
                 <div className='ml-10 flex items-baseline space-x-4'>
-                  <Link
-                    activeClass='about'
-                    to='about'
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
-                  >
-                    About
-                  </Link>
-                  <Link
-                    activeClass='projects'
-                    to='projects'
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
-                  >
-                    Projects
-                  </Link>
-                  <Link
-                    activeClass='tech'
-                    to='tech'
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
-                  >
-                    My Skills
-                  </Link>
-                  <Link
-                    activeClass='contact'
-                    to='contact'
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
-                  >
-                    Contact
-                  </Link>
+                  {navLinks.map(link => {
+                    return (
+                      <Link
+                        key={link.path}
+                        activeClass={link.path}
+                        to={link.path}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
+                      >
+                        {link.name}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>
