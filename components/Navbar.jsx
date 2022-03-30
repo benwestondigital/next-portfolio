@@ -10,7 +10,7 @@ import MobileLinks from './MobileLinks';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  console.log(router);
+  const path = router.pathname;
   return (
     <div>
       <nav className='fixed z-20 bg-white w-full'>
@@ -54,12 +54,12 @@ const Navbar = () => {
                   </a>
                 </div>
               </div>
-              <NavLinks />
+              <NavLinks path={path}/>
             </div>
             <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </div>
-        <MobileLinks isOpen={isOpen} />
+        <MobileLinks path={path} isOpen={isOpen} />
       </nav>
     </div>
   );
