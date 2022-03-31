@@ -23,7 +23,7 @@ const About = () => {
         </div>
       </div>
       <div className='flex flex-col justify-center items-center mx-2 mt-10 md:w-4/5 md:ml-20'>
-        <p className='flex-wrap mb-5 md:w-2/3 font-normal text-left'>
+        <p className='prose lg: prose-xl flex-wrap mb-5 md:w-2/3 font-normal text-left'>
           <br />
           I first became interested in coding through playing online games when
           I was a teenager. I saw people creating programs to automate their
