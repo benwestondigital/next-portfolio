@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-scroll';
 import { AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { DiGithubBadge } from 'react-icons/di';
 import { useRouter } from 'next/router';
 import NavLinks from './NavLinks';
 import HamBurger from './HamBurger';
 import MobileLinks from './MobileLinks';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,11 +20,8 @@ const Navbar = () => {
               {/* Logo Section */}
               <div className='flex justify-center items-center flex-shrink-0 ml-10'>
                 <Link
-                  activeClass='about'
-                  to='about'
-                  smooth={true}
-                  offset={50}
-                  duration={500}
+                  href='/#about'
+                  passHref
                 >
                   <h1 className='font-bold text-4xl sm:text-3xl cursor-pointer'>
                     Ben <span className='text-blue-600'>Weston</span>
