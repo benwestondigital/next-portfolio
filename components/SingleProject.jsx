@@ -7,7 +7,7 @@ const SingleProject = ({ project }) => {
       <div className='rounded w-80 h-80 shadow-xl relative'>
         <Image
           src={project.image}
-          alt='project'
+          alt={project.projName}
           layout='fill'
           objectFit='cover'
           className='p-2 rounded cursor-pointer'
