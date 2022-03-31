@@ -19,7 +19,7 @@ const Projects = () => {
           Projects
         </h2>
         <p className='mt-5 mb-5 font-normal text-center'>Here are some of the projects I&apos;ve been working on lately:</p>
-        <div className='items-center justify-center gap-10 mt-10 md:flex sm:flex-col md:flex-row md:items-start md:gap-10 sm:pb-10'>
+        <div className='items-center justify-center gap-10 mt-10 md:flex flex-wrap sm:flex-col md:flex-row md:items-start md:gap-10 sm:pb-10'>
           {projects.map(project => {
             return <SingleProject key={project.projName} project={project} />;
           })}
