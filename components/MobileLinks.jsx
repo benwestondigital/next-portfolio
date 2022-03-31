@@ -16,12 +16,11 @@ const MobileLinks = ({ path, isOpen }) => {
     >
       <div className='md:hidden' id='mobile-menu'>
         <div className='bg-white mx-4 mr-20 pt-4 pb-4 space-y-1'>
-          {navLinks.map((link, index) => {
+          {navLinks.map(link => {
             return (
-              <>
+              <div key={link.path}>
                 {path === '/' ? (
                   <ScrollLink
-                    key={link.path}
                     href={`/${link.path}`}
                     activeClass={link.path}
                     to={link.path}
@@ -33,13 +32,13 @@ const MobileLinks = ({ path, isOpen }) => {
                     {link.name}
                   </ScrollLink>
                 ) : (
-                  <Link key={index} href={`/#${link.path}`}>
+                  <Link href={`/#${link.path}`}>
                     <a className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                       {link.name}
                     </a>
                   </Link>
                 )}
-              </>
+              </div>
             );
           })}
         </div>

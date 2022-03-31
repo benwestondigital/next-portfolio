@@ -8,7 +8,7 @@ const NavLinks = ({ path }) => {
       <div className='ml-10 flex items-baseline space-x-4'>
         {navLinks.map(link => {
           return (
-            <>
+            <div key={link.path}>
               {path === '/' ? (
                 <ScrollLink
                   key={link.path}
@@ -30,7 +30,7 @@ const NavLinks = ({ path }) => {
                   {link.name}
                 </Link>
               )}
-            </>
+            </div>
           );
         })}
       </div>
