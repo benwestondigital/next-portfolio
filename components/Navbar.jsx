@@ -20,7 +20,7 @@ const Navbar = () => {
               {/* Logo Section */}
               <div className='flex justify-center items-center flex-shrink-0 ml-10'>
                 <Link
-                  href='/#about'
+                  href='/'
                   passHref
                 >
                   <h1 className='font-bold text-4xl sm:text-3xl cursor-pointer'>
