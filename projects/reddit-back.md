@@ -3,6 +3,7 @@ title: 'NC News - Reddit Clone - Back End'
 metaTitle: 'Back-End Reddit'
 metaDesc: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.'
 socialImage: images/redditback.png
+github: https://github.com/benwestondigital/reddit-clone-project
 date: '2022-03-31'
 tags:
     - postgresql

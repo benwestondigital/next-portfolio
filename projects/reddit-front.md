@@ -3,6 +3,7 @@ title: 'NC News - Reddit Clone - Front-End'
 metaTitle: 'Front-End Reddit'
 metaDesc: 'Developed a Reddit clone front-end with React.'
 socialImage: images/redditfront.png
+github: https://github.com/benwestondigital/nc-news
 date: '2022-03-31'
 tags:
     - react
