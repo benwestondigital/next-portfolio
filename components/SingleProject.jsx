@@ -18,7 +18,7 @@ const SingleProject = ({ project: { slug, frontmatter } }) => {
         {frontmatter.title}
       </h2>
       <p className='text-center font-normal mx-2 mb-5 flex-wrap'>
-        {frontmatter.description}
+        {frontmatter.metaDesc}
       </p>
       <Link href={`/projects/${slug}`}>
         <a className='uppercase text-center font-normal font mb-5 flex-wrap'>
