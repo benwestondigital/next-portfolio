@@ -1,5 +1,5 @@
 ---
-title: 'Back-End Reddit - NC News'
+title: 'NC News - Reddit Clone - Back End'
 metaTitle: 'Back-End Reddit'
 metaDesc: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.'
 socialImage: images/redditback.png

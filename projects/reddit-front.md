@@ -1,5 +1,5 @@
 ---
-title: 'Front-End Reddit - NC News'
+title: 'NC News - Reddit Clone - Front-End'
 metaTitle: 'Front-End Reddit'
 metaDesc: 'Developed a Reddit clone front-end with React.'
 socialImage: images/redditfront.png
