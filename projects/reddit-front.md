@@ -1,7 +1,7 @@
 ---
 title: 'Front-End Reddit - NC News'
 metaTitle: 'Front-End Reddit'
-metaDesc: 'Front-End Reddit'
+metaDesc: 'Developed a Reddit clone front-end with React.'
 socialImage: images/redditfront.png
 date: '2022-03-31'
 tags:

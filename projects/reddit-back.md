@@ -1,7 +1,7 @@
 ---
 title: 'Back-End Reddit - NC News'
 metaTitle: 'Back-End Reddit'
-metaDesc: 'Back-End Reddit'
+metaDesc: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.'
 socialImage: images/redditback.png
 date: '2022-03-31'
 tags:
