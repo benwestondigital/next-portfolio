@@ -3,6 +3,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';
 import md from 'markdown-it';
+import { DiGithubBadge } from 'react-icons/di';
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('projects');
@@ -36,6 +37,17 @@ const ProjectPage = ({ frontmatter, content }) => {
         <Link href='/'>
           <a>Home</a>
         </Link>
+      </div>
+      <div className='flex justify-between'>
+        <a href={frontmatter.github} target='_blank' rel='noreferrer'>
+          Github Repo
+          <DiGithubBadge className='w-20 h-20 m-1 p-1 text-black hover:text-gray-600' />
+        </a>
+        {frontmatter.livelink && (
+          <a href={frontmatter.livelink} target='_blank' rel='noreferrer'>
+            View Site
+          </a>
+        )}
       </div>
       <Image
         src={`/${frontmatter.socialImage}`}
