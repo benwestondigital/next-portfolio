@@ -1,9 +1,21 @@
 import { Element } from 'react-scroll';
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const form = useRef();
+  const [contactDetails, setContactDetails] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = e => {
+    setContactDetails({
+      ...contactDetails,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -14,6 +26,11 @@ const Contact = () => {
       process.env.NEXT_PUBLIC_USER_ID
     );
     console.log(sendEmail.text);
+    setContactDetails({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
 
   return (
@@ -26,41 +43,43 @@ const Contact = () => {
           <p className='text-center md:text-left font-normal font mx-2 mt-6 flex-wrap'>
             Have an interesting job opportunity for me? Get in touch:
           </p>
-          {/* TODO: build out this form to include name, email, bigger text area */}
           <form
             ref={form}
             onSubmit={onSubmit}
             className='flex flex-col justify-center text-center md:w-1/2 w-full my-3'
           >
             <div className='flex'>
-              <label htmlFor="name"/>
+              <label htmlFor='name' />
               <input
                 required
+                value={contactDetails.name}
+                onChange={handleChange}
                 type='text'
                 name='name'
                 id='name'
-                autoComplete='name'
                 placeholder='Your Name'
                 className='mt-5 py-1 pl-2 w-full rounded text-blue-800 text-xl border-2 border-indigo-900 h-10'
               />
-              <label htmlFor="email"/>
+              <label htmlFor='email' />
               <input
                 required
+                value={contactDetails.email}
+                onChange={handleChange}
                 type='email'
                 name='email'
                 id='email'
-                autoComplete='email'
                 placeholder='Your Email'
                 className='mt-5 py-1 pl-2 w-full rounded text-blue-800 text-xl border-2 border-indigo-900 h-10'
               />
             </div>
-            <label htmlFor="message"/>
+            <label htmlFor='message' />
             <textarea
               required
+              value={contactDetails.message}
+              onChange={handleChange}
               type='text'
               name='message'
               id='message'
-              autoComplete='Your message'
               placeholder='Your Message'
               className='mt-5 py-1 pl-2 w-full rounded text-blue-800 text-xl border-2 border-indigo-900 h-32'
             />
