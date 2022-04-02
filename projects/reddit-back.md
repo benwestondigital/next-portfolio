@@ -4,6 +4,7 @@ metaTitle: 'Back-End Reddit'
 metaDesc: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.'
 socialImage: images/redditback.png
 github: https://github.com/benwestondigital/reddit-clone-project
+livelink: https://ben-reddit-project.herokuapp.com/api
 date: '2022-03-31'
 tags:
     - postgresql

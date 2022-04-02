@@ -4,6 +4,7 @@ metaTitle: 'Front-End Reddit'
 metaDesc: 'Developed a Reddit clone front-end with React.'
 socialImage: images/redditfront.png
 github: https://github.com/benwestondigital/nc-news
+livelink: https://reddit-clone-project.netlify.app/
 date: '2022-03-31'
 tags:
     - react
