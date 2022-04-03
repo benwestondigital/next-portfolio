@@ -38,6 +38,10 @@ Asynchronous fetching using the async/await syntax as it is a cleaner style and 
 
 - Components and state planned using wireframe and component tree
 
+Before starting work on the app, I planned the structure by creating a wireframe. I split the functionality of the app into different React components to reduce complexity and allow for reusability.
+
+Using a component tree, I then decided what data the app would need to hold in state, and where to keep it. I planned to keep the state as low as possible but as high as necessary.
+
 - User profile switching using React Context
 
 User state needs to be shared between multiple components, therefore I have handled it using Context. On the profile page users can see the number of articles and comments they have posted, and their karma.
@@ -59,6 +63,10 @@ Unused API requests are cancelled to prevent memory leaks.
 - Optimistic Rendering
 
 User votes are rendered before the back end request is made, this improves UX by giving the user immediate feedback on their action. Error handling is in place to revert the change if the server request is unsuccessful.
+
+- Sorting
+
+The sort queries are set up as a useEffect dependency. Therefore a new request is made to the server to return the data sorted in the correct order when a user changes the sort type.
 
 ## Problems I faced
 
