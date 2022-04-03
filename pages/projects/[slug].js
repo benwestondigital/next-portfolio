@@ -32,21 +32,21 @@ export async function getStaticProps({ params: { slug } }) {
 const ProjectPage = ({ frontmatter, content }) => {
   return (
     <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
-      <div className='flex justify-between mb-10'>
-        <h1 className='mb-5 font-bold text-left text-3xl md:text-6xl'>
+        <h1 className='mb-5 font-bold text-3xl md:text-6xl'>
           {frontmatter.title}
         </h1>
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </div>
       <div className='flex justify-between w-full'>
         <a href={frontmatter.github} target='_blank' rel='noreferrer'>
           Github Repo
           <DiGithubBadge className='w-20 h-20 m-1 p-1 text-black hover:text-gray-600' />
         </a>
         {frontmatter.livelink && (
-          <a href={frontmatter.livelink} target='_blank' rel='noreferrer' className='font-semibold'>
+          <a
+            href={frontmatter.livelink}
+            target='_blank'
+            rel='noreferrer'
+            className='font-semibold hover:text-blue-600'
+          >
             View Site
           </a>
         )}
