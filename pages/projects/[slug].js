@@ -31,9 +31,9 @@ export async function getStaticProps({ params: { slug } }) {
 
 const ProjectPage = ({ frontmatter, content }) => {
   return (
-    <div className='flex flex-col justify-between items-center md:mx-20 md:pt-32 p-28'>
+    <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
       <div className='flex justify-between mb-10'>
-        <h1 className='mb-5 font-bold text-left text-6xl'>
+        <h1 className='mb-5 font-bold text-left text-3xl md:text-6xl'>
           {frontmatter.title}
         </h1>
         <Link href='/'>
@@ -56,6 +56,7 @@ const ProjectPage = ({ frontmatter, content }) => {
           src={`/${frontmatter.image}`}
           alt={frontmatter.title}
           objectFit='cover'
+          priority
           layout='fill'
           className='p-2 rounded'
           objectPosition='top'
