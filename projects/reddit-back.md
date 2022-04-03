@@ -12,10 +12,23 @@ tags:
     - node
 ---
 
-- Technology: Express, Node.js, PostgreSQL
-- Key Features: Thoroughly tested with Jest and Supertest, CI/CD, seeding
-- What I learnt:
-- Problems I faced: I was having trouble with one of my tests failing. The test logic looked good and the behaviour was inconsistent, sometimes it would pass and other times it would fail.
+This news project clones the back-end functionality of Reddit using Node.js and Express to serve articles, users, topics and comments in JSON format using a PostgreSQL database.
+
+## Technology
+
+- Node.js
+- Express
+- PostgreSQL
+
+These tools are all extremely popular with developers and employers, all ranking extremely highly in the Stack Overflow developer surveys as highly used.
+
+## Key Features
+
+Thoroughly tested with Jest and Supertest, CI/CD, seeding
+
+## Problems I faced
+
+I was having trouble with one of my tests failing. The test logic looked good and the behaviour was inconsistent, sometimes it would pass and other times it would fail.
 
 Unit testing, endpoint testing
 
@@ -26,3 +39,7 @@ From this I learnt to be careful with how I separate test functions into files, 
 What I would improve: add more functionality e.g. voting on comments, post article, delete article
 
 This is a REST API
+
+## What I learnt
+
+## What I would improve

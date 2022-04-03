@@ -16,7 +16,23 @@ WhereTo is a travel app that suggests locations with weather similar to your inp
 
 A few years ago I saw a fantastic map on Reddit that showed locations that had similar climates. At the time I was working selling wine, and found it so interesting that places like the Hunter Valley in Sydney, Australia had the same climate as Buenos Aires, Argentina. For bootcamp project pitches I immediately thought of this and knew this was a great idea that we could create.
 
-## Hurdles
+## Technology
+
+- Svelte
+- Svelte Kit
+- MongoDB
+- TypeScript
+
+I wanted to use technology that was highly rated by developers, so we built it with Svelte, SvelteKit, MongoDB, and written with TypeScript.
+It was a steep learning curve to take on all this new technology and learn it in a short timeframe, but while undertaking the project we came to love tech, and really enjoyed building using Svelte.
+
+## Key Features
+
+- Utilizes non-relational database and external APIs
+- Type checked with TypeScript
+- Uses MongoDB Geospatial Queries to handle coordinate information
+
+## Problems I faced
 
 Using a meta-framework like SvelteKit offered a lot of new possibilities compared to Create React App projects like I had previously made. I found Svelte to be great and intuitive to use, but due to the lack of documentation, and my first time using a meta-framework, I had to re-write some features as I figured out better ways to approach the problem. Originally, I had made fetch requests in the file. Then, I found out about API endpoints, and moved the fetch calls into there. Finally, I learnt about page endpoints and this was the best solution for fetching data. This was a great learning experience and helped me understand how to structure a project like this in the future.
 
@@ -26,13 +42,24 @@ We used TypeScript on this project because it is highly rated by so many develop
 
 When stitching the final product together, we had some problems linking all the pages together. This was our first project as a group, so merging the branches together had a learning curve to overcome. It definitely improved my Git skills.
 
-## Technology: Svelte, Svelte Kit, MongoDB, TypeScript
+## What I learnt
 
-## Tech Stack and Explanation
+- How meta-frameworks like Svelte Kit and Next.js work
 
-We wanted to use technology that was highly rated by developers, so we built it with Svelte, SvelteKit, MongoDB, and written with TypeScript.
-It was a steep learning curve to take on all this new technology and learn it in a short timeframe, but while undertaking the project we came to love tech, and really enjoyed building using Svelte.
+In future projects I will take advantage of features like page endpoints to render content server-side before page load.
 
-- Key Features: utilizes non-relational database and external APIs
-- What I learnt: it was a process to go from fetch in file → api endpoints → page endpoints and load function
-- What I would improve:
+- Improved skill working with APIs
+
+I spent a lot of time working with external APIs like Google Places. This has increased my confidence using these tools in future projects.
+
+- How to use TypeScript
+
+I learnt how to use TypeScript, and how useful it is. This will serve me well in future projects now I have overcome the initial learning curve.
+
+- Improved Git skills
+
+Working in a team on different branches and working with pull requests massively improved my skills with Git. This will be extremely helpful in future projects and working on development teams.
+
+## What I would improve
+
+With more time on this project I would add more features to the app, such as flight times, distance to destination, currency exchange rates.
