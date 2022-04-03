@@ -6,6 +6,7 @@ const NavLinks = ({ path }) => {
   return (
     <div className='hidden md:block'>
       <div className='ml-10 flex items-baseline space-x-4'>
+      {path !== '/' && <Link href='/' className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'>Home</Link>}
         {navLinks.map(link => {
           return (
             <div key={link.path}>
