@@ -22,26 +22,51 @@ This project uses the most commonly used web-framework React, and the highly pop
 
 ## Key Features
 
-- Uses React Hooks such as useState, useEffect
+- Uses the React Hooks useState, useEffect, useContext and useParams
 
-- Data fetching using the axios package
+State changes in the app are handled using useState, and data fetching is done using useEffect.
+
+Managed the form state for comment input with useState.
+
+- Data fetching with axios
+
+Asynchronous fetching using the async/await syntax as it is a cleaner style and avoids lengthy promise chains.
+
+- Components and state planned using wireframe and component tree
+
+- User profile switching using React Context
+
+User state needs to be shared between multiple components, therefore I have handled it using Context. On the profile page users can see the number of articles and comments they have posted, and their karma.
+
+Delete buttons for comments conditionally renders based on the logged in user profile.
+
+- Page Routing
+
+React Router is used to create different page routes using client side routing. The useParams hook returns dynamic parameters from the current URL that are then used to fetch the correct data for the page.
+
+- Responsive Design
+
+The app was built with a mobile first design, and scales depending on screen size.
+
+- Effect cleanup using a Cancel Token
+
+Unused API requests are cancelled to prevent memory leaks.
 
 ## Problems I faced
+
+Can't perform state update on an unmounted component
 
 I ran into issues with a memory leak in my project, caused by the fetch request being unable to render the data if the user left the page before the fetch was completed. To fix this, I had to implement an unsubscribe return function in the useEffect fetch. This fixed the issue by cancelling the request whenever a user left the page.
 
 From this I learnt a lot about React that I wouldn’t have otherwise. I learnt how to fix memory leaks, using cancel tokens to cancel a fetch request on the user leaving a page. I have a deeper understanding of data fetching through dealing with this issue.
 
-What I would improve: split hooks out into custom hooks to separate concerns and tidy files
-
 To handle state in this app I used useState to deal with x,y,z when they were fetched from the backend API.
 Loading state, error state
-I used axios to make the requests as it is more user friendly than fetch
-For the user login feature, the global state is handled using react useContext
-Managed the form state for comment input with useState
 
 For styling, the app uses vanilla css
 
 ## What I learnt
 
 ## What I would improve
+
+My next steps on this project would be to create custom hooks to separate concerns and tidy the files. I would add increased functionality e.g. adding new articles and potentially use a CSS framework like Chakra UI to improve the styling of the app.
