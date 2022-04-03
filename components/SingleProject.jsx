@@ -6,7 +6,7 @@ const SingleProject = ({ project: { slug, frontmatter } }) => {
     <div className='flex flex-col w-96 items-center justify-start'>
       <div className='rounded w-80 h-80 shadow-xl relative'>
         <Image
-          src={`/${frontmatter.socialImage}`}
+          src={`/${frontmatter.image}`}
           alt={frontmatter.title}
           layout='fill'
           objectFit='cover'
@@ -18,7 +18,7 @@ const SingleProject = ({ project: { slug, frontmatter } }) => {
         {frontmatter.title}
       </h2>
       <p className='text-center font-normal mx-2 mb-5 flex-wrap'>
-        {frontmatter.metaDesc}
+        {frontmatter.description}
       </p>
       <Link href={`/projects/${slug}`}>
         <a className='uppercase text-center font-normal font mb-5 flex-wrap'>
