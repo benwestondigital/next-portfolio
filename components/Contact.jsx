@@ -41,7 +41,7 @@ const Contact = () => {
             Contact Me
           </h2>
           <p className='flex-wrap mx-2 mt-6 font-normal text-center md:text-left font'>
-            Have an interesting job opportunity? Get in touch:
+            Have an interesting job opportunity for me? Get in touch:
           </p>
           <form
             ref={form}
@@ -58,7 +58,7 @@ const Contact = () => {
                 name='name'
                 id='name'
                 placeholder='Your Name'
-                className='w-full h-10 py-1 pl-2 mt-5 mr-2 text-xl text-blue-800 border-2 border-indigo-900 rounded'
+                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 mr-2 text-xl text-blue-800 border-2 border-indigo-900 rounded'
               />
               <label htmlFor='email' />
               <input
@@ -69,7 +69,7 @@ const Contact = () => {
                 name='email'
                 id='email'
                 placeholder='Your Email'
-                className='w-full h-10 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
+                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
               />
             </div>
             <label htmlFor='message' />
@@ -81,7 +81,7 @@ const Contact = () => {
               name='message'
               id='message'
               placeholder='Your Message'
-              className='w-full h-32 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
+              className='placeholder:italic w-full h-32 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
             />
             <button className='self-center w-1/2 h-10 mt-5 text-xl text-white bg-indigo-900 rounded hover:bg-black'>
               Submit
