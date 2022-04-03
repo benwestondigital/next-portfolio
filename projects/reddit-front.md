@@ -26,6 +26,10 @@ This project uses the most commonly used web-framework React, and the highly pop
 
 State changes in the app are handled using useState, and data fetching is done using useEffect.
 
+- Controlled Components
+
+Inputs are controlled with React and passed as props to children. For example, comment input is handled via state and updated based on user input. This allows React to be the single source of truth.
+
 Managed the form state for comment input with useState.
 
 - Data fetching with axios
@@ -52,6 +56,10 @@ The app was built with a mobile first design, and scales depending on screen siz
 
 Unused API requests are cancelled to prevent memory leaks.
 
+- Optimistic Rendering
+
+User votes are rendered before the back end request is made, this improves UX by giving the user immediate feedback on their action. Error handling is in place to revert the change if the server request is unsuccessful.
+
 ## Problems I faced
 
 Can't perform state update on an unmounted component
@@ -69,4 +77,4 @@ For styling, the app uses vanilla css
 
 ## What I would improve
 
-My next steps on this project would be to create custom hooks to separate concerns and tidy the files. I would add increased functionality e.g. adding new articles and potentially use a CSS framework like Chakra UI to improve the styling of the app.
+My next steps on this project would be to create custom hooks to separate concerns and extract the logic into a separate file. I would add increased functionality e.g. the ability to post new articles and potentially use a CSS framework like Chakra UI to improve the styling of the app. Pagination would also improve the app.
