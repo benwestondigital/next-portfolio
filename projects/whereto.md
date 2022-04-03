@@ -1,8 +1,8 @@
 ---
 title: 'WhereTo - Climate Travel App'
-metaTitle: 'WhereTo - Climate Travel App'
-metaDesc: 'Miss the weather in your favourite holiday destination? Let WhereTo help you decide on your next vacation spot. Uses Svelte / Svelte Kit.'
-socialImage: images/whereto.png
+shortTitle: 'WhereTo - Climate Travel App'
+description: 'Miss the weather in your favourite holiday destination? Let WhereTo help you decide on your next vacation spot. Uses Svelte / Svelte Kit.'
+image: images/whereto.png
 github: https://github.com/benwestondigital/climate-app
 date: '2022-03-31'
 tags:

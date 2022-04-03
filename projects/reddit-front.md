@@ -1,8 +1,8 @@
 ---
 title: 'NC News - Reddit Clone - Front-End'
-metaTitle: 'Front-End Reddit'
-metaDesc: 'Developed a Reddit clone front-end with React.'
-socialImage: images/redditfront.png
+shortTitle: 'Front-End Reddit'
+description: 'Developed a Reddit clone front-end with React.'
+image: images/redditfront.png
 github: https://github.com/benwestondigital/nc-news
 livelink: https://reddit-clone-project.netlify.app/
 date: '2022-03-31'

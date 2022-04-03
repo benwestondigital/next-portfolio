@@ -1,8 +1,8 @@
 ---
 title: 'NC News - Reddit Clone - Back End'
-metaTitle: 'Back-End Reddit'
-metaDesc: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.'
-socialImage: images/redditback.png
+shortTitle: 'Back-End Reddit'
+description: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.'
+image: images/redditback.png
 github: https://github.com/benwestondigital/reddit-clone-project
 livelink: https://ben-reddit-project.herokuapp.com/api
 date: '2022-03-31'
