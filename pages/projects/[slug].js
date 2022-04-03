@@ -31,14 +31,16 @@ export async function getStaticProps({ params: { slug } }) {
 
 const ProjectPage = ({ frontmatter, content }) => {
   return (
-    <div className='flex flex-col justify-between prose md:mx-20 md:pt-32 p-28'>
+    <div className='flex flex-col justify-between items-center md:mx-20 md:pt-32 p-28'>
       <div className='flex justify-between mb-10'>
-        <h1 className='font-semibold'>{frontmatter.title}</h1>
+        <h1 className='mb-5 font-bold text-left text-6xl'>
+          {frontmatter.title}
+        </h1>
         <Link href='/'>
           <a>Home</a>
         </Link>
       </div>
-      <div className='flex justify-between'>
+      <div className='flex justify-between w-full'>
         <a href={frontmatter.github} target='_blank' rel='noreferrer'>
           Github Repo
           <DiGithubBadge className='w-20 h-20 m-1 p-1 text-black hover:text-gray-600' />
@@ -49,16 +51,20 @@ const ProjectPage = ({ frontmatter, content }) => {
           </a>
         )}
       </div>
-      <Image
-        src={`/${frontmatter.socialImage}`}
-        alt={frontmatter.title}
-        width={400}
-        height={400}
-        objectFit='cover'
-        className='p-2 rounded cursor-pointer'
-        objectPosition='top'
+      <div className='h-96 w-96 relative'>
+        <Image
+          src={`/${frontmatter.image}`}
+          alt={frontmatter.title}
+          objectFit='cover'
+          layout='fill'
+          className='p-2 rounded'
+          objectPosition='top'
+        />
+      </div>
+      <div
+        className='prose'
+        dangerouslySetInnerHTML={{ __html: md().render(content) }}
       />
-      <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
     </div>
   );
 };
