@@ -46,7 +46,7 @@ const ProjectPage = ({ frontmatter, content }) => {
           <DiGithubBadge className='w-20 h-20 m-1 p-1 text-black hover:text-gray-600' />
         </a>
         {frontmatter.livelink && (
-          <a href={frontmatter.livelink} target='_blank' rel='noreferrer'>
+          <a href={frontmatter.livelink} target='_blank' rel='noreferrer' className='font-semibold'>
             View Site
           </a>
         )}
