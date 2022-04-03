@@ -12,7 +12,7 @@ tags:
   - node
 ---
 
-This news project clones the back-end functionality of Reddit using Node.js and Express to serve articles, users, topics and comments in JSON format using a PostgreSQL database.
+This news project is a REST API that clones the back-end functionality of Reddit using Node.js and Express to serve articles, users, topics and comments in JSON format using a PostgreSQL database.
 
 ## Technology
 
@@ -32,15 +32,17 @@ Thoroughly tested with Jest and Supertest, CI/CD, seeding
 
 Set up using Github Actions. A workflow (pipeline) is set up to run tests each time the main branch is pushed. Once the integration tests have passed, the app is deployed.
 
+- Model View Controller Pattern
+
+Following the MVC pattern to abstract the server into identifiable sections helps to debug errors and keep maintainable code.
+
+- Use .env files to hide confidential information
+
 ## Problems I faced
 
 I was having trouble with one of my tests failing. The test logic looked good and the behaviour was inconsistent, sometimes it would pass and other times it would fail.
 
-Unit testing, endpoint testing
-
 I had two testing files set up – an app file for the endpoints, and a utils file for utility functions e.g. ones that would transform data before seeding. I eventually figured out that in one of my utility functions I needed a connection to the database, but I hadn’t set it up in that file. This led to inconsistent behaviour, where if I ran both test files at the same time it would work (due to the connection in the app file) and separately the utils file would fail.
-
-This is a REST API
 
 ## What I learnt
 
@@ -51,10 +53,6 @@ This is a REST API
 - How to use Heroku hosting
 
 - Using Express to set up a RESTful API
-
-- Model View Controller Pattern
-
-Following the MVC pattern to abstract the server into identifiable sections helps to debug errors and keep maintainable code.
 
 to be careful with how I separate test functions into files, and checking which data they might need to access to run.
 

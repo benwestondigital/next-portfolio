@@ -83,6 +83,10 @@ For styling, the app uses vanilla css
 
 ## What I learnt
 
+As the project progressed I became much more comfortable using conditional rendering and ternary operators to display the required elements.
+
+I learnt the importance of writing concise code, refactoring as I went along to improve readability.
+
 ## What I would improve
 
 My next steps on this project would be to create custom hooks to separate concerns and extract the logic into a separate file. I would add increased functionality e.g. the ability to post new articles and potentially use a CSS framework like Chakra UI to improve the styling of the app. Pagination would also improve the app.
