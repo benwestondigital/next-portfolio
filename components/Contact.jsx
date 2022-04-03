@@ -36,17 +36,17 @@ const Contact = () => {
   return (
     <Element id='contact' name='contact'>
       <div>
-        <div className='w-full my-40 h-auto flex flex-col justify-center items-center'>
-          <h2 className='text-indigo-900 text-6xl font-bold text-center'>
+        <div className='flex flex-col items-center justify-center w-full h-auto my-40'>
+          <h2 className='text-6xl font-bold text-center text-indigo-900'>
             Contact Me
           </h2>
-          <p className='text-center md:text-left font-normal font mx-2 mt-6 flex-wrap'>
-            Have an interesting job opportunity for me? Get in touch:
+          <p className='flex-wrap mx-2 mt-6 font-normal text-center md:text-left font'>
+            Have an interesting job opportunity? Get in touch:
           </p>
           <form
             ref={form}
             onSubmit={onSubmit}
-            className='flex flex-col justify-center text-center md:w-1/2 w-full my-3'
+            className='flex flex-col justify-center w-full my-3 text-center md:w-1/2'
           >
             <div className='flex'>
               <label htmlFor='name' />
@@ -58,7 +58,7 @@ const Contact = () => {
                 name='name'
                 id='name'
                 placeholder='Your Name'
-                className='mt-5 py-1 pl-2 w-full rounded text-blue-800 text-xl border-2 border-indigo-900 h-10'
+                className='w-full h-10 py-1 pl-2 mt-5 mr-2 text-xl text-blue-800 border-2 border-indigo-900 rounded'
               />
               <label htmlFor='email' />
               <input
@@ -69,7 +69,7 @@ const Contact = () => {
                 name='email'
                 id='email'
                 placeholder='Your Email'
-                className='mt-5 py-1 pl-2 w-full rounded text-blue-800 text-xl border-2 border-indigo-900 h-10'
+                className='w-full h-10 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
               />
             </div>
             <label htmlFor='message' />
@@ -81,9 +81,9 @@ const Contact = () => {
               name='message'
               id='message'
               placeholder='Your Message'
-              className='mt-5 py-1 pl-2 w-full rounded text-blue-800 text-xl border-2 border-indigo-900 h-32'
+              className='w-full h-32 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
             />
-            <button className='mt-5 text-xl w-36 h-10 bg-indigo-900 text-white rounded hover:bg-black'>
+            <button className='self-center w-1/2 h-10 mt-5 text-xl text-white bg-indigo-900 rounded hover:bg-black'>
               Submit
             </button>
           </form>
