@@ -16,6 +16,13 @@ const MobileLinks = ({ path, isOpen }) => {
     >
       <div className='md:hidden' id='mobile-menu'>
         <div className='bg-white mx-4 mr-20 pt-4 pb-4 space-y-1'>
+          {path !== '/' && (
+            <Link href='/'>
+              <a className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+                Home
+              </a>
+            </Link>
+          )}
           {navLinks.map(link => {
             return (
               <div key={link.path}>
