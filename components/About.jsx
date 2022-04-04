@@ -4,7 +4,7 @@ import { Element, Link } from 'react-scroll';
 
 const About = () => {
   return (
-    <Element id='about' name='about'>
+    <Element id='about' name='about' className='flex flex-col justify-center items-center'>
       <div className='flex justify-center md:mx-20 md:pt-32 pt-28 '>
         <div className='relative hidden w-1/3 px-10 rounded-full shadow-xl h-96 md:block'>
           <Image
@@ -23,7 +23,7 @@ const About = () => {
           </h1>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center mx-2 mt-10 md:w-4/5 md:ml-20'>
+      <div className='flex flex-col justify-center items-center mt-10 md:w-4/5'>
         <p className='prose lg:prose-xl flex-wrap mb-5 md:w-2/3 font-normal text-left'>
           <br />
           I first became interested in coding through playing online games when
