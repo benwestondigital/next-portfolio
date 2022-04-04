@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { navLinks } from '../utils';
 
-const MobileLinks = ({ path, isOpen }) => {
+const MobileLinks = ({ path, isOpen, setIsOpen }) => {
   return (
     <Transition
       show={isOpen}
@@ -16,13 +16,6 @@ const MobileLinks = ({ path, isOpen }) => {
     >
       <div className='md:hidden' id='mobile-menu'>
         <div className='bg-white mx-4 mr-20 pt-4 pb-4 space-y-1'>
-          {path !== '/' && (
-            <Link href='/'>
-              <a className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
-                Home
-              </a>
-            </Link>
-          )}
           {navLinks.map(link => {
             return (
               <div key={link.path}>
@@ -35,12 +28,16 @@ const MobileLinks = ({ path, isOpen }) => {
                     offset={-100}
                     duration={500}
                     className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    onClick={() => setIsOpen(false)}
                   >
                     {link.name}
                   </ScrollLink>
                 ) : (
                   <Link href={`/#${link.path}`}>
-                    <a className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+                    <a
+                      onClick={() => setIsOpen(false)}
+                      className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    >
                       {link.name}
                     </a>
                   </Link>
