@@ -1,5 +1,6 @@
 ---
-title: 'NC News - Reddit Clone - Back End'
+title: 'NC News - Reddit Clone'
+type: 'Back End'
 shortTitle: 'Back-End Reddit'
 description: 'The back-end functionality for my Reddit clone built using Express / PostgreSQL.'
 image: images/redditback.png

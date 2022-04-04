@@ -1,5 +1,6 @@
 ---
-title: 'NC News - Reddit Clone - Front-End'
+title: 'NC News - Reddit Clone'
+type: 'Front-End'
 shortTitle: 'Front-End Reddit'
 description: 'Developed a Reddit clone front-end with React.'
 image: images/redditfront.png

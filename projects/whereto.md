@@ -1,5 +1,6 @@
 ---
 title: 'WhereTo - Climate Travel App'
+type: 'Full-Stack'
 shortTitle: 'WhereTo - Climate Travel App'
 description: 'Miss the weather in your favourite holiday destination? Let WhereTo help you decide on your next vacation spot. Uses Svelte / Svelte Kit.'
 image: images/whereto.png
