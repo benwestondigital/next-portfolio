@@ -18,6 +18,7 @@ const SingleProject = ({ project: { slug, frontmatter } }) => {
         <h2 className='text-xl m-2 mt-5 text-indigo-600 font-semibold'>
           {frontmatter.title}
         </h2>
+        <h3 className='mx-2 mb-2'>{frontmatter.type}</h3>
         <p className='text-center font-normal mx-2 mb-5 flex-wrap'>
           {frontmatter.description}
         </p>
