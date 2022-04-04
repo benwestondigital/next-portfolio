@@ -5,7 +5,7 @@ import { Element, Link } from 'react-scroll';
 const About = () => {
   return (
     <Element id='about' name='about' className='flex flex-col justify-center items-center'>
-      <div className='flex justify-center md:mx-20 md:pt-32 pt-28 '>
+      <div className='flex justify-center md:mx-20 md:pt-32 pt-28'>
         <div className='relative hidden w-1/3 px-10 rounded-full shadow-xl h-96 md:block'>
           <Image
             src={avatar}
@@ -24,6 +24,16 @@ const About = () => {
         </div>
       </div>
       <div className='flex flex-col justify-center items-center mt-10 md:w-4/5'>
+      <Link
+          activeClass='projects'
+          to='projects'
+          smooth={true}
+          offset={-100}
+          duration={500}
+          className='h-16 pt-5 mt-5 text-lg text-center font-semibold text-white bg-indigo-900 rounded-md md:mt-10 w-60 hover:bg-black'
+        >
+          See My Portfolio
+        </Link>
         <p className='prose lg:prose-xl flex-wrap mb-5 md:w-2/3 font-normal text-left'>
           <br />
           I first became interested in coding through playing online games when
@@ -67,17 +77,6 @@ const About = () => {
           can help a company achieve their goals and continue my learning
           journey.
         </p>
-
-        <Link
-          activeClass='projects'
-          to='projects'
-          smooth={true}
-          offset={50}
-          duration={500}
-          className='h-16 pt-5 mt-5 text-lg text-center font-semibold text-white bg-indigo-900 rounded-md md:mt-10 w-60 hover:bg-black'
-        >
-          See My Portfolio
-        </Link>
       </div>
     </Element>
   );
