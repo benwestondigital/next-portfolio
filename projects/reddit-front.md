@@ -2,7 +2,7 @@
 title: 'NC News - Reddit Clone'
 type: 'Front-End'
 shortTitle: 'Front-End Reddit'
-description: 'Developed a Reddit clone front-end with React.'
+description: 'Developed a Reddit clone front-end with React and React Router.'
 image: images/redditfront.png
 github: https://github.com/benwestondigital/nc-news
 livelink: https://reddit-clone-project.netlify.app/
