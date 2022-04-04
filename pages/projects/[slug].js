@@ -41,7 +41,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
   const index = paths.findIndex(element => element === currentPath);
   let nextProject;
 
-  if (index < paths.length -1) {
+  if (index < paths.length - 1) {
     nextProject = paths[index + 1];
   } else {
     nextProject = paths[0];
@@ -49,12 +49,17 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
 
   return (
     <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
-      <h1 className='mb-5 font-bold text-3xl md:text-6xl'>
-        {frontmatter.title}
-      </h1>
-      <Link href={`/projects/${nextProject}`}>
-        <a>Next Project {'>'}</a>
-      </Link>
+      <div className='flex justify-between items-baseline h-48 mx-2'>
+        <div className='flex flex-col justify-between items-start h-32'>
+          <h1 className='mb-5 font-bold text-3xl md:text-5xl'>
+            {frontmatter.title}
+          </h1>
+          <h2>Type: {frontmatter.type}</h2>
+        </div>
+        <Link href={`/projects/${nextProject}`}>
+          <a className='hover:font-semibold'>Next Project {'>'}</a>
+        </Link>
+      </div>
       <div className='flex justify-between w-full'>
         <a href={frontmatter.github} target='_blank' rel='noreferrer'>
           Github Repo
