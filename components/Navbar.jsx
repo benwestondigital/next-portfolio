@@ -56,7 +56,7 @@ const Navbar = () => {
             <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </div>
-        <MobileLinks path={path} isOpen={isOpen} />
+        <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen}/>
       </nav>
     </div>
   );
