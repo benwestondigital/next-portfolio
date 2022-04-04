@@ -32,7 +32,7 @@ const MobileLinks = ({ path, isOpen }) => {
                     activeClass={link.path}
                     to={link.path}
                     smooth={true}
-                    offset={50}
+                    offset={-100}
                     duration={500}
                     className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                   >

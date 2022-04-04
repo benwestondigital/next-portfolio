@@ -16,7 +16,7 @@ const NavLinks = ({ path }) => {
                   activeClass={link.path}
                   to={link.path}
                   smooth={true}
-                  offset={50}
+                  offset={-100}
                   duration={500}
                   className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
                 >
