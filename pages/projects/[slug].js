@@ -49,17 +49,17 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
 
   return (
     <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
-      <div className='flex justify-between items-baseline h-48 mx-2 w-full md:w-2/3'>
-        <div className='flex flex-col justify-between items-start h-32'>
-          <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
-            {frontmatter.title}
-          </h1>
+        <div className='flex justify-between w-4/5 mb-10'>
           <h2>Type: {frontmatter.type}</h2>
-        </div>
         <Link href={`/projects/${nextProject}`}>
           <a className='hover:font-semibold min-w-fit'>Next Project {'>'}</a>
         </Link>
       </div>
+      <div className='flex justify-between items-start h-32'>
+          <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
+            {frontmatter.title}
+          </h1>
+        </div>
       <div className='flex justify-between w-1/2'>
         <a href={frontmatter.github} target='_blank' rel='noreferrer'>
           Github Repo
