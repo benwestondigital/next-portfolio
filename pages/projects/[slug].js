@@ -49,22 +49,29 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
 
   return (
     <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
-        <div className='flex justify-between w-4/5 mb-10'>
-          <h2>Type: {frontmatter.type}</h2>
+      <div className='flex justify-between w-4/5 mb-10'>
+        <Link
+          href='/'
+          className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
+        >
+          Home
+        </Link>
+
         <Link href={`/projects/${nextProject}`}>
           <a className='hover:font-semibold min-w-fit'>Next Project {'>'}</a>
         </Link>
       </div>
       <div className='flex justify-between items-start h-32'>
-          <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
-            {frontmatter.title}
-          </h1>
-        </div>
-      <div className='flex justify-between w-1/2'>
+        <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
+          {frontmatter.title}
+        </h1>
+      </div>
+      <div className='flex justify-between w-2/3'>
         <a href={frontmatter.github} target='_blank' rel='noreferrer'>
           Github Repo
           <DiGithubBadge className='w-20 h-20 m-1 p-1 text-black hover:text-gray-600' />
         </a>
+        <h2>Type: {frontmatter.type}</h2>
         {frontmatter.livelink && (
           <a
             href={frontmatter.livelink}
