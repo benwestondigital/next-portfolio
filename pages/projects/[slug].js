@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import md from 'markdown-it';
 import { useRouter } from 'next/router';
-import { DiGithubBadge } from 'react-icons/di';
+
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('projects');
@@ -66,10 +66,14 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           {frontmatter.title}
         </h1>
       </div>
-      <div className='flex justify-between w-2/3'>
-        <a href={frontmatter.github} target='_blank' rel='noreferrer'>
+      <div className='flex flex-col sm:flex-row items-center sm:items-start justify-between md:w-2/3 mb-5'>
+        <a
+          href={frontmatter.github}
+          target='_blank'
+          rel='noreferrer'
+          className='hover:font-semibold hover:text-blue-600'
+        >
           Github Repo
-          <DiGithubBadge className='w-20 h-20 m-1 p-1 text-black hover:text-gray-600' />
         </a>
         <h2>Type: {frontmatter.type}</h2>
         {frontmatter.livelink && (
@@ -77,20 +81,20 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
             href={frontmatter.livelink}
             target='_blank'
             rel='noreferrer'
-            className='font-semibold hover:text-blue-600'
+            className='hover:font-semibold hover:text-blue-600'
           >
             View Site
           </a>
         )}
       </div>
-      <div className='h-96 w-96 relative'>
+      <div className='h-96 w-full md:w-96 relative'>
         <Image
           src={`/${frontmatter.image}`}
           alt={frontmatter.title}
           objectFit='cover'
           priority
           layout='fill'
-          className='p-2 rounded'
+          className='rounded'
           objectPosition='top'
         />
       </div>
