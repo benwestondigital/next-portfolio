@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import md from 'markdown-it';
 import { useRouter } from 'next/router';
-
+import { Element, Link as ScrollLink } from 'react-scroll';
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('projects');
@@ -48,61 +48,72 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
   }
 
   return (
-    <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
-      <div className='flex justify-between w-4/5 mb-10'>
-        <Link
-          href='/'
-          className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
-        >
-          Home
-        </Link>
+    <Element id='projectpage' name='projectpage'>
+      <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
+        <div className='flex justify-between w-4/5 mb-10 text-lg'>
+          <Link href='/'>
+            <a className='cursor-pointer hover:font-semibold'>
+              Home
+            </a>
+          </Link>
 
-        <Link href={`/projects/${nextProject}`}>
-          <a className='hover:font-semibold min-w-fit'>Next Project {'>'}</a>
-        </Link>
-      </div>
-      <div className='flex justify-between items-start h-32'>
-        <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
-          {frontmatter.title}
-        </h1>
-      </div>
-      <div className='flex flex-col sm:flex-row items-center sm:items-start justify-between md:w-2/3 mb-5'>
-        <a
-          href={frontmatter.github}
-          target='_blank'
-          rel='noreferrer'
-          className='hover:font-semibold hover:text-blue-600'
-        >
-          Github Repo
-        </a>
-        <h2>Type: {frontmatter.type}</h2>
-        {frontmatter.livelink && (
+          <Link href={`/projects/${nextProject}`}>
+            <a className='hover:font-semibold min-w-fit'>Next Project {'>'}</a>
+          </Link>
+        </div>
+        <div className='flex justify-between items-start h-32'>
+          <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
+            {frontmatter.title}
+          </h1>
+        </div>
+        <div className='flex flex-col sm:flex-row text-md items-center sm:items-start justify-between md:w-2/3 mb-5'>
           <a
-            href={frontmatter.livelink}
+            href={frontmatter.github}
             target='_blank'
             rel='noreferrer'
             className='hover:font-semibold hover:text-blue-600'
           >
-            View Site
+            Github Repo
           </a>
-        )}
-      </div>
-      <div className='h-96 w-full md:w-96 relative'>
-        <Image
-          src={`/${frontmatter.image}`}
-          alt={frontmatter.title}
-          objectFit='cover'
-          priority
-          layout='fill'
-          className='rounded'
-          objectPosition='top'
+          <h2>Type: {frontmatter.type}</h2>
+          {frontmatter.livelink && (
+            <a
+              href={frontmatter.livelink}
+              target='_blank'
+              rel='noreferrer'
+              className='hover:font-semibold hover:text-blue-600'
+            >
+              View Site
+            </a>
+          )}
+        </div>
+        <div className='h-96 w-full md:w-96 relative'>
+          <Image
+            src={`/${frontmatter.image}`}
+            alt={frontmatter.title}
+            objectFit='cover'
+            priority
+            layout='fill'
+            className='rounded'
+            objectPosition='top'
+          />
+        </div>
+        <div
+          className='prose'
+          dangerouslySetInnerHTML={{ __html: md().render(content) }}
         />
+        <ScrollLink
+          activeClass='projectpage'
+          to='projectpage'
+          smooth={true}
+          offset={-100}
+          duration={500}
+          className='h-16 pt-5 mt-10 text-lg text-center font-semibold text-white bg-indigo-900 rounded-md md:mt-10 w-60 hover:bg-black'
+        >
+          Back to Top
+        </ScrollLink>
       </div>
-      <div
-        className='prose'
-        dangerouslySetInnerHTML={{ __html: md().render(content) }}
-      />
-    </div>
+    </Element>
   );
 };
 
