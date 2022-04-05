@@ -49,7 +49,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
 
   return (
     <Element id='projectpage' name='projectpage'>
-      <div className='flex flex-col justify-between items-center md:mx-20 p-10 pt-20 md:pt-32 md:p-28'>
+      <article className='flex flex-col justify-between items-center md:mx-20 px-4 pt-20 md:pt-32 md:p-28'>
         <div className='flex justify-between w-4/5 mb-10 text-lg'>
           <Link href='/'>
             <a className='cursor-pointer hover:font-semibold'>
@@ -58,15 +58,16 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           </Link>
 
           <Link href={`/projects/${nextProject}`}>
-            <a className='hover:font-semibold min-w-fit'>Next Project {'>'}</a>
+            <a className='hover:font-semibold min-w-fit'>Next Project</a>
           </Link>
         </div>
-        <div className='flex justify-between items-start h-32'>
+        <div className='flex flex-col justify-center my-6 items-center text-center h-32'>
           <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
             {frontmatter.title}
           </h1>
+          <h2>Type: {frontmatter.type}</h2>
         </div>
-        <div className='flex flex-col sm:flex-row text-md items-center sm:items-start justify-between md:w-2/3 mb-5'>
+        <div className='flex flex-col md:flex-row text-md items-center sm:items-start justify-between md:w-2/3 mb-5'>
           <a
             href={frontmatter.github}
             target='_blank'
@@ -75,7 +76,6 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           >
             Github Repo
           </a>
-          <h2>Type: {frontmatter.type}</h2>
           {frontmatter.livelink && (
             <a
               href={frontmatter.livelink}
@@ -99,7 +99,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           />
         </div>
         <div
-          className='prose'
+          className='prose pt-6'
           dangerouslySetInnerHTML={{ __html: md().render(content) }}
         />
         <ScrollLink
@@ -112,7 +112,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
         >
           Back to Top
         </ScrollLink>
-      </div>
+      </article>
     </Element>
   );
 };
