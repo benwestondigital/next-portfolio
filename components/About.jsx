@@ -4,7 +4,7 @@ import { Element, Link } from 'react-scroll';
 
 const About = () => {
   return (
-    <Element id='about' name='about' className='flex flex-col justify-center items-center'>
+    <Element id='about' name='about' className='flex flex-col justify-center items-center px-2'>
       <div className='flex justify-center md:mx-20 md:pt-32 pt-28'>
         <div className='relative hidden w-1/3 px-10 rounded-full shadow-xl h-96 md:block'>
           <Image
