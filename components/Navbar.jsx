@@ -12,11 +12,11 @@ const Navbar = () => {
   const router = useRouter();
   const path = router.pathname;
   return (
-      <nav className='container fixed z-20 bg-white'>
-        <div className='w-full'>
-          <div className='flex items-center justify-between h-20'>
-            <div className='flex items-center justify-between '>
-              <div className='flex justify-center items-center flex-shrink-0'>
+      <nav className='container mx-auto fixed z-20 bg-white h-20'>
+          {/* below div affects mobile menu */}
+          <div className='flex items-center justify-between md:block py-4'>
+            <div className='flex items-center justify-between'>
+              <div className='flex justify-start items-center flex-shrink-0 gap-6'>
                 <Link
                   href='/'
                   passHref
@@ -53,7 +53,6 @@ const Navbar = () => {
             </div>
             <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
-        </div>
         <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen}/>
       </nav>
   );
