@@ -12,8 +12,8 @@ const Navbar = () => {
   const router = useRouter();
   const path = router.pathname;
   return (
-    <nav className='container fixed z-20 bg-white'>
-      <div className='flex items-center justify-between h-20 px-4 py-2'>
+    <nav className='container px-8 fixed z-20 bg-white'>
+      <div className='flex items-center justify-between h-20'>
         <div className='flex justify-start items-center flex-shrink-0 gap-6'>
           <Link href='/' passHref>
             <h1 className='font-bold text-4xl sm:text-3xl cursor-pointer'>
