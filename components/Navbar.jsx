@@ -12,13 +12,11 @@ const Navbar = () => {
   const router = useRouter();
   const path = router.pathname;
   return (
-    <div>
-      <nav className='fixed z-20 bg-white w-full'>
+      <nav className='container fixed z-20 bg-white'>
         <div className='w-full'>
-          <div className='flex items-center h-20 w-full'>
-            <div className='flex items-center sm:mx-10 md:mx-20 justify-between w-full'>
-              {/* Logo Section */}
-              <div className='flex justify-center items-center flex-shrink-0 ml-10'>
+          <div className='flex items-center justify-between h-20'>
+            <div className='flex items-center justify-between '>
+              <div className='flex justify-center items-center flex-shrink-0'>
                 <Link
                   href='/'
                   passHref
@@ -27,7 +25,7 @@ const Navbar = () => {
                     Ben <span className='text-blue-600'>Weston</span>
                   </h1>
                 </Link>
-                <div className='hidden md:ml-5 md:flex'>
+                <div className='hidden md:flex'>
                   <a
                     href='https://www.linkedin.com/in/ben-weston-b19420175/'
                     target='_blank'
@@ -58,7 +56,6 @@ const Navbar = () => {
         </div>
         <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen}/>
       </nav>
-    </div>
   );
 };
 
