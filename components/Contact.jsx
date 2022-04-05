@@ -57,6 +57,7 @@ const Contact = () => {
                 type='text'
                 name='name'
                 id='name'
+                autoComplete='name'
                 placeholder='Your Name'
                 className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 mr-2 text-xl text-blue-800 border-2 border-indigo-900 rounded'
               />
@@ -68,6 +69,7 @@ const Contact = () => {
                 type='email'
                 name='email'
                 id='email'
+                autoComplete='email'
                 placeholder='Your Email'
                 className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
               />
