@@ -46,7 +46,7 @@ const Contact = () => {
           <form
             ref={form}
             onSubmit={onSubmit}
-            className='flex flex-col justify-center w-full lg:w-1/3 my-3 text-center md:w-1/2'
+            className='flex flex-col justify-center w-4/5 lg:w-1/3 my-3 text-center md:w-1/2'
           >
             <div className='flex'>
               <label htmlFor='name' />
