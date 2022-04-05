@@ -12,49 +12,43 @@ const Navbar = () => {
   const router = useRouter();
   const path = router.pathname;
   return (
-      <nav className='container mx-auto fixed z-20 bg-white h-20'>
-          {/* below div affects mobile menu */}
-          <div className='flex items-center justify-between md:block py-4'>
-            <div className='flex items-center justify-between'>
-              <div className='flex justify-start items-center flex-shrink-0 gap-6'>
-                <Link
-                  href='/'
-                  passHref
-                >
-                  <h1 className='font-bold text-4xl sm:text-3xl cursor-pointer'>
-                    Ben <span className='text-blue-600'>Weston</span>
-                  </h1>
-                </Link>
-                <div className='hidden md:flex'>
-                  <a
-                    href='https://www.linkedin.com/in/ben-weston-b19420175/'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <AiFillLinkedin className='w-10 h-10 m-1 p-1 text-blue-600 hover:text-gray-600' />
-                  </a>
-                  <a
-                    href='https://github.com/benwestondigital/'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <DiGithubBadge className='w-10 h-10 m-1 p-1 text-black hover:text-gray-600' />
-                  </a>
-                  <a
-                    href='https://twitter.com/benwestononline'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <AiOutlineTwitter className='w-10 h-10 m-1 p-1 text-blue-400 hover:text-gray-600' />
-                  </a>
-                </div>
-              </div>
-              <NavLinks path={path}/>
-            </div>
-            <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
+    <nav className='container fixed z-20 bg-white'>
+      <div className='flex items-center justify-between h-20 px-4 py-2'>
+        <div className='flex justify-start items-center flex-shrink-0 gap-6'>
+          <Link href='/' passHref>
+            <h1 className='font-bold text-4xl sm:text-3xl cursor-pointer'>
+              Ben <span className='text-blue-600'>Weston</span>
+            </h1>
+          </Link>
+          <div className='hidden md:flex'>
+            <a
+              href='https://www.linkedin.com/in/ben-weston-b19420175/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <AiFillLinkedin className='w-10 h-10 m-1 p-1 text-blue-600 hover:text-gray-600' />
+            </a>
+            <a
+              href='https://github.com/benwestondigital/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <DiGithubBadge className='w-10 h-10 m-1 p-1 text-black hover:text-gray-600' />
+            </a>
+            <a
+              href='https://twitter.com/benwestononline'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <AiOutlineTwitter className='w-10 h-10 m-1 p-1 text-blue-400 hover:text-gray-600' />
+            </a>
           </div>
-        <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen}/>
-      </nav>
+        </div>
+        <NavLinks path={path} />
+        <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
+      <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen} />
+    </nav>
   );
 };
 
