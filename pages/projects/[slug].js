@@ -65,9 +65,9 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
             {frontmatter.title}
           </h1>
-          <h2>Type: {frontmatter.type}</h2>
+          <h2 className='text-2xl md:text-3xl'>Type: {frontmatter.type}</h2>
         </div>
-        <div className='flex flex-col md:flex-row text-md items-center sm:items-start justify-between md:w-2/3 mb-5'>
+        <div className='flex flex-col text-md items-center justify-between md:w-2/3 mb-5'>
           <a
             href={frontmatter.github}
             target='_blank'
