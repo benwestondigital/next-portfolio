@@ -1,4 +1,4 @@
-const MobileLinks = ({ isOpen, setIsOpen }) => {
+const HamBurger = ({ isOpen, setIsOpen }) => {
   return (
     <div className='mr-14 flex md:hidden'>
       <button
@@ -48,4 +48,4 @@ const MobileLinks = ({ isOpen, setIsOpen }) => {
   );
 };
 
-export default MobileLinks;
+export default HamBurger;
