@@ -49,25 +49,24 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
 
   return (
     <Element id='projectpage' name='projectpage'>
-      <article className='flex flex-col justify-between items-center md:mx-20 px-4 pt-20 md:pt-32 md:p-28'>
-        <div className='flex justify-between w-4/5 mb-10 text-lg'>
+      <article className='flex flex-col justify-between items-center px-4 pt-20 md:pt-28'>
+        <div className='flex justify-between w-4/5 sm:w-2/3 my-4 text-lg'>
           <Link href='/'>
             <a className='cursor-pointer hover:font-semibold'>
               Home
             </a>
           </Link>
-
           <Link href={`/projects/${nextProject}`}>
-            <a className='hover:font-semibold min-w-fit'>Next Project</a>
+            <a className='hover:font-semibold'>Next Project</a>
           </Link>
         </div>
-        <div className='flex flex-col justify-center my-6 items-center text-center h-32'>
+        <div className='flex flex-col justify-center my-4 items-center text-center h-32'>
           <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
             {frontmatter.title}
           </h1>
-          <h2 className='text-2xl md:text-3xl'>Type: {frontmatter.type}</h2>
+          <h2 className='text-xl sm:text-2xl md:text-3xl'>Type: {frontmatter.type}</h2>
         </div>
-        <div className='flex flex-col text-md items-center justify-between md:w-2/3 mb-5'>
+        <div className='flex flex-col items-center justify-between mb-5'>
           <a
             href={frontmatter.github}
             target='_blank'
@@ -108,7 +107,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           smooth={true}
           offset={-100}
           duration={500}
-          className='btn'
+          className='btn mb-4 sm:mb-10'
         >
           Back to Top
         </ScrollLink>
