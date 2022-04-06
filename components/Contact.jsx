@@ -36,8 +36,8 @@ const Contact = () => {
   return (
     <Element id='contact' name='contact'>
       <div>
-        <div className='flex flex-col items-center justify-center w-full h-auto my-40'>
-          <h2 className='text-6xl font-bold text-center text-indigo-900'>
+        <div className='flex flex-col items-center justify-center w-full h-auto my-32'>
+          <h2 className='text-5xl sm:text-6xl font-bold text-center text-indigo-900'>
             Contact Me
           </h2>
           <p className='flex-wrap mx-2 mt-6 font-normal text-center md:text-left font'>
