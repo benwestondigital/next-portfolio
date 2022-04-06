@@ -1,40 +1,26 @@
-import Image from 'next/image';
-import avatar from '../public/images/avatar.png';
 import { Element, Link } from 'react-scroll';
+import Hero from './Hero';
 
 const About = () => {
   return (
-    <Element id='about' name='about' className='flex flex-col justify-center items-center'>
-      <div className='flex justify-center md:mx-20 md:pt-32 pt-28'>
-        <div className='relative hidden w-1/3 px-10 rounded-full shadow-xl h-96 md:block'>
-          <Image
-            src={avatar}
-            alt='hero'
-            layout='fill'
-            objectFit='contain'
-            priority
-            className='hidden rounded-full cursor-pointer md:block'
-          />
-        </div>
-        <div className='flex flex-col mx-10 mt-10 md:w-1/2 md:ml-20'>
-          <h1 className='mb-5 font-bold text-left text-5xl md:text-7xl'>
-            Hi! I&apos;m <span className='text-indigo-900'>Ben!</span> I love to
-            create interesting projects with code.
-          </h1>
-        </div>
-      </div>
-      <div className='flex flex-col justify-center items-center mt-10 md:w-4/5'>
-      <Link
+    <Element
+      id='about'
+      name='about'
+      className='flex flex-col justify-center items-center px-2'
+    >
+      <Hero />
+      <section className='flex flex-1 flex-col justify-center items-center mt-10 md:w-4/5'>
+        <Link
           activeClass='projects'
           to='projects'
           smooth={true}
           offset={-100}
           duration={500}
-          className='h-16 pt-5 mt-5 text-lg text-center font-semibold text-white bg-indigo-900 rounded-md md:mt-10 w-60 hover:bg-black'
+          className='btn'
         >
           See My Portfolio
         </Link>
-        <p className='prose lg:prose-xl flex-wrap mb-5 md:w-2/3 font-normal text-left'>
+        <p className='prose lg:prose-xl flex-wrap mb-5 font-normal text-left px-2'>
           <br />
           I first became interested in coding through playing online games when
           I was a teenager. I saw people creating programs to automate their
@@ -77,7 +63,7 @@ const About = () => {
           can help a company achieve their goals and continue my learning
           journey.
         </p>
-      </div>
+      </section>
     </Element>
   );
 };

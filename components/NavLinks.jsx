@@ -5,7 +5,7 @@ import { navLinks } from '../utils';
 const NavLinks = ({ path }) => {
   return (
     <div className='hidden md:block'>
-      <div className='ml-10 flex items-baseline space-x-4'>
+      <div className='flex flex-1 items-center gap-4 lg:gap-6'>
         {navLinks.map(link => {
           return (
             <div key={link.path}>

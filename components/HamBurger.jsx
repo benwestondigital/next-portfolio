@@ -1,10 +1,10 @@
-const MobileLinks = ({ isOpen, setIsOpen }) => {
+const HamBurger = ({ isOpen, setIsOpen }) => {
   return (
-    <div className='mr-14 flex md:hidden'>
+    <div className='flex flex-1 justify-end md:hidden'>
       <button
         onClick={() => setIsOpen(!isOpen)}
         type='button'
-        className='bg-blue-600 inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-black focus:outline-none focus:ring-white'
+        className='bg-blue-600 items-center justify-center p-2 rounded-md text-white hover:bg-black focus:outline-none focus:ring-white'
         aria-controls='mobile-menu'
         aria-expanded='false'
       >
@@ -48,4 +48,4 @@ const MobileLinks = ({ isOpen, setIsOpen }) => {
   );
 };
 
-export default MobileLinks;
+export default HamBurger;

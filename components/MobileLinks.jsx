@@ -15,7 +15,7 @@ const MobileLinks = ({ path, isOpen, setIsOpen }) => {
       leaveTo='opacity-0 scale-95'
     >
       <div className='md:hidden' id='mobile-menu'>
-        <div className='bg-white mx-4 mr-20 pt-4 pb-4 space-y-1'>
+        <div className='bg-white w-full py-4 space-y-1'>
           {navLinks.map(link => {
             return (
               <div key={link.path}>
