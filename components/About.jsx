@@ -1,30 +1,16 @@
-import Image from 'next/image';
-import avatar from '../public/images/avatar.png';
 import { Element, Link } from 'react-scroll';
+import Hero from './Hero';
 
 const About = () => {
   return (
-    <Element id='about' name='about' className='flex flex-col justify-center items-center px-2'>
-      <div className='flex justify-center md:mx-20 md:pt-32 pt-28'>
-        <div className='relative hidden w-1/3 px-10 rounded-full shadow-xl h-96 md:block'>
-          <Image
-            src={avatar}
-            alt='hero'
-            layout='fill'
-            objectFit='contain'
-            priority
-            className='hidden rounded-full cursor-pointer md:block'
-          />
-        </div>
-        <div className='flex flex-col mx-10 mt-10 md:w-1/2 md:ml-20'>
-          <h1 className='mb-5 font-bold text-left text-5xl md:text-7xl'>
-            Hi! I&apos;m <span className='text-indigo-900'>Ben!</span> I love to
-            create interesting projects with code.
-          </h1>
-        </div>
-      </div>
+    <Element
+      id='about'
+      name='about'
+      className='flex flex-col justify-center items-center px-2'
+    >
+      <Hero />
       <div className='flex flex-col justify-center items-center mt-10 md:w-4/5'>
-      <Link
+        <Link
           activeClass='projects'
           to='projects'
           smooth={true}
