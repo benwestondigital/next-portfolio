@@ -1,7 +1,7 @@
 
 const TechSection = ({ techType, type }) => {
   return (
-    <div className='flex justify-items-start items-center mx-2 md:mx-40 gap-5 mt-20'>
+    <section className='flex justify-items-start items-center mx-2 md:mx-40 gap-5 mt-20'>
       <div className='flex flex-col justify-center items-center'>
         <h2 className='text-xl text-indigo-600 font-semibold'>
           {techType}
@@ -25,7 +25,7 @@ const TechSection = ({ techType, type }) => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

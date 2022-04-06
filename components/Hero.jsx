@@ -3,7 +3,7 @@ import avatar from '../public/images/avatar.png';
 
 const Hero = () => {
   return (
-    <div className='flex justify-center md:mx-20 md:pt-32 pt-28'>
+    <section className='flex justify-center md:mx-20 md:pt-32 pt-28'>
       <div className='relative hidden w-1/3 px-10 rounded-full shadow-xl h-96 md:block'>
         <Image
           src={avatar}
@@ -20,7 +20,7 @@ const Hero = () => {
           create interesting projects with code.
         </h1>
       </div>
-    </div>
+    </section>
   );
 };
 

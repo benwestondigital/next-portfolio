@@ -9,7 +9,7 @@ const About = () => {
       className='flex flex-col justify-center items-center px-2'
     >
       <Hero />
-      <div className='flex flex-1 flex-col justify-center items-center mt-10 md:w-4/5'>
+      <section className='flex flex-1 flex-col justify-center items-center mt-10 md:w-4/5'>
         <Link
           activeClass='projects'
           to='projects'
@@ -63,7 +63,7 @@ const About = () => {
           can help a company achieve their goals and continue my learning
           journey.
         </p>
-      </div>
+      </section>
     </Element>
   );
 };
