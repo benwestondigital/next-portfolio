@@ -108,7 +108,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           smooth={true}
           offset={-100}
           duration={500}
-          className='h-16 pt-5 mt-10 text-lg text-center font-semibold text-white bg-indigo-900 rounded-md md:mt-10 w-60 hover:bg-black'
+          className='btn'
         >
           Back to Top
         </ScrollLink>

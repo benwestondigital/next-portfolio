@@ -9,14 +9,14 @@ const About = () => {
       className='flex flex-col justify-center items-center px-2'
     >
       <Hero />
-      <div className='flex flex-col justify-center items-center mt-10 md:w-4/5'>
+      <div className='flex flex-1 flex-col justify-center items-center mt-10 md:w-4/5'>
         <Link
           activeClass='projects'
           to='projects'
           smooth={true}
           offset={-100}
           duration={500}
-          className='h-16 pt-5 mt-5 text-lg text-center font-semibold text-white bg-indigo-900 rounded-md md:mt-10 w-60 hover:bg-black'
+          className='btn'
         >
           See My Portfolio
         </Link>
