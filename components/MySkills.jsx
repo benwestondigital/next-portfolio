@@ -5,9 +5,9 @@ import { tech } from '../utils';
 const Tech = () => {
   return (
     <Element id='tech' name='tech'>
-      <section className='flex flex-col items-center justify-center w-full h-auto my-32 px-2'>
-        <h1 className='text-6xl font-bold text-indigo-900'>My Skills</h1>
-        <p className='flex-wrap md:w-1/2 my-5 text-center font-normal'>
+      <section className='flex flex-col items-center justify-center h-auto my-32 px-2'>
+        <h1 className='text-5xl sm:text-6xl font-bold text-indigo-900'>My Skills</h1>
+        <p className='flex-wrap md:w-2/3 lg:w-1/2 my-5 text-center'>
           I am always looking to learn new technology, so in addition to my
           bootcamp I have completed a number of courses from providers like
           Codecademy, such as{' '}
