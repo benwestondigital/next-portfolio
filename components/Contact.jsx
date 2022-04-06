@@ -48,7 +48,7 @@ const Contact = () => {
             onSubmit={onSubmit}
             className='flex flex-col justify-center w-4/5 lg:w-1/2 my-3 text-center md:w-1/2'
           >
-            <div className='flex'>
+            <div className='flex flex-1'>
               <label htmlFor='name' />
               <input
                 required
@@ -59,7 +59,7 @@ const Contact = () => {
                 id='name'
                 autoComplete='name'
                 placeholder='Your Name'
-                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 mr-2 text-xl text-blue-800 border-2 border-indigo-900 rounded'
+                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 mr-2 text-xl text-blue-800 border-2 border-indigo-900 rounded focus:outline-none focus:border-blue-600'
               />
               <label htmlFor='email' />
               <input
@@ -71,7 +71,7 @@ const Contact = () => {
                 id='email'
                 autoComplete='email'
                 placeholder='Your Email'
-                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
+                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded focus:outline-none focus:border-blue-600'
               />
             </div>
             <label htmlFor='message' />
@@ -83,7 +83,7 @@ const Contact = () => {
               name='message'
               id='message'
               placeholder='Your Message'
-              className='placeholder:italic w-full h-32 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded'
+              className='placeholder:italic w-full h-32 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded focus:outline-none focus:border-blue-600'
             />
             <button className='self-center w-1/2 h-10 mt-5 text-xl text-white bg-indigo-900 rounded hover:bg-black'>
               Submit
