@@ -9,7 +9,7 @@ const Tech = () => {
         <h1 className='text-5xl sm:text-6xl font-bold text-indigo-900'>
           My Skills
         </h1>
-        <p className='flex-wrap md:w-2/3 lg:w-1/2 my-5 text-center prose'>
+        <p className='flex-wrap md:w-2/3 lg:w-1/2 my-5 text-center prose lg:prose-xl'>
           I am always looking to learn new technology, so in addition to my
           bootcamp I have completed a number of online courses such as{' '}
           <a
