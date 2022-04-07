@@ -2,7 +2,6 @@ import Link from 'next/link';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';
-import md from 'markdown-it';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import { useRouter } from 'next/router';
@@ -12,7 +11,7 @@ export async function getStaticPaths() {
   const files = fs.readdirSync('projects');
   const paths = files.map(fileName => ({
     params: {
-      slug: fileName.replace('.md', ''),
+      slug: fileName.replace('.mdx', ''),
     },
   }));
   return {
@@ -21,12 +20,20 @@ export async function getStaticPaths() {
   };
 }
 
+const ResponsiveImage = props => (
+  <Image alt={props.alt} layout='responsive' {...props} />
+);
+
+const components = {
+  img: ResponsiveImage,
+};
+
 export async function getStaticProps({ params: { slug } }) {
   const files = fs.readdirSync('projects');
   const paths = files.map(fileName => {
-    return fileName.replace('.md', '');
+    return fileName.replace('.mdx', '');
   });
-  const fileName = fs.readFileSync(`projects/${slug}.md`, 'utf-8');
+  const fileName = fs.readFileSync(`projects/${slug}.mdx`, 'utf-8');
   const { data: frontmatter, content } = matter(fileName);
   const mdxSource = await serialize(content);
 
@@ -101,8 +108,8 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
             objectPosition='top'
           />
         </div>
-        <div className="prose pt-6">
-        <MDXRemote {...mdxSource} />
+        <div className='prose pt-6'>
+          <MDXRemote {...mdxSource} components={components} />
         </div>
         <ScrollLink
           activeClass='projectpage'
