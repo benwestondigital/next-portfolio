@@ -101,7 +101,9 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
             objectPosition='top'
           />
         </div>
+        <div className="prose pt-6">
         <MDXRemote {...mdxSource} />
+        </div>
         <ScrollLink
           activeClass='projectpage'
           to='projectpage'
