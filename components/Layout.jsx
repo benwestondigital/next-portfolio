@@ -3,7 +3,7 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
-    <div className='container mx-auto font-sans'>
+    <div className='container antialiased mx-auto font-sans'>
       <Navbar />
       {children}
       <Footer />
