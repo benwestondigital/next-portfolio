@@ -63,10 +63,10 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
           </Link>
         </div>
         <div className='flex flex-col justify-center my-4 items-center text-center h-32'>
-          <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
+          <h1 className='mb-5 font-bold text-2xl md:text-5xl min-w-fit'>
             {frontmatter.title}
           </h1>
-          <h2 className='text-xl sm:text-2xl md:text-3xl'>
+          <h2 className='text-lg sm:text-xl md:text-3xl'>
             Type: {frontmatter.type}
           </h2>
         </div>
