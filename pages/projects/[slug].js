@@ -11,56 +11,8 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
 
 //TODO: add link to whereto northcoders project page with ternary live link : project page
-//TODO: add head component with title of slug
 //TODO: add 4 pictures for each project - screenshots size 359*432
 //TODO: for code, I can add snippets rather than having to do a screenshot
-
-const mdxImage = props => (
-  <div className='h-96 w-full md:w-96 relative mx-auto'>
-    <Image
-      alt={props.alt}
-      layout='fill'
-      objectFit='contain'
-      className='rounded p-2'
-      {...props}
-    />
-  </div>
-);
-
-const components = {
-  img: mdxImage,
-};
-
-export async function getStaticPaths() {
-  const files = fs.readdirSync('projects');
-  const paths = files.map(fileName => ({
-    params: {
-      slug: fileName.replace('.mdx', ''),
-    },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params: { slug } }) {
-  const files = fs.readdirSync('projects');
-  const paths = files.map(fileName => {
-    return fileName.replace('.mdx', '');
-  });
-  const fileName = fs.readFileSync(`projects/${slug}.mdx`, 'utf-8');
-  const { data: frontmatter, content } = matter(fileName);
-  const mdxSource = await serialize(content);
-
-  return {
-    props: {
-      frontmatter,
-      mdxSource,
-      paths,
-    },
-  };
-}
 
 const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
   const router = useRouter();
@@ -133,5 +85,52 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
     </Element>
   );
 };
+
+const mdxImage = props => (
+  <div className='h-96 w-full md:w-96 relative mx-auto'>
+    <Image
+      alt={props.alt}
+      layout='fill'
+      objectFit='contain'
+      className='rounded p-2'
+      {...props}
+    />
+  </div>
+);
+
+const components = {
+  img: mdxImage,
+};
+
+export async function getStaticPaths() {
+  const files = fs.readdirSync('projects');
+  const paths = files.map(fileName => ({
+    params: {
+      slug: fileName.replace('.mdx', ''),
+    },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params: { slug } }) {
+  const files = fs.readdirSync('projects');
+  const paths = files.map(fileName => {
+    return fileName.replace('.mdx', '');
+  });
+  const fileName = fs.readFileSync(`projects/${slug}.mdx`, 'utf-8');
+  const { data: frontmatter, content } = matter(fileName);
+  const mdxSource = await serialize(content);
+
+  return {
+    props: {
+      frontmatter,
+      mdxSource,
+      paths,
+    },
+  };
+}
 
 export default ProjectPage;
