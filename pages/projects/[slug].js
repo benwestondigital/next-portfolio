@@ -7,6 +7,17 @@ import { MDXRemote } from 'next-mdx-remote';
 import { useRouter } from 'next/router';
 import { Element, Link as ScrollLink } from 'react-scroll';
 
+const mdxImage = props => (
+  <div className='h-96 w-full md:w-96 relative mx-auto'>
+  <Image alt={props.alt} layout='fill' objectFit='contain' className='rounded p-2' {...props} />
+  </div>
+);
+
+const components = {
+  img: mdxImage,
+};
+
+
 export async function getStaticPaths() {
   const files = fs.readdirSync('projects');
   const paths = files.map(fileName => ({
@@ -19,14 +30,6 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-
-const ResponsiveImage = props => (
-  <Image alt={props.alt} layout='responsive' {...props} />
-);
-
-const components = {
-  img: ResponsiveImage,
-};
 
 export async function getStaticProps({ params: { slug } }) {
   const files = fs.readdirSync('projects');
@@ -101,11 +104,10 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
           <Image
             src={`/${frontmatter.image}`}
             alt={frontmatter.title}
-            objectFit='cover'
+            objectFit='contain'
             priority
             layout='fill'
             className='rounded'
-            objectPosition='top'
           />
         </div>
         <div className='prose pt-6'>
