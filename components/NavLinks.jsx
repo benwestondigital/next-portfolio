@@ -5,7 +5,7 @@ import { navLinks } from '../utils';
 const NavLinks = ({ path }) => {
   return (
     <div className='hidden md:block'>
-      <div className='flex flex-1 items-center gap-4 lg:gap-6'>
+      <div className='flex flex-1 items-center gap-4 lg:gap-6 font-semibold'>
         {navLinks.map(link => {
           return (
             <div key={link.path}>
@@ -22,12 +22,11 @@ const NavLinks = ({ path }) => {
                   {link.name}
                 </ScrollLink>
               ) : (
-                <Link
-                  key={link.path}
-                  href={`/#${link.path}`}
-                  className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
-                >
-                  {link.name}
+                <Link key={link.path} href={`/#${link.path}`}>
+                  <a className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'>
+                    {' '}
+                    {link.name}
+                  </a>
                 </Link>
               )}
             </div>
