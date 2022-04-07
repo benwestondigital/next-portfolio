@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className='flex items-center justify-between h-20'>
         <div className='flex justify-start items-center flex-shrink-0 gap-6'>
           <Link href='/' passHref>
-            <h1 className='font-bold text-4xl sm:text-3xl cursor-pointer'>
+            <h1 className='font-bold text-2xl md:text-2xl cursor-pointer'>
               Ben <span className='text-blue-600'>Weston</span>
             </h1>
           </Link>
