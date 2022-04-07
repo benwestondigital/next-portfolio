@@ -3,6 +3,8 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';
 import md from 'markdown-it';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
 import { useRouter } from 'next/router';
 import { Element, Link as ScrollLink } from 'react-scroll';
 
@@ -26,16 +28,18 @@ export async function getStaticProps({ params: { slug } }) {
   });
   const fileName = fs.readFileSync(`projects/${slug}.md`, 'utf-8');
   const { data: frontmatter, content } = matter(fileName);
+  const mdxSource = await serialize(content);
+
   return {
     props: {
       frontmatter,
-      content,
+      mdxSource,
       paths,
     },
   };
 }
 
-const ProjectPage = ({ frontmatter, content, paths }) => {
+const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
   const router = useRouter();
   const currentPath = router.query.slug;
   const index = paths.findIndex(element => element === currentPath);
@@ -52,9 +56,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
       <article className='flex flex-col justify-between items-center px-4 pt-20 md:pt-28'>
         <div className='flex justify-between w-4/5 sm:w-2/3 my-4 text-lg'>
           <Link href='/'>
-            <a className='cursor-pointer hover:font-semibold'>
-              Home
-            </a>
+            <a className='cursor-pointer hover:font-semibold'>Home</a>
           </Link>
           <Link href={`/projects/${nextProject}`}>
             <a className='hover:font-semibold'>Next Project</a>
@@ -64,7 +66,9 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
           <h1 className='mb-5 font-bold text-3xl md:text-5xl min-w-fit'>
             {frontmatter.title}
           </h1>
-          <h2 className='text-xl sm:text-2xl md:text-3xl'>Type: {frontmatter.type}</h2>
+          <h2 className='text-xl sm:text-2xl md:text-3xl'>
+            Type: {frontmatter.type}
+          </h2>
         </div>
         <div className='flex flex-col items-center justify-between mb-5'>
           <a
@@ -97,10 +101,7 @@ const ProjectPage = ({ frontmatter, content, paths }) => {
             objectPosition='top'
           />
         </div>
-        <div
-          className='prose pt-6'
-          dangerouslySetInnerHTML={{ __html: md().render(content) }}
-        />
+        <MDXRemote {...mdxSource} />
         <ScrollLink
           activeClass='projectpage'
           to='projectpage'
