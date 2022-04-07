@@ -15,17 +15,34 @@ const SingleProject = ({ project: { slug, frontmatter } }) => {
             objectPosition='top'
           />
         </div>
-        <h2 className='text-xl m-2 mt-5 text-indigo-600 font-semibold'>
+        <h3 className='mx-2 mt-6 text-xs uppercase font-semibold text-gray-600 tracking-wide'>
+          {frontmatter.type}
+        </h3>
+        <h2 className='text-xl my-2 text-indigo-600 font-semibold'>
           {frontmatter.title}
         </h2>
-        <h3 className='mx-2 mb-2'>Project Type: {frontmatter.type}</h3>
-        <p className='text-center font-normal mx-2 mb-5 flex-wrap'>
+        <p className='text-base text-center mx-2 mb-5 flex-wrap text-gray-700'>
           {frontmatter.description}
         </p>
-
-        <p className='uppercase text-center font-normal font mb-5 flex-wrap'>
-          See Project Details &gt;
-        </p>
+        <div className='flex items-center'>
+          <p className='uppercase text-center text-sm font-semibold tracking-wide text-gray-900 hover:text-blue-600'>
+            See Project Details
+          </p>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-5 w-5 text-blue-600'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+            strokeWidth='2'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='m13 7 5 5m0 0-5 5m5-5H6'
+            />
+          </svg>
+        </div>
       </a>
     </Link>
   );
