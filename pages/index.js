@@ -9,7 +9,7 @@ import fs from 'fs';
 export async function getStaticProps() {
   const files = fs.readdirSync('projects');
   const projects = files.map(fileName => {
-    const slug = fileName.replace('.md', '');
+    const slug = fileName.replace('.mdx', '');
     const readFile = fs.readFileSync(`projects/${fileName}`, 'utf-8');
     const { data: frontmatter } = matter(readFile);
     return {

@@ -40,7 +40,7 @@ const Contact = () => {
           <h2 className='text-5xl sm:text-6xl font-bold text-center text-indigo-900'>
             Contact Me
           </h2>
-          <p className='flex-wrap mx-2 mt-6 font-normal text-center md:text-left font'>
+          <p className='flex-wrap mx-2 mt-6 font-normal text-center md:text-left prose'>
             Have an interesting job opportunity for me? Get in touch:
           </p>
           <form
