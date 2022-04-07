@@ -7,6 +7,10 @@ import { MDXRemote } from 'next-mdx-remote';
 import { useRouter } from 'next/router';
 import { Element, Link as ScrollLink } from 'react-scroll';
 
+//TODO: add link to whereto northcoders project page with ternary live link : project page
+//TODO: add head component with title of slug
+//TODO: add 4 pictures for each project - screenshots size 359*432
+
 const mdxImage = props => (
   <div className='h-96 w-full md:w-96 relative mx-auto'>
   <Image alt={props.alt} layout='fill' objectFit='contain' className='rounded p-2' {...props} />
