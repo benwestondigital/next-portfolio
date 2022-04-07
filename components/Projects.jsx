@@ -6,7 +6,7 @@ const Projects = ({projects}) => {
     <Element id='projects' name='projects'>
       <section className='flex flex-col items-center justify-center w-full h-auto my-32'>
         <h2 className='text-5xl sm:text-6xl font-bold text-indigo-900'>Projects</h2>
-        <p className='my-5 text-center prose'>
+        <p className='my-5 text-center prose lg:prose-xl'>
           Here are some of the projects I&apos;ve been working on lately:
         </p>
         <div className='items-center justify-center gap-6 md:gap-10 mt-10 flex flex-wrap flex-col md:flex-row'>
