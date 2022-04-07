@@ -1,9 +1,12 @@
 import { Element } from 'react-scroll';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Spinner from './Spinner';
 
 const Contact = () => {
   const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [buttonText, setButtonText] = useState('Submit');
   const [contactDetails, setContactDetails] = useState({
     name: '',
     email: '',
@@ -18,6 +21,7 @@ const Contact = () => {
   };
 
   const onSubmit = async e => {
+    setIsSubmitting(true);
     e.preventDefault();
     const sendEmail = await emailjs.sendForm(
       process.env.NEXT_PUBLIC_SERVICE_ID,
@@ -31,6 +35,8 @@ const Contact = () => {
       email: '',
       message: '',
     });
+    setIsSubmitting(false);
+    setButtonText('Submitted!')
   };
 
   return (
@@ -86,7 +92,7 @@ const Contact = () => {
               className='placeholder:italic w-full h-32 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded focus:outline-none focus:border-blue-600'
             />
             <button className='self-center w-1/2 h-10 mt-5 text-xl text-white bg-indigo-900 rounded hover:bg-black'>
-              Submit
+              {isSubmitting ? <Spinner /> : buttonText}
             </button>
           </form>
         </div>
