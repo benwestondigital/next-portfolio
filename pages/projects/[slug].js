@@ -6,6 +6,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import { useRouter } from 'next/router';
 import { Element, Link as ScrollLink } from 'react-scroll';
+import Head from 'next/head';
 
 //TODO: add link to whereto northcoders project page with ternary live link : project page
 //TODO: add head component with title of slug
@@ -67,6 +68,9 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
 
   return (
     <Element id='projectpage' name='projectpage'>
+      <Head>
+        <title>Ben Weston | {frontmatter.title}</title>
+      </Head>
       <article className='flex flex-col justify-between items-center px-4 pt-20 md:pt-28'>
         <div className='flex justify-between w-4/5 sm:w-2/3 my-4 text-lg'>
           <Link href='/'>
