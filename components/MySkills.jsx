@@ -6,11 +6,12 @@ const Tech = () => {
   return (
     <Element id='tech' name='tech'>
       <section className='flex flex-col items-center justify-center h-auto my-32 px-2'>
-        <h1 className='text-5xl sm:text-6xl font-bold text-indigo-900'>My Skills</h1>
+        <h1 className='text-5xl sm:text-6xl font-bold text-indigo-900'>
+          My Skills
+        </h1>
         <p className='flex-wrap md:w-2/3 lg:w-1/2 my-5 text-center'>
           I am always looking to learn new technology, so in addition to my
-          bootcamp I have completed a number of courses from providers like
-          Codecademy, such as{' '}
+          bootcamp I have completed a number of online courses such as{' '}
           <a
             className='font-semibold'
             href='https://www.codecademy.com/learn/learn-html'
@@ -36,19 +37,13 @@ const Tech = () => {
             rel='noreferrer'
           >
             Learn TypeScript
-          </a>
-          .
+          </a>{' '}
+          from Codecademy.
         </p>
 
-        {tech.map((type) => {
+        {tech.map(type => {
           const [techType] = Object.keys(type);
-          return (
-            <TechSection
-              key={techType}
-              type={type}
-              techType={techType}
-            />
-          );
+          return <TechSection key={techType} type={type} techType={techType} />;
         })}
       </section>
     </Element>
