@@ -1,23 +1,18 @@
-
 const TechSection = ({ techType, type }) => {
   return (
     <section className='my-10'>
-      <div className='flex flex-col justify-center items-center'>
-        <h2 className='text-xl text-indigo-600 font-semibold'>
-          {techType}
-        </h2>
-        <div className='flex flex-1 flex-wrap shrink justify-center items-start'>
+      <div className='flex flex-col items-center justify-center'>
+        <h2 className='text-xl font-semibold text-indigo-600'>{techType}</h2>
+        <div className='flex flex-1 shrink flex-wrap items-start justify-center'>
           {type[techType].map(item => {
             const Icon = item.icon;
             return (
               <div
                 key={item.techName}
-                className='flex flex-col w-20 justify-start items-center mx-2'
+                className='mx-2 flex w-20 flex-col items-center justify-start'
               >
-                <Icon
-                  className='w-10 h-10 bg-gray-600 hover:bg-gray-800 text-gray-100 m-3 p-1 shadow-xl rounded-md'
-                />
-                <p className='md:text-base text-gray-400 text-center sm:text-sm'>
+                <Icon className='m-3 h-10 w-10 rounded-md bg-gray-600 p-1 text-gray-100 shadow-xl hover:bg-gray-800' />
+                <p className='text-center text-gray-400 sm:text-sm md:text-base'>
                   {item.techName}
                 </p>
               </div>

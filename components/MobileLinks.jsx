@@ -15,7 +15,7 @@ const MobileLinks = ({ path, isOpen, setIsOpen }) => {
       leaveTo='opacity-0 scale-95'
     >
       <div className='md:hidden' id='mobile-menu'>
-        <div className='bg-white w-full py-4 space-y-1'>
+        <div className='w-full space-y-1 bg-white py-4'>
           {navLinks.map(link => {
             return (
               <div key={link.path}>
@@ -27,7 +27,7 @@ const MobileLinks = ({ path, isOpen, setIsOpen }) => {
                     smooth={true}
                     offset={-100}
                     duration={500}
-                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    className='block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-black hover:bg-blue-600 hover:text-white'
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
@@ -36,7 +36,7 @@ const MobileLinks = ({ path, isOpen, setIsOpen }) => {
                   <Link href={`/#${link.path}`}>
                     <a
                       onClick={() => setIsOpen(false)}
-                      className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                      className='block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-black hover:bg-blue-600 hover:text-white'
                     >
                       {link.name}
                     </a>

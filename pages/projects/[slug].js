@@ -31,7 +31,7 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
       <Head>
         <title>Ben Weston | {frontmatter.title}</title>
       </Head>
-      <article className='flex flex-col justify-between items-center px-4 pt-20 md:pt-28'>
+      <article className='flex flex-col items-center justify-between px-4 pt-20 md:pt-28'>
         {/*         <div className='flex justify-between w-4/5 sm:w-2/3 my-4 text-lg text-gray-700'>
           <Link href='/'>
             <a className='cursor-pointer hover:font-semibold'>Home</a>
@@ -40,22 +40,22 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
             <a className='hover:font-semibold'>Next Project</a>
           </Link>
         </div> */}
-        <div className='flex flex-col justify-center mb-4 mt-24 md:items-center h-32'>
-          <h2 className='text-lg text-blue-600 font-semibold'>
+        <div className='mb-4 mt-24 flex h-32 flex-col justify-center md:items-center'>
+          <h2 className='text-lg font-semibold text-blue-600'>
             {frontmatter.type}
           </h2>
-          <h1 className='my-5 font-bold text-4xl md:text-center'>
+          <h1 className='my-5 text-4xl font-bold md:text-center'>
             {frontmatter.title}
           </h1>
         </div>
-        <div className='flex flex-row self-start md:self-center md:items-center justify-between md:gap-x-10 mb-5 text-gray-700'>
+        <div className='mb-5 flex flex-row justify-between self-start text-gray-700 md:items-center md:gap-x-10 md:self-center'>
           <a
             href={frontmatter.github}
             target='_blank'
             rel='noreferrer'
             className='hover:font-semibold hover:text-blue-600'
           >
-            <AiFillGithub className='w-11 h-11 m-1 p-1 text-gray-900 hover:text-orange-300' />
+            <AiFillGithub className='m-1 h-11 w-11 p-1 text-gray-900 hover:text-orange-300' />
           </a>
           {frontmatter.livelink && (
             <a
@@ -64,11 +64,11 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
               rel='noreferrer'
               className='hover:font-semibold hover:text-blue-600'
             >
-              <FaExternalLinkAlt className='w-10 h-10 m-1 p-1 text-gray-900 hover:text-orange-300' />
+              <FaExternalLinkAlt className='m-1 h-10 w-10 p-1 text-gray-900 hover:text-orange-300' />
             </a>
           )}
         </div>
-        <div className='h-96 w-full md:w-96 relative'>
+        <div className='relative h-96 w-full md:w-96'>
           <Image
             src={`/${frontmatter.image}`}
             alt={frontmatter.title}
@@ -87,7 +87,7 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
 };
 
 const mdxImage = props => (
-  <div className='h-96 w-full md:w-96 relative mx-auto'>
+  <div className='relative mx-auto h-96 w-full md:w-96'>
     <Image
       alt={props.alt}
       layout='fill'

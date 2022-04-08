@@ -4,28 +4,28 @@ import Link from 'next/link';
 const SingleProject = ({ project: { slug, frontmatter } }) => {
   return (
     <Link href={`/projects/${slug}`}>
-      <a className='flex flex-col w-80 sm:w-96 items-center justify-start hover:bg-gray-50 hover:drop-shadow-lg rounded p-2'>
-        <div className='rounded w-72 h-72 sm:w-80 sm:h-80 drop-shadow-md relative'>
+      <a className='flex w-80 flex-col items-center justify-start rounded p-2 hover:bg-gray-50 hover:drop-shadow-lg sm:w-96'>
+        <div className='relative h-72 w-72 rounded drop-shadow-md sm:h-80 sm:w-80'>
           <Image
             src={`/${frontmatter.image}`}
             alt={frontmatter.title}
             layout='fill'
             objectFit='cover'
-            className='p-2 rounded cursor-pointer'
+            className='cursor-pointer rounded p-2'
             objectPosition='top'
           />
         </div>
-        <h3 className='mx-2 mt-6 text-xs uppercase font-semibold text-gray-600 tracking-wide'>
+        <h3 className='mx-2 mt-6 text-xs font-semibold uppercase tracking-wide text-gray-600'>
           {frontmatter.type}
         </h3>
-        <h2 className='text-xl my-2 text-indigo-600 font-semibold'>
+        <h2 className='my-2 text-xl font-semibold text-indigo-600'>
           {frontmatter.title}
         </h2>
-        <p className='text-base text-center mx-2 mb-5 flex-wrap text-gray-700'>
+        <p className='mx-2 mb-5 flex-wrap text-center text-base text-gray-700'>
           {frontmatter.description}
         </p>
         <div className='flex items-center'>
-          <p className='uppercase text-center text-sm font-semibold tracking-wide text-gray-900 hover:text-blue-600'>
+          <p className='text-center text-sm font-semibold uppercase tracking-wide text-gray-900 hover:text-blue-600'>
             See Project Details
           </p>
           <svg

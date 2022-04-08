@@ -3,19 +3,19 @@ import avatar from '../public/images/avatar.png';
 
 const Hero = () => {
   return (
-    <section className='flex justify-center items-center md:mx-20 md:pt-32 pt-28'>
-      <div className='relative flex-1 hidden w-1/3 rounded-full shadow-xl h-96 md:block'>
+    <section className='flex items-center justify-center pt-28 md:mx-20 md:pt-32'>
+      <div className='relative hidden h-96 w-1/3 flex-1 rounded-full shadow-xl md:block'>
         <Image
           src={avatar}
           alt='hero'
           layout='fill'
           objectFit='contain'
           priority
-          className='hidden rounded-full cursor-pointer md:block'
+          className='hidden cursor-pointer rounded-full md:block'
         />
       </div>
-      <div className='flex flex-1 flex-col mx-10 mt-10 md:w-3/5 lg:w-1/2 md:ml-20'>
-        <h1 className='mb-5 font-bold text-left text-5xl md:text-6xl'>
+      <div className='mx-10 mt-10 flex flex-1 flex-col md:ml-20 md:w-3/5 lg:w-1/2'>
+        <h1 className='mb-5 text-left text-5xl font-bold md:text-6xl'>
           Hi! I&apos;m <span className='text-indigo-900'>Ben</span>. I love to
           create interesting projects with code.
         </h1>

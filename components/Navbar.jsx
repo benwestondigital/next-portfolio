@@ -12,11 +12,11 @@ const Navbar = () => {
   const router = useRouter();
   const path = router.pathname;
   return (
-    <nav className='container px-4 md:px-8 fixed z-20 bg-white'>
-      <div className='flex items-center justify-between h-20'>
-        <div className='flex justify-start items-center flex-shrink-0 gap-6'>
+    <nav className='container fixed z-20 bg-white px-4 md:px-8'>
+      <div className='flex h-20 items-center justify-between'>
+        <div className='flex flex-shrink-0 items-center justify-start gap-6'>
           <Link href='/' passHref>
-            <h1 className='font-bold text-2xl md:text-2xl cursor-pointer'>
+            <h1 className='cursor-pointer text-2xl font-bold md:text-2xl'>
               Ben <span className='text-blue-600'>Weston</span>
             </h1>
           </Link>
@@ -26,21 +26,21 @@ const Navbar = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <AiFillLinkedin className='w-10 h-10 m-1 p-1 text-blue-600 hover:text-gray-600' />
+              <AiFillLinkedin className='m-1 h-10 w-10 p-1 text-blue-600 hover:text-gray-600' />
             </a>
             <a
               href='https://github.com/benwestondigital/'
               target='_blank'
               rel='noreferrer'
             >
-              <DiGithubBadge className='w-10 h-10 m-1 p-1 text-black hover:text-gray-600' />
+              <DiGithubBadge className='m-1 h-10 w-10 p-1 text-black hover:text-gray-600' />
             </a>
             <a
               href='https://twitter.com/benwestononline'
               target='_blank'
               rel='noreferrer'
             >
-              <AiOutlineTwitter className='w-10 h-10 m-1 p-1 text-blue-400 hover:text-gray-600' />
+              <AiOutlineTwitter className='m-1 h-10 w-10 p-1 text-blue-400 hover:text-gray-600' />
             </a>
           </div>
         </div>

@@ -36,23 +36,23 @@ const Contact = () => {
       message: '',
     });
     setIsSubmitting(false);
-    setButtonText('Submitted!')
+    setButtonText('Submitted!');
   };
 
   return (
     <Element id='contact' name='contact'>
       <div>
-        <div className='flex flex-col items-center justify-center w-full h-auto my-32'>
-          <h2 className='text-5xl sm:text-6xl font-bold text-center text-indigo-900'>
+        <div className='my-32 flex h-auto w-full flex-col items-center justify-center'>
+          <h2 className='text-center text-5xl font-bold text-indigo-900 sm:text-6xl'>
             Contact Me
           </h2>
-          <p className='flex-wrap mx-2 mt-6 font-normal text-center md:text-left prose'>
+          <p className='prose mx-2 mt-6 flex-wrap text-center font-normal md:text-left'>
             Have an interesting job opportunity for me? Get in touch:
           </p>
           <form
             ref={form}
             onSubmit={onSubmit}
-            className='flex flex-col justify-center w-4/5 lg:w-1/2 my-3 text-center md:w-1/2'
+            className='my-3 flex w-4/5 flex-col justify-center text-center md:w-1/2 lg:w-1/2'
           >
             <div className='flex flex-1'>
               <label htmlFor='name' />
@@ -65,7 +65,7 @@ const Contact = () => {
                 id='name'
                 autoComplete='name'
                 placeholder='Your Name'
-                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 mr-2 text-xl text-blue-800 border-2 border-indigo-900 rounded focus:outline-none focus:border-blue-600'
+                className='mt-5 mr-2 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none'
               />
               <label htmlFor='email' />
               <input
@@ -77,7 +77,7 @@ const Contact = () => {
                 id='email'
                 autoComplete='email'
                 placeholder='Your Email'
-                className='placeholder:italic w-full h-10 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded focus:outline-none focus:border-blue-600'
+                className='mt-5 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none'
               />
             </div>
             <label htmlFor='message' />
@@ -89,9 +89,9 @@ const Contact = () => {
               name='message'
               id='message'
               placeholder='Your Message'
-              className='placeholder:italic w-full h-32 py-1 pl-2 mt-5 text-xl text-blue-800 border-2 border-indigo-900 rounded focus:outline-none focus:border-blue-600'
+              className='mt-5 h-32 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none'
             />
-            <button className='self-center w-1/2 h-10 mt-5 text-xl text-white bg-indigo-900 rounded hover:bg-black'>
+            <button className='mt-5 h-10 w-1/2 self-center rounded bg-indigo-900 text-xl text-white hover:bg-black'>
               {isSubmitting ? <Spinner /> : buttonText}
             </button>
           </form>

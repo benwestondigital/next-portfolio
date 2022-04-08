@@ -5,7 +5,7 @@ import { navLinks } from '../utils';
 const NavLinks = ({ path }) => {
   return (
     <div className='hidden md:block'>
-      <div className='flex flex-1 items-center gap-4 lg:gap-6 font-semibold'>
+      <div className='flex flex-1 items-center gap-4 font-semibold lg:gap-6'>
         {navLinks.map(link => {
           return (
             <div key={link.path}>
@@ -17,13 +17,13 @@ const NavLinks = ({ path }) => {
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'
+                  className='text-md cursor-pointer px-3 py-2 hover:text-blue-600'
                 >
                   {link.name}
                 </ScrollLink>
               ) : (
                 <Link key={link.path} href={`/#${link.path}`}>
-                  <a className='cursor-pointer hover:text-blue-600 px-3 py-2 text-md'>
+                  <a className='text-md cursor-pointer px-3 py-2 hover:text-blue-600'>
                     {' '}
                     {link.name}
                   </a>

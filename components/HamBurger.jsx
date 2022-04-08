@@ -4,7 +4,7 @@ const HamBurger = ({ isOpen, setIsOpen }) => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         type='button'
-        className='bg-blue-600 items-center justify-center p-2 rounded-md text-white hover:bg-black focus:outline-none focus:ring-white'
+        className='items-center justify-center rounded-md bg-blue-600 p-2 text-white hover:bg-black focus:outline-none focus:ring-white'
         aria-controls='mobile-menu'
         aria-expanded='false'
       >

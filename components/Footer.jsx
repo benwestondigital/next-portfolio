@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <div className='mt-16 flex flex-col justify-center items-center'>
+    <div className='mt-16 flex flex-col items-center justify-center'>
       <h3 className='text-xl'>
         <Link href='/'>
           <a className='cursor-pointer font-semibold hover:text-black'>
@@ -10,7 +10,7 @@ const Footer = () => {
           </a>
         </Link>
       </h3>
-      <p className='text-sm pt-2 pb-4 text-gray-600'>
+      <p className='pt-2 pb-4 text-sm text-gray-600'>
         Built with Next.js, Tailwind and MDX
       </p>
     </div>

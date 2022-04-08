@@ -5,11 +5,11 @@ import { tech } from '../utils';
 const Tech = () => {
   return (
     <Element id='tech' name='tech'>
-      <section className='flex flex-col items-center justify-center h-auto my-32 px-2'>
-        <h1 className='text-5xl sm:text-6xl font-bold text-indigo-900'>
+      <section className='my-32 flex h-auto flex-col items-center justify-center px-2'>
+        <h1 className='text-5xl font-bold text-indigo-900 sm:text-6xl'>
           My Skills
         </h1>
-        <p className='flex-wrap md:w-2/3 lg:w-1/2 my-5 text-center prose lg:prose-xl'>
+        <p className='prose my-5 flex-wrap text-center md:w-2/3 lg:prose-xl lg:w-1/2'>
           I am always looking to learn new technology, so in addition to my
           bootcamp I have completed a number of online courses such as{' '}
           <a
