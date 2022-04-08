@@ -6,7 +6,7 @@ const Hero = () => {
   const [effect, setEffect] = useState(false);
   return (
     <section className='h-auto'>
-      <div className='flex h-4/5 animate-fadeInUp items-center justify-center pt-28 md:mx-20 md:pt-32'>
+      <div className='flex h-4/5 animate-fadeIn md:animate-fadeInUp items-center justify-center pt-28 md:mx-20 md:pt-32'>
         <div className='relative hidden h-96 w-1/3 flex-1 rounded-full shadow-xl md:block'>
           <Image
             src={avatar}

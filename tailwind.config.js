@@ -15,6 +15,10 @@ module.exports = {
           },
         },
         fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1},
+        },
+        fadeInDown: {
           '0%': { opacity: 0, transform: 'translateY(-100%)' },
           '100%': { opacity: 1, transform: 'translateY(0%)' },
         },
@@ -31,7 +35,8 @@ module.exports = {
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
         wiggleShort: 'wiggle 0.3s ease-in-out',
-        fadeIn: 'fadeIn 1s ease-in forwards',
+        fadeIn: 'fadeIn 1.1s ease-in forwards',
+        fadeInDown: 'fadeIn 1s ease-in forwards',
         fadeInUp: 'fadeInUp 0.6s ease-in forwards',
         slideIn: 'translateRight 0.8s ease forwards',
       },
