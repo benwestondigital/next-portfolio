@@ -145,7 +145,7 @@ const Contact = () => {
                 </span>
               </button>
               {isSubmitted && (
-                <ConfettiExplosion force={0.4} floorHeight={250} />
+                <ConfettiExplosion force={0.4} floorHeight={250} floorWidth={500} />
               )}
             </div>
             {isSubmitted && (
