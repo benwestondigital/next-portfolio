@@ -16,10 +16,11 @@ const Navbar = () => {
       <div className='flex h-20 items-center justify-between'>
         <div className='flex flex-shrink-0 items-center justify-start gap-6'>
           <Link href='/' passHref>
-            <h1 className='cursor-pointer text-2xl font-bold md:text-2xl'>
+            <h1 className='cursor-pointer text-2xl font-bold md:text-2xl animate-slideIn'>
               Ben <span className='text-blue-600'>Weston</span>
             </h1>
           </Link>
+          
           <div className='hidden md:flex'>
             <a
               href='https://www.linkedin.com/in/ben-weston-b19420175/'
