@@ -4,8 +4,8 @@ import Link from 'next/link';
 const SingleProject = ({ project: { slug, frontmatter } }) => {
   return (
     <Link href={`/projects/${slug}`}>
-      <a className='flex flex-col w-80 sm:w-96 items-center justify-start hover:bg-gray-50 hover:shadow-xl rounded p-2'>
-        <div className='rounded w-72 h-72 sm:w-80 sm:h-80 shadow-xl relative'>
+      <a className='flex flex-col w-80 sm:w-96 items-center justify-start hover:bg-gray-50 hover:drop-shadow-lg rounded p-2'>
+        <div className='rounded w-72 h-72 sm:w-80 sm:h-80 drop-shadow-md relative'>
           <Image
             src={`/${frontmatter.image}`}
             alt={frontmatter.title}
