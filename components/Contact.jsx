@@ -5,13 +5,15 @@ import Spinner from './Spinner';
 
 const Contact = () => {
   const form = useRef();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [buttonText, setButtonText] = useState('Submit');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [contactDetails, setContactDetails] = useState({
     name: '',
     email: '',
     message: '',
   });
+
+  const buttonText = isSubmitted ? 'Submitted' : 'Submit';
 
   const handleChange = e => {
     setContactDetails({
@@ -21,7 +23,7 @@ const Contact = () => {
   };
 
   const onSubmit = async e => {
-    setIsSubmitting(true);
+    setIsLoading(true);
     e.preventDefault();
     const sendEmail = await emailjs.sendForm(
       process.env.NEXT_PUBLIC_SERVICE_ID,
@@ -35,8 +37,8 @@ const Contact = () => {
       email: '',
       message: '',
     });
-    setIsSubmitting(false);
-    setButtonText('Submitted!');
+    setIsLoading(false);
+    setIsSubmitted(true);
   };
 
   return (
@@ -93,7 +95,7 @@ const Contact = () => {
             />
             <button
               href='#_'
-              className='group mt-5 relative inline-flex w-1/3 items-center justify-start self-center overflow-hidden rounded bg-gray-50 py-3 pl-4 pr-12 font-semibold text-indigo-900 transition-all duration-150 ease-in-out hover:pl-10 hover:pr-6'
+              className='group relative mt-5 inline-flex w-1/3 items-center justify-start self-center overflow-hidden rounded bg-gray-50 py-3 pl-4 pr-12 font-semibold text-indigo-900 transition-all duration-150 ease-in-out hover:pl-10 hover:pr-6'
             >
               <span className='absolute bottom-0 left-0 h-1 w-full bg-indigo-900 transition-all duration-150 ease-in-out group-hover:h-full'></span>
               <span className='absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12'>
@@ -129,10 +131,10 @@ const Contact = () => {
                 </svg>
               </span>
               <span className='relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white'>
-                {isSubmitting ? <Spinner /> : buttonText}
+                {isLoading ? <Spinner /> : buttonText}
               </span>
             </button>
-            {buttonText === 'Submitted!' && (
+            {isSubmitted && (
               <p className='prose pt-6'>
                 Thanks for your message! I will be in touch shortly.
               </p>
