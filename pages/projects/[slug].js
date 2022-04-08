@@ -55,7 +55,7 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
             rel='noreferrer'
             className='hover:font-semibold hover:text-blue-600'
           >
-            <AiFillGithub className='m-1 h-11 w-11 p-1 text-gray-900 hover:animate-wiggle hover:text-orange-300' />
+            <AiFillGithub className='m-1 h-11 w-11 p-1 text-gray-900 hover:animate-wiggle hover:text-orange-400' />
           </a>
           {frontmatter.livelink && (
             <a
@@ -64,7 +64,7 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
               rel='noreferrer'
               className='hover:animate-wiggle hover:font-semibold hover:text-blue-600'
             >
-              <FaExternalLinkAlt className='m-1 h-10 w-10 p-1 text-gray-900 hover:text-orange-300' />
+              <FaExternalLinkAlt className='m-1 h-10 w-10 p-1 text-gray-900 hover:text-orange-400' />
             </a>
           )}
         </div>
