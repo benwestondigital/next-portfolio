@@ -22,7 +22,7 @@ const Footer = () => {
           href='https://www.linkedin.com/in/ben-weston-b19420175/'
           target='_blank'
           rel='noreferrer'
-          className='pb-1 font-semibold text-black no-underline hover:animate-wiggle hover:text-orange-400 hover:underline'
+          className='pb-1 font-semibold text-black no-underline hover:animate-wiggle hover:text-orange-400 active:underline'
         >
           LinkedIn
         </a>
@@ -30,7 +30,7 @@ const Footer = () => {
           href='https://github.com/benwestondigital/'
           target='_blank'
           rel='noreferrer'
-          className='py-1 font-semibold text-black no-underline hover:animate-wiggle hover:text-orange-400 hover:underline'
+          className='py-1 font-semibold text-black no-underline hover:animate-wiggle hover:text-orange-400 active:underline'
         >
           GitHub
         </a>
@@ -38,7 +38,7 @@ const Footer = () => {
           href='https://twitter.com/benwestononline'
           target='_blank'
           rel='noreferrer'
-          className='py-1 pb-4 font-semibold text-black no-underline hover:animate-wiggle hover:text-orange-400 hover:underline'
+          className='py-1 pb-4 font-semibold text-black no-underline hover:animate-wiggle hover:text-orange-400 active:underline'
         >
           Twitter
         </a>
