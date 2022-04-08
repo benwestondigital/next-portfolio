@@ -94,6 +94,7 @@ const Contact = () => {
             <button className='mt-5 h-10 w-1/2 self-center rounded bg-indigo-900 text-xl text-white hover:bg-black'>
               {isSubmitting ? <Spinner /> : buttonText}
             </button>
+            {buttonText === 'Submitted!' && <p className='prose pt-6'>Thanks for your message! I will be in touch shortly.</p>}
           </form>
         </div>
       </div>
