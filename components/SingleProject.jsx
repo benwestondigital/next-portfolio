@@ -25,7 +25,7 @@ const SingleProject = ({ project: { slug, frontmatter } }) => {
           {frontmatter.description}
         </p>
         <div className='flex items-center'>
-          <p className='text-center text-sm font-semibold uppercase tracking-wide text-gray-900 hover:text-blue-600'>
+          <p className='text-center text-sm font-semibold uppercase tracking-wide text-gray-900 hover:text-blue-600 hover:underline'>
             See Project Details
           </p>
           <svg
