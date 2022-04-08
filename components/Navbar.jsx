@@ -26,21 +26,21 @@ const Navbar = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <AiFillLinkedin className='m-1 h-10 w-10 p-1 text-blue-600 hover:text-gray-600' />
+              <AiFillLinkedin className='m-1 h-10 w-10 p-1 text-blue-600 hover:text-gray-600 hover:animate-wiggle' />
             </a>
             <a
               href='https://github.com/benwestondigital/'
               target='_blank'
               rel='noreferrer'
             >
-              <DiGithubBadge className='m-1 h-10 w-10 p-1 text-black hover:text-gray-600' />
+              <DiGithubBadge className='m-1 h-10 w-10 p-1 text-black hover:text-gray-600 hover:animate-wiggle' />
             </a>
             <a
               href='https://twitter.com/benwestononline'
               target='_blank'
               rel='noreferrer'
             >
-              <AiOutlineTwitter className='m-1 h-10 w-10 p-1 text-blue-400 hover:text-gray-600' />
+              <AiOutlineTwitter className='m-1 h-10 w-10 p-1 text-blue-400 hover:text-gray-600 hover:animate-wiggle' />
             </a>
           </div>
         </div>
