@@ -45,7 +45,7 @@ const Contact = () => {
 
   return (
     <Element id='contact' name='contact'>
-      <div>
+      <div className='overflow-hidden'>
         <div className='my-32 flex h-auto w-full flex-col items-center justify-center'>
           <h2 className='text-center text-5xl font-bold text-indigo-900 sm:text-6xl'>
             Contact Me
