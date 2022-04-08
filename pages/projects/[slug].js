@@ -48,21 +48,21 @@ const ProjectPage = ({ frontmatter, mdxSource, paths }) => {
             {frontmatter.title}
           </h1>
         </div>
-        <div className='mb-5 flex flex-row justify-between self-start text-gray-700 md:items-center md:gap-x-10 md:self-center'>
+        <div className='mb-5 flex animate-fadeInUp flex-row justify-between self-start text-gray-700 md:items-center md:gap-x-10 md:self-center'>
           <a
             href={frontmatter.github}
             target='_blank'
             rel='noreferrer'
             className='hover:font-semibold hover:text-blue-600'
           >
-            <AiFillGithub className='m-1 h-11 w-11 p-1 text-gray-900 hover:text-orange-300 hover:animate-wiggle' />
+            <AiFillGithub className='m-1 h-11 w-11 p-1 text-gray-900 hover:animate-wiggle hover:text-orange-300' />
           </a>
           {frontmatter.livelink && (
             <a
               href={frontmatter.livelink}
               target='_blank'
               rel='noreferrer'
-              className='hover:font-semibold hover:text-blue-600 hover:animate-wiggle'
+              className='hover:animate-wiggle hover:font-semibold hover:text-blue-600'
             >
               <FaExternalLinkAlt className='m-1 h-10 w-10 p-1 text-gray-900 hover:text-orange-300' />
             </a>
