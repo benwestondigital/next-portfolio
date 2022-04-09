@@ -7,6 +7,7 @@ import { Element } from 'react-scroll';
 import Head from 'next/head';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
+import MDXComponents from '../../components/MDXComponents';
 
 //TODO: add link to whereto northcoders project page with ternary live link : project page
 //TODO: add 4 pictures for each project - screenshots size 359*432
@@ -48,38 +49,12 @@ const ProjectPage = ({ frontmatter, mdxSource }) => {
             </a>
           )}
         </div>
-        <div className='relative h-96 w-full md:w-96'>
-          <Image
-            src={`/${frontmatter.image}`}
-            alt={frontmatter.title}
-            objectFit='contain'
-            priority
-            layout='fill'
-            className='rounded'
-          />
-        </div>
-        <div className='prose pt-6 dark:prose-invert'>
-          <MDXRemote {...mdxSource} components={components} />
+        <div className='prose w-full pt-6 dark:prose-invert'>
+          <MDXRemote {...mdxSource} components={MDXComponents} />
         </div>
       </article>
     </Element>
   );
-};
-
-const mdxImage = props => (
-  <div className='relative mx-auto h-96 w-full md:w-96 hidden md:block'>
-    <Image
-      alt={props.alt}
-      layout='fill'
-      objectFit='contain'
-      className='rounded p-2'
-      {...props}
-    />
-  </div>
-);
-
-const components = {
-  img: mdxImage,
 };
 
 export async function getStaticPaths() {

@@ -14,6 +14,13 @@ tags:
   - typescript
 ---
 
+  <Image
+    alt={`WhereTo - Climate Travel App`}
+    src={`/images/whereto/whereto.png`}
+    width={359}
+    height={432}
+  />
+
 WhereTo is a travel app that suggests locations with weather similar to your input destination. This was the final project for the Northcoders bootcamp, and was built as a team using agile methodology. It uses a non-relational database to store climate and city data, and external APIs to fetch coordinates, photos and weather data.
 
 A few years ago I saw a fantastic map on Reddit that showed locations that had similar climates. At the time I was working selling wine, and found it so interesting that places like the Hunter Valley in Sydney, Australia had the same climate as Buenos Aires, Argentina. For bootcamp project pitches I immediately thought of this and knew this was a great idea that we could create.
@@ -34,7 +41,14 @@ It was a steep learning curve to take on all this new technology and learn it in
 - Type checked with TypeScript
 - Uses MongoDB Geospatial Queries to handle coordinate information
 
-![co-ordinate fetching](/images/whereto/coordfetch.png)
+{/* comment to end list */}
+
+  <Image
+    alt={`Co-ordinate Fetching`}
+    src={`/images/whereto/coordfetch.png`}
+    width={1252}
+    height={558}
+  />
 
 When the user enters their location, the string is passed into Google Autocomplete API, which returns a place ID. This place ID is used to query the Google Places API to get co-ordinates for the user's input destination.
 
@@ -59,7 +73,12 @@ The co-ordinates are then used to query the MongoDB database to return the array
 ```
 Inside the Search Results page endpoint, current weather and photos are fetched for each city. These cards are iterated and rendered onto the page.
 
-![city card](/images/whereto/citycard.png)
+  <Image
+    alt={`City Card`}
+    src={`/images/whereto/citycard.png`}
+    width={498}
+    height={421}
+  />
 
 
 ## Problems I faced
