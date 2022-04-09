@@ -28,7 +28,7 @@ const Navbar = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <AiFillLinkedin className='m-1 h-10 w-10 p-1 text-blue-600 hover:animate-wiggle hover:text-gray-600' />
+              <AiFillLinkedin className='m-1 h-10 w-10 p-1 text-[#0072b1] hover:animate-wiggle hover:text-gray-600' />
             </a>
             <a
               href='https://github.com/benwestondigital/'
@@ -42,7 +42,7 @@ const Navbar = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <AiOutlineTwitter className='m-1 h-10 w-10 p-1 text-blue-400 hover:animate-wiggle hover:text-gray-600' />
+              <AiOutlineTwitter className='m-1 h-10 w-10 p-1 text-[#00acee] hover:animate-wiggle hover:text-gray-600' />
             </a>
           </div>
         </div>
