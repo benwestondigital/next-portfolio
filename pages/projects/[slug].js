@@ -11,6 +11,7 @@ import { AiFillGithub } from 'react-icons/ai';
 //TODO: add link to whereto northcoders project page with ternary live link : project page
 //TODO: add 4 pictures for each project - screenshots size 359*432
 //TODO: for code, I can add snippets rather than having to do a screenshot
+//TODO: add error page
 
 const ProjectPage = ({ frontmatter, mdxSource }) => {
   return (
@@ -66,7 +67,7 @@ const ProjectPage = ({ frontmatter, mdxSource }) => {
 };
 
 const mdxImage = props => (
-  <div className='relative mx-auto h-96 w-full md:w-96'>
+  <div className='relative mx-auto h-96 w-full md:w-96 hidden md:block'>
     <Image
       alt={props.alt}
       layout='fill'
