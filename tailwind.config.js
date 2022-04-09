@@ -45,7 +45,7 @@ module.exports = {
         wiggleShort: 'wiggle 0.3s ease-in-out',
         fadeIn: 'fadeIn 1.1s ease-in forwards',
         fadeInDown: 'fadeIn 1s ease-in forwards',
-        fadeInUp: 'fadeInUp 0.6s ease-out forwards',
+        fadeInUp: 'fadeInUp 0.7s ease-out forwards',
         slideIn: 'translateRight 0.8s ease-out forwards',
         spin360: 'spin360 1s ease forwards',
       },
