@@ -1,6 +1,6 @@
 const HamBurger = ({ isOpen, setIsOpen }) => {
   return (
-    <div className='flex flex-1 justify-end md:hidden'>
+    <div className='flex justify-end md:hidden'>
       <button
         onClick={() => setIsOpen(!isOpen)}
         type='button'
