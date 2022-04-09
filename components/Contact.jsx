@@ -47,10 +47,10 @@ const Contact = () => {
     <Element id='contact' name='contact'>
       <div className='overflow-hidden'>
         <div className='my-32 flex h-auto w-full flex-col items-center justify-center'>
-          <h2 className='text-center text-5xl font-bold text-indigo-900 sm:text-6xl'>
+          <h2 className='text-center text-5xl font-bold text-indigo-900 dark:text-indigo-500 sm:text-6xl'>
             Contact Me
           </h2>
-          <p className='prose mx-2 mt-6 flex-wrap text-center font-normal md:text-left'>
+          <p className='prose mx-2 mt-6 flex-wrap text-center font-normal dark:prose-invert md:text-left'>
             Have an interesting job opportunity for me? Get in touch:
           </p>
           <form
@@ -69,7 +69,7 @@ const Contact = () => {
                 id='name'
                 autoComplete='name'
                 placeholder='Your Name'
-                className='mt-5 mr-2 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none'
+                className='mt-5 mr-2 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white'
               />
               <label htmlFor='email' />
               <input
@@ -81,7 +81,7 @@ const Contact = () => {
                 id='email'
                 autoComplete='email'
                 placeholder='Your Email'
-                className='mt-5 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none'
+                className='mt-5 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white'
               />
             </div>
             <label htmlFor='message' />
@@ -93,15 +93,15 @@ const Contact = () => {
               name='message'
               id='message'
               placeholder='Your Message'
-              className='mt-5 h-32 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none'
+              className='mt-5 h-32 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white'
             />
             <div className='flex flex-col items-center justify-center'>
               <button
                 disabled={isSubmitted}
-                className='group relative mt-5 inline-flex w-max items-center justify-start overflow-hidden rounded bg-gray-50 py-3 pl-4 pr-12 font-semibold text-indigo-900 transition-all duration-300 ease-in-out hover:pl-10 hover:pr-6 disabled:cursor-not-allowed disabled:opacity-50'
+                className='group relative mt-5 inline-flex w-max items-center justify-start overflow-hidden rounded bg-gray-50 py-3 pl-4 pr-12 font-semibold text-indigo-900 dark:text-indigo-500 transition-all duration-300 ease-in-out hover:pl-10 hover:pr-6 disabled:cursor-not-allowed disabled:opacity-50'
               >
-                <span className='absolute bottom-0 left-0 h-1 w-full bg-indigo-900 transition-all duration-300 ease-in-out group-hover:h-full'></span>
-                <span className='absolute right-0 pr-4 duration-400 ease-out group-hover:translate-x-12'>
+                <span className='absolute bottom-0 left-0 h-1 w-full bg-indigo-900 dark:bg-indigo-500 transition-all duration-300 ease-in-out group-hover:h-full'></span>
+                <span className='duration-400 absolute right-0 pr-4 ease-out group-hover:translate-x-12'>
                   <svg
                     className='h-5 w-5 text-green-400'
                     fill='none'
@@ -117,7 +117,7 @@ const Contact = () => {
                     ></path>
                   </svg>
                 </span>
-                <span className='absolute left-0 -translate-x-12 pl-2.5 duration-400 ease-out group-hover:translate-x-0'>
+                <span className='duration-400 absolute left-0 -translate-x-12 pl-2.5 ease-out group-hover:translate-x-0'>
                   <svg
                     className='h-5 w-5 text-green-400'
                     fill='none'
@@ -133,7 +133,7 @@ const Contact = () => {
                     ></path>
                   </svg>
                 </span>
-                <span className='relative w-full text-center transition-colors duration-400 ease-in-out group-hover:text-white'>
+                <span className='duration-400 relative w-full text-center transition-colors ease-in-out group-hover:text-white'>
                   {isLoading ? (
                     <span className='flex items-center gap-2'>
                       <Spinner />
@@ -145,11 +145,15 @@ const Contact = () => {
                 </span>
               </button>
               {isSubmitted && (
-                <ConfettiExplosion force={0.4} floorHeight={250} floorWidth={500} />
+                <ConfettiExplosion
+                  force={0.4}
+                  floorHeight={250}
+                  floorWidth={500}
+                />
               )}
             </div>
             {isSubmitted && (
-              <p className='prose pt-6'>
+              <p className='prose pt-6 dark:prose-invert'>
                 Thanks for your message! I will be in touch shortly.
               </p>
             )}

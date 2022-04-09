@@ -2,7 +2,7 @@ const TechSection = ({ techType, type }) => {
   return (
     <section className='my-10'>
       <div className='flex flex-col items-center justify-center'>
-        <h2 className='text-xl font-semibold text-indigo-600'>{techType}</h2>
+        <h2 className='text-xl font-semibold text-indigo-600 dark:text-indigo-500'>{techType}</h2>
         <div className='flex flex-1 shrink flex-wrap items-start justify-center'>
           {type[techType].map(item => {
             const Icon = item.icon;

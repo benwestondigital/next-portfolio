@@ -23,7 +23,7 @@ const Hero = () => {
         </div>
         <div className='mx-10 mt-10 flex flex-1 flex-col md:ml-20 md:w-3/5 lg:w-1/2'>
           <h1 className='mb-5 text-left text-5xl font-bold md:text-6xl'>
-            Hi! I&apos;m <span className='text-indigo-900'>Ben</span>. I love to
+            Hi! I&apos;m <span className='text-indigo-900 dark:text-indigo-500'>Ben</span>. I love to
             create interesting projects with code.
           </h1>
         </div>
