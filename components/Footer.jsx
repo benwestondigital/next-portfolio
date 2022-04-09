@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <div className='mt-16 flex flex-col items-center justify-center bg-gray-50'>
+    <div className='mt-16 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900'>
       <h3 className='pt-4 text-xl'>
         <Link href='/'>
           <a className='cursor-pointer font-semibold hover:text-black'>
