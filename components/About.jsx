@@ -20,7 +20,7 @@ const About = () => {
         >
           See My Portfolio
         </Link>
-        <div className='prose lg:prose-xl flex-wrap mb-5 px-2'>
+        <div className='prose lg:prose-xl dark:prose-invert flex-wrap mb-5 px-2'>
           <p className='pt-16'>
             I first became interested in coding through playing online games
             when I was a teenager. I saw people creating programs to automate

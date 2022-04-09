@@ -5,16 +5,16 @@ const Footer = () => {
     <div className='mt-16 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900'>
       <h3 className='pt-4 text-xl'>
         <Link href='/'>
-          <a className='cursor-pointer font-semibold hover:text-black'>
-            Ben{' '}
-            <span className='text-blue-600 hover:text-indigo-900'>Weston</span>
+          <a className='cursor-pointer font-semibold hover:opacity-60'>
+            <span className='hover:text-black dark:hover:text-gray-500'>Ben</span>{' '}
+            <span className='text-blue-600 hover:text-indigo-900 dark:hover:text-indigo-500'>Weston</span>
           </a>
         </Link>
       </h3>
-      <p className='pt-2 pb-4 text-sm text-gray-600'>
+      <p className='prose pt-2 pb-4 text-sm dark:prose-invert'>
         Built with Next.js, Tailwind and MDX
       </p>
-      <div className='prose mt-4 mr-8 flex flex-col self-end text-sm md:hidden'>
+      <div className='prose dark:prose-dark mt-4 mr-8 flex flex-col self-end text-sm md:hidden'>
         <p className='mb-1 text-xs uppercase tracking-wide text-gray-600'>
           Links
         </p>

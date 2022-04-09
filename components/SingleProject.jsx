@@ -4,7 +4,7 @@ import Link from 'next/link';
 const SingleProject = ({ project: { slug, frontmatter } }) => {
   return (
     <Link href={`/projects/${slug}`}>
-      <a className='flex w-80 flex-col items-center justify-start rounded p-2 hover:bg-gray-50 hover:drop-shadow-lg sm:w-96  md:hover:scale-105 transition ease-in-out delay-150'>
+      <a className='flex w-80 flex-col items-center justify-start rounded p-2 transition delay-150 ease-in-out  hover:bg-gray-50 hover:drop-shadow-lg dark:hover:bg-gray-800 sm:w-96 md:hover:scale-105'>
         <div className='relative h-72 w-72 rounded drop-shadow-md sm:h-80 sm:w-80'>
           <Image
             src={`/${frontmatter.image}`}
@@ -15,22 +15,22 @@ const SingleProject = ({ project: { slug, frontmatter } }) => {
             objectPosition='top'
           />
         </div>
-        <h3 className='mx-2 mt-6 text-xs font-semibold uppercase tracking-wide text-gray-600'>
+        <h3 className='mx-2 mt-6 text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400'>
           {frontmatter.type}
         </h3>
-        <h2 className='my-2 text-xl font-semibold text-indigo-600'>
+        <h2 className='my-2 text-xl font-semibold text-indigo-600 dark:text-indigo-400'>
           {frontmatter.title}
         </h2>
-        <p className='mx-2 mb-5 flex-wrap text-center text-base text-gray-700'>
+        <p className='mx-2 mb-5 flex-wrap text-center text-base text-gray-700 dark:text-white'>
           {frontmatter.description}
         </p>
         <div className='flex items-center'>
-          <p className='text-center text-sm font-semibold uppercase tracking-wide text-gray-900 hover:text-blue-600 hover:underline'>
+          <p className='text-center text-sm font-semibold uppercase tracking-wide text-gray-900 hover:text-blue-600 hover:underline dark:text-gray-300'>
             See Project Details
           </p>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='h-5 w-5 text-blue-600'
+            className='h-5 w-5 text-blue-600 dark:text-indigo-500'
             fill='none'
             viewBox='0 0 24 24'
             stroke='currentColor'

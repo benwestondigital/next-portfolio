@@ -28,7 +28,7 @@ const Navbar = () => {
     if (currentTheme === 'dark') {
       return (
         <SunIcon
-          className='h-7 w-7 hidden md:block'
+          className='hidden h-7 w-7 hover:text-orange-300 md:block'
           role='button'
           onClick={() => setTheme('light')}
         />
@@ -36,7 +36,7 @@ const Navbar = () => {
     } else {
       return (
         <MoonIcon
-          className='h-7 w-7 hidden md:block'
+          className='hidden h-7 w-7 hover:text-gray-400 md:block'
           role='button'
           onClick={() => setTheme('dark')}
         />
@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='container fixed z-20 bg-white px-4 md:px-8 dark:bg-gray-900'>
+    <nav className='container fixed z-20 bg-white px-4 dark:bg-gray-900 md:px-8'>
       <div className='flex h-20 items-center justify-between'>
         <div className='flex flex-shrink-0 items-center justify-start gap-6'>
           <Link href='/' passHref>
@@ -67,7 +67,7 @@ const Navbar = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <DiGithubBadge className='m-1 h-10 w-10 p-1 text-black hover:animate-wiggle hover:text-gray-600' />
+              <DiGithubBadge className='m-1 h-10 w-10 p-1 text-black hover:animate-wiggle hover:text-gray-600 dark:text-white dark:hover:text-gray-600' />
             </a>
             <a
               href='https://twitter.com/benwestononline'
