@@ -8,17 +8,15 @@ github: https://github.com/benwestondigital/climate-app
 projectlink: https://northcoders.com/projects/march-2022/whereto
 date: '2022-03-31'
 tags:
-    - svelte
-    - sveltekit
-    - mongodb
-    - typescript
+  - svelte
+  - sveltekit
+  - mongodb
+  - typescript
 ---
 
 WhereTo is a travel app that suggests locations with weather similar to your input destination. This was the final project for the Northcoders bootcamp, and was built as a team using agile methodology. It uses a non-relational database to store climate and city data, and external APIs to fetch coordinates, photos and weather data.
 
 A few years ago I saw a fantastic map on Reddit that showed locations that had similar climates. At the time I was working selling wine, and found it so interesting that places like the Hunter Valley in Sydney, Australia had the same climate as Buenos Aires, Argentina. For bootcamp project pitches I immediately thought of this and knew this was a great idea that we could create.
-
-![whereto](/images/whereto/whereto.png)
 
 ## Technology
 
@@ -35,6 +33,34 @@ It was a steep learning curve to take on all this new technology and learn it in
 - Utilizes non-relational database and external APIs
 - Type checked with TypeScript
 - Uses MongoDB Geospatial Queries to handle coordinate information
+
+![co-ordinate fetching](/images/whereto/coordfetch.png)
+
+When the user enters their location, the string is passed into Google Autocomplete API, which returns a place ID. This place ID is used to query the Google Places API to get co-ordinates for the user's input destination.
+
+The co-ordinates are then used to query the MongoDB database to return the array of cities with a similar climate.
+
+```js
+	try {
+		cities = await getCitiesSimilarToLocation([lng, lat], { limit: 9 });
+	} catch (error) {
+		console.log(error);
+	}
+
+	const combinedData = await Promise.all(
+		cities.map(async (city) => {
+			const cityWeather = await getWeather(city.city_ascii);
+			const { photo_reference } = await getPhotoRef(city.city_ascii);
+			const src = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo_reference}&key=${process.env['VITE_API_KEY']}`;
+
+			return { weather: cityWeather, details: city, src } as City;
+		})
+	);
+```
+Inside the Search Results page endpoint, current weather and photos are fetched for each city. These cards are iterated and rendered onto the page.
+
+![city card](/images/whereto/citycard.png)
+
 
 ## Problems I faced
 
@@ -62,10 +88,23 @@ I spent a lot of time working with external APIs like Google Places. This has in
 
 I learnt how to use TypeScript, and how useful it is. This will serve me well in future projects now I have overcome the initial learning curve.
 
+- Concise syntax of Svelte
+
+I enjoyed using Svelte, particularly how simple it is to manage state.
+
+```js
+on:submit|preventDefault={onConfirmSubmit}
+```
+For example, handling a form submission can be done in such a little amount of code, whereas in React this is a more verbose process.
+
 - Improved Git skills
 
 Working in a team on different branches and working with pull requests massively improved my skills with Git. This will be extremely helpful in future projects and working on development teams.
 
 ## What I would improve
 
-With more time on this project I would add more features to the app, such as flight times, distance to destination, currency exchange rates.
+With more time on this project I would add more features to the app, such as flight times, distance to destination, currency exchange rates. The 'my places' and 'my searches' pages are both placeholders so I would finish their functionality.
+
+Instead of fetching data in multiple places, I would use Svelte Stores to fetch the data once and allow access to it from different places in the app.
+
+On the location page, another API is used to fetch historic data, this is then visualised using Chart.js
