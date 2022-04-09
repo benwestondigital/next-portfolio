@@ -5,8 +5,19 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import matter from 'gray-matter';
 import fs from 'fs';
+import { useEffect } from 'react';
 
 export default function Home({ projects }) {
+
+  useEffect(() => {
+    console.log(`
+    This website was created by
+    _ __            __    _                
+    ( /  )          ( /   /      _/_        
+     /--< _  _ _     / / /_  (   /  __ _ _  
+    /___/(/_/ / /_  (_/_/(/_/_)_(__(_)/ / /_`);
+  }, []);
+
   return (
     <div>
       <Head>
