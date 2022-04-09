@@ -60,6 +60,13 @@ module.exports = {
         '2xl': '1024px',
       },
     },
+    typography: theme => ({
+      dark: {
+        css: {
+          color: 'white',
+        },
+      },
+    }),
   },
   plugins: [require('@tailwindcss/typography')],
 };
