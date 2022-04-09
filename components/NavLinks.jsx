@@ -39,7 +39,7 @@ const NavLinks = ({ path }) => {
 
   return (
     <div className='hidden md:block'>
-      <div className='flex flex-1 items-center gap-4 font-semibold lg:gap-6'>
+      <div className='flex flex-1 items-center gap-2 font-semibold lg:gap-6'>
         {navLinks.map(link => {
           return (
             <div key={link.path}>
