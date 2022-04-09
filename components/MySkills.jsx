@@ -4,7 +4,7 @@ import { tech } from '../utils';
 
 const Tech = () => {
   return (
-    <Element id='tech' name='tech'>
+    <Element id='tech' name='tech' className='scroll-mt-24'>
       <section className='my-32 flex h-auto flex-col items-center justify-center px-2'>
         <h1 className='text-5xl font-bold text-indigo-900 dark:text-indigo-500 sm:text-6xl'>
           My Skills

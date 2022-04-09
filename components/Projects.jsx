@@ -3,7 +3,7 @@ import SingleProject from './SingleProject';
 
 const Projects = ({projects}) => {
   return (
-    <Element id='projects' name='projects'>
+    <Element id='projects' name='projects' className='scroll-mt-24'>
       <section className='flex flex-col items-center justify-center w-full h-auto my-32'>
         <h2 className='text-5xl sm:text-6xl font-bold text-indigo-900 dark:text-indigo-500'>Projects</h2>
         <p className='my-5 text-center prose lg:prose-xl dark:prose-invert'>

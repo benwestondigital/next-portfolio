@@ -44,9 +44,9 @@ const Contact = () => {
   };
 
   return (
-    <Element id='contact' name='contact'>
+    <Element id='contact' name='contact' className='scroll-mt-8' >
       <div className='overflow-hidden'>
-        <div className='my-32 flex h-auto w-full flex-col items-center justify-center'>
+        <div className='my-24 flex h-auto w-full flex-col items-center justify-center'>
           <h2 className='text-center text-5xl font-bold text-indigo-900 dark:text-indigo-500 sm:text-6xl'>
             Contact Me
           </h2>
