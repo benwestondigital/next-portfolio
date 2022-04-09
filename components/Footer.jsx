@@ -6,7 +6,7 @@ const Footer = () => {
       <h3 className='pt-4 text-xl'>
         <Link href='/'>
           <a className='cursor-pointer font-semibold hover:opacity-60'>
-            <span className='hover:text-black dark:hover:text-gray-500'>
+            <span className='dark:hover:text-white'>
               Ben
             </span>{' '}
             <span className='text-blue-600 hover:text-indigo-900 dark:hover:text-indigo-500'>
