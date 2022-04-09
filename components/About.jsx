@@ -54,7 +54,7 @@ const About = () => {
               href='https://northcoders.com/'
               target='_blank'
               rel='noreferrer'
-              className='font-semibold no-underline'
+              className='font-semibold no-underline hover:text-indigo-300'
             >
               Northcoders
             </a>{' '}
