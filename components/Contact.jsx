@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <Element id='contact' name='contact' className='scroll-mt-8' >
+    <Element id='contact' name='contact' className='scroll-mt-8'>
       <div className='overflow-hidden'>
         <div className='my-24 flex h-auto w-full flex-col items-center justify-center'>
           <h2 className='text-center text-5xl font-bold text-indigo-900 dark:text-indigo-500 sm:text-6xl'>
@@ -69,7 +69,7 @@ const Contact = () => {
                 id='name'
                 autoComplete='name'
                 placeholder='Your Name'
-                className='mt-5 mr-2 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white'
+                className='mt-5 mr-2 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white dark:focus:border-blue-300'
               />
               <label htmlFor='email' />
               <input
@@ -81,7 +81,7 @@ const Contact = () => {
                 id='email'
                 autoComplete='email'
                 placeholder='Your Email'
-                className='mt-5 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white'
+                className='mt-5 h-10 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white dark:focus:border-blue-300'
               />
             </div>
             <label htmlFor='message' />
@@ -93,14 +93,14 @@ const Contact = () => {
               name='message'
               id='message'
               placeholder='Your Message'
-              className='mt-5 h-32 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white'
+              className='mt-5 h-32 w-full rounded border-2 border-indigo-900 py-1 pl-2 text-xl text-blue-800 placeholder:italic focus:border-blue-600 focus:outline-none dark:border-indigo-500 dark:text-white dark:focus:border-blue-300'
             />
             <div className='flex flex-col items-center justify-center'>
               <button
                 disabled={isSubmitted}
-                className='group relative mt-5 inline-flex w-max items-center justify-start overflow-hidden rounded bg-gray-50 py-3 pl-4 pr-12 font-semibold text-indigo-900 dark:text-indigo-500 transition-all duration-300 ease-in-out hover:pl-10 hover:pr-6 disabled:cursor-not-allowed disabled:opacity-50'
+                className='group relative mt-5 inline-flex w-max items-center justify-start overflow-hidden rounded bg-gray-50 py-3 pl-4 pr-12 font-semibold text-indigo-900 transition-all duration-300 ease-in-out hover:pl-10 hover:pr-6 disabled:cursor-not-allowed disabled:opacity-50 dark:text-indigo-500'
               >
-                <span className='absolute bottom-0 left-0 h-1 w-full bg-indigo-900 dark:bg-indigo-500 transition-all duration-300 ease-in-out group-hover:h-full'></span>
+                <span className='absolute bottom-0 left-0 h-1 w-full bg-indigo-900 transition-all duration-300 ease-in-out group-hover:h-full dark:bg-indigo-500'></span>
                 <span className='duration-400 absolute right-0 pr-4 ease-out group-hover:translate-x-12'>
                   <svg
                     className='h-5 w-5 text-green-400'
