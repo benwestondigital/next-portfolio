@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { DiGithubBadge } from 'react-icons/di';
 import { useRouter } from 'next/router';
@@ -6,43 +6,13 @@ import NavLinks from './NavLinks';
 import HamBurger from './HamBurger';
 import MobileLinks from './MobileLinks';
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 
 const Navbar = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const path = router.pathname;
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
-  const renderThemeChanger = () => {
-    if (!mounted) return null;
-
-    const currentTheme = theme === 'system' ? systemTheme : theme;
-
-    if (currentTheme === 'dark') {
-      return (
-        <SunIcon
-          className='hidden h-7 w-7 hover:text-orange-300 md:block'
-          role='button'
-          onClick={() => setTheme('light')}
-        />
-      );
-    } else {
-      return (
-        <MoonIcon
-          className='hidden h-7 w-7 hover:text-gray-400 md:block'
-          role='button'
-          onClick={() => setTheme('dark')}
-        />
-      );
-    }
-  };
 
   return (
     <nav className='container fixed z-20 bg-white px-4 dark:bg-gray-900 md:px-8'>
@@ -79,7 +49,6 @@ const Navbar = () => {
           </div>
         </div>
         <NavLinks path={path} />
-        {renderThemeChanger()}
         <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
       <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen} />
