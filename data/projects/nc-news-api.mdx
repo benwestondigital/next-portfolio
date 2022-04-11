@@ -13,16 +13,18 @@ tags:
   - node
 ---
 
-  <Image
-    alt={`Northcoders News API`}
-    src={`/images/redditback/redditback.png`}
-    width={359}
-    height={432}
-    priority
-    figcaption='An example of the endpoints available in the Northcoders News API'
-  />
+{' '}
 
-This news project is a REST API that clones the back-end functionality of Reddit using Node.js and Express to serve articles, users, topics and comments in JSON format using a PostgreSQL database.
+<Image
+  alt={`Northcoders News API`}
+  src={`/images/redditback/redditback.png`}
+  width={359}
+  height={432}
+  priority
+  figcaption='An example of the endpoints available in the Northcoders News API'
+/>
+
+This news project is a REST API that clones the back-end functionality of Reddit using Node.js and Express to serve articles, users, topics and comments in JSON format using a PostgreSQL database. There is functionality for creating, reading, updating and deleting items.
 
 ---
 
@@ -40,7 +42,29 @@ These tools are all extremely popular with developers and employers, all ranking
 
 ## Key Features
 
-Thoroughly tested with Jest and Supertest, CI/CD, seeding
+- Testing
+
+The app is thoroughly tested with Jest and Supertest. There are two separate testing files - app.test.js and utils.test.js. App is connected to the database, while utils is for non-database helper functions, such as ensuring the correct formatting before seeding.
+
+```javascript:__tests__/app.test.js
+// Testing a GET request to the /api/topics endpoint with Supertest
+describe('/api/topics', () => {
+  describe('GET', () => {
+    test('200 - responds with an array of topic objects', async () => {
+      const test = await request(app).get('/api/topics').expect(200);
+      const topics = test.body.topics;
+      expect(topics).toBeInstanceOf(Array);
+      expect(topics).toHaveLength(3);
+      topics.forEach(topic => {
+        expect(topic).toMatchObject({
+          slug: expect.any(String),
+          description: expect.any(String),
+        });
+      });
+    });
+  });
+});
+```
 
 - CI / CD
 
@@ -49,6 +73,43 @@ Set up using Github Actions. A workflow (pipeline) is set up to run tests each t
 - Model View Controller Pattern
 
 Following the MVC pattern to abstract the server into identifiable sections helps to debug errors and keep maintainable code.
+
+The Controller handles the client request and invokes the model with the information contained in the request.
+
+The Model handles interaction with the database to create, read, update and delete data.
+
+The View is handled with the front-end Northcoders News project.
+
+```javascript:article-get-request
+// 1. Controller handles GET request
+const getArticles = async (req, res, next) => {
+  try {
+    const { sort_by, order } = req.query;
+// 2. Model is invoked with information from request
+    const articles = await selectArticles(sort_by, order);
+// 4. Returned articles from database sent to front-end View
+    res.status(200).send({ articles });
+  } catch (err) {
+    next(err);
+  }
+
+
+// 3. Model queries the database and returns matching articles (simplified example for brevity)
+  const selectArticles = async (sort_by, order) => {
+  let queryStr = `
+  SELECT articles.*, COUNT(comment_id) AS comment_count
+  FROM articles
+  LEFT OUTER JOIN comments
+  ON articles.article_id = comments.article_id
+  GROUP BY articles.article_id
+  ORDER BY ${sort_by} ${order};`;
+
+  const { rows } = await db.query(queryStr);
+  const articles = rows;
+
+  return articles;
+};
+```
 
 - Use .env files to hide confidential information
 
@@ -65,6 +126,34 @@ I had two testing files set up – an app file for the endpoints, and a utils fi
 ## What I learnt
 
 - Creating a relational database, setting up tables and inserting data
+
+```javascript:seeds/seed.js
+// Creation of the topics table
+await db.query(`CREATE TABLE topics (
+    slug VARCHAR(50) PRIMARY KEY NOT NULL,
+    description VARCHAR(500) NOT NULL
+  );`);
+
+// Formatting data pre-insertion (in utils.js)
+formattedTopics = topicData => {
+  return topicData.map(topic => {
+    return [topic.slug, topic.description];
+  });
+};
+
+// Data being inserted into the table using node-postgres
+  async function insertTopics() {
+    const formatTopic = formattedTopics(topicData);
+    const sql = format(
+      `INSERT INTO topics
+      (slug, description)
+      VALUES %L
+      RETURNING *;`,
+      formatTopic
+    );
+    await db.query(sql);
+  }
+```
 
 - How to seed database
 
