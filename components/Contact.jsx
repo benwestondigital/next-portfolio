@@ -8,6 +8,7 @@ const Contact = () => {
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const [contactDetails, setContactDetails] = useState({
     name: '',
@@ -25,22 +26,33 @@ const Contact = () => {
   };
 
   const onSubmit = async e => {
+    setIsError(false);
     setIsLoading(true);
     e.preventDefault();
-    const sendEmail = await emailjs.sendForm(
-      process.env.NEXT_PUBLIC_SERVICE_ID,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      form.current,
-      process.env.NEXT_PUBLIC_USER_ID
-    );
-    console.log(sendEmail.text);
-    setContactDetails({
-      name: '',
-      email: '',
-      message: '',
-    });
-    setIsLoading(false);
-    setIsSubmitted(true);
+    try {
+      const sendEmail = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_USER_ID
+      );
+      console.log(sendEmail.text);
+      setContactDetails({
+        name: '',
+        email: '',
+        message: '',
+      });
+      setIsLoading(false);
+      setIsSubmitted(true);
+    } catch (err) {
+      setIsError(true);
+      setIsLoading(false);
+      setContactDetails({
+        name: '',
+        email: '',
+        message: '',
+      });
+    }
   };
 
   return (
@@ -155,6 +167,12 @@ const Contact = () => {
             {isSubmitted && (
               <p className='prose pt-6 dark:prose-invert'>
                 Thanks for your message! I will be in touch shortly.
+              </p>
+            )}
+            {isError && (
+              <p className='prose pt-6 dark:prose-invert'>
+                Sorry, this message could not be sent. Please try again later or
+                contact me through LinkedIn.
               </p>
             )}
           </form>
