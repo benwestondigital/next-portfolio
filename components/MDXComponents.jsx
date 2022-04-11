@@ -3,12 +3,15 @@ import YoutubeEmbed from './YoutubeEmbed';
 
 function RoundedImage(props) {
   return (
-    <Image
-      alt={props.alt}
-      className='rounded-lg'
-      layout='responsive'
-      {...props}
-    />
+    <figure>
+      <Image
+        alt={props.alt}
+        className='rounded-lg'
+        layout='responsive'
+        {...props}
+      />
+      {props.figcaption && <figcaption className='italic'>{props.figcaption}</figcaption>}
+    </figure>
   );
 }
 
