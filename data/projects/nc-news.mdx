@@ -23,7 +23,7 @@ tags:
   figcaption='NC News Home Page'
 />{' '}
 
-This Front-End project is Reddit-clone built using React.js. The website retrieves information from an external server via a custom API created in an earlier Back-End project. You can find the links at the bottom of this readme. The styling is creating using vanilla css, and incorporates a Loading spinner from React Spinkit.
+This Front-End project is Social news aggregation and discussion site built using React. The website retrieves information from an external server via a custom API that was created in the Northcoders News API back-end project. The styling is creating using vanilla css, and incorporates a Loading spinner from React Spinkit.
 
 ---
 
@@ -81,12 +81,12 @@ Delete buttons for comments conditionally renders based on the logged in user pr
 const { user } = useContext(UserContext);
 
 // Used for conditional rendering of the delete button
-const renderDelete = () => author === user;
+const renderDelete = author === user;
 
 return (
   <div>
 // Delete button is only shown to users that created the comment
-  {renderDelete() && <DeleteButton/>}
+  {renderDelete && <DeleteButton/>}
   </div>
 )
 ```
