@@ -3,12 +3,10 @@ import About from '../components/About';
 import MySkills from '../components/MySkills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
-import matter from 'gray-matter';
-import fs from 'fs';
 import { useEffect } from 'react';
+import { getAllFilesFrontMatter } from '../lib/mdx';
 
 export default function Home({ projects }) {
-
   useEffect(() => {
     console.log(`
     This website was created by
@@ -34,19 +32,6 @@ export default function Home({ projects }) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync('projects');
-  const projects = files.map(fileName => {
-    const slug = fileName.replace('.mdx', '');
-    const readFile = fs.readFileSync(`projects/${fileName}`, 'utf-8');
-    const { data: frontmatter } = matter(readFile);
-    return {
-      slug,
-      frontmatter,
-    };
-  });
-  return {
-    props: {
-      projects,
-    },
-  };
+  const projects = await getAllFilesFrontMatter('projects');
+  return { props: { projects } };
 }
