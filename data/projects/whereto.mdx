@@ -132,7 +132,9 @@ I enjoyed using Svelte, particularly how simple it is to manage state.
 
 ```typescript:components/search.svelte
 // Svelte concise syntax for form submission event handler
-on:submit|preventDefault={onConfirmSubmit}
+<form on:submit|preventDefault={onConfirmSubmit}>
+...
+</form>
 ```
 
 For example, handling a form submission can be done in such a little amount of code, whereas in React this is a more verbose process.
