@@ -20,6 +20,7 @@ tags:
   width={359}
   height={432}
   priority
+  figcaption='WhereTo Home Page'
 />
 
 WhereTo is a travel app that suggests locations with weather similar to your input destination. This was the final project for the Northcoders bootcamp, and was built as a team using agile methodology. It uses a non-relational database to store climate and city data, and external APIs to fetch coordinates, photos and weather data.
@@ -27,6 +28,8 @@ WhereTo is a travel app that suggests locations with weather similar to your inp
 A few years ago I saw a fantastic map on Reddit that showed locations that had similar climates. At the time I was working selling wine, and found it so interesting that places like the Hunter Valley in Sydney, Australia had the same climate as Buenos Aires, Argentina. For bootcamp project pitches I immediately thought of this and knew this was a great idea that we could create.
 
 <YoutubeEmbed embedId='-gt7Xot2kDw' />
+
+---
 
 ## Technology
 
@@ -38,13 +41,15 @@ A few years ago I saw a fantastic map on Reddit that showed locations that had s
 I wanted to use technology that was highly rated by developers, so we built it with Svelte, SvelteKit, MongoDB, and written with TypeScript.
 It was a steep learning curve to take on all this new technology and learn it in a short timeframe, but while undertaking the project we came to love tech, and really enjoyed building using Svelte.
 
+---
+
 ## Key Features
 
 - Utilizes non-relational database and external APIs
 - Type checked with TypeScript
 - Uses MongoDB Geospatial Queries to handle coordinate information
 
-{/* comment to end list */}
+---
 
 ```typescript:components/search.svelte
 	// Fetch call to Google Geocoding API get lat/long co-ords from the place id
@@ -88,7 +93,10 @@ Inside the Search Results page endpoint, current weather and photos are fetched 
   src={`/images/whereto/citycard.png`}
   width={498}
   height={421}
+  figcaption='City card with a photo, temperature, and humidity fetched from external APIs'
 />
+
+---
 
 ## Problems I faced
 
@@ -101,6 +109,8 @@ We used TypeScript on this project because it is highly rated by so many develop
 When stitching the final product together, we had some problems linking all the pages together. This was our first project as a group, so merging the branches together had a learning curve to overcome. It definitely improved my Git skills.
 
 Unfortunately, there is no live link for this project as the OpenWeather API free tier only allows for HTTP content and Heroku enforces HTTPS. Due to this, a local version of the project runs but it can't be hosted.
+
+---
 
 ## What I learnt
 
@@ -130,6 +140,8 @@ For example, handling a form submission can be done in such a little amount of c
 - Improved Git skills
 
 Working in a team on different branches and working with pull requests massively improved my skills with Git. This will be extremely helpful in future projects and working on development teams.
+
+---
 
 ## What I would improve
 
