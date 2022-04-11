@@ -6,9 +6,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import MDXComponents from '../../components/MDXComponents';
 import { getFileBySlug, getFiles } from '../../lib/mdx';
 
-//TODO: add link to whereto northcoders project page with ternary live link : project page
-//TODO: add 4 pictures for each project - screenshots size 359*432
-//TODO: for code, I can add snippets rather than having to do a screenshot
+//TODO: add 4 pictures for each project
 //TODO: add error page
 
 const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
