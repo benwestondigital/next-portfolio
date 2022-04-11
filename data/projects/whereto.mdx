@@ -55,12 +55,14 @@ When the user enters their location, the string is passed into Google Autocomple
 The co-ordinates are then used to query the MongoDB database to return the array of cities with a similar climate.
 
 ```typescript:searchresults/index.ts
+// query the database to get similar cities
 	try {
 		cities = await getCitiesSimilarToLocation([lng, lat], { limit: 9 });
 	} catch (error) {
 		console.log(error);
 	}
 
+// for each city, fetch the weather and a photo
 	const combinedData = await Promise.all(
 		cities.map(async (city) => {
 			const cityWeather = await getWeather(city.city_ascii);
