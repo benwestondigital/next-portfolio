@@ -46,11 +46,14 @@ pre::-webkit-scrollbar {
   cursor: pointer;
 }
 
-.token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
   @apply text-gray-700 dark:text-gray-300;
+}
+
+.token.comment {
+  @apply text-green-600 dark:text-green-500
 }
 
 .token.punctuation {
@@ -64,7 +67,7 @@ pre::-webkit-scrollbar {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-500;
+  @apply text-fuchsia-600;
 }
 
 .token.selector,
