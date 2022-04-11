@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import YoutubeEmbed from './YoutubeEmbed';
 
 function RoundedImage(props) {
   return (
@@ -13,6 +14,7 @@ function RoundedImage(props) {
 
 const MDXComponents = {
   Image: RoundedImage,
+  YoutubeEmbed,
 };
 
 export default MDXComponents;
