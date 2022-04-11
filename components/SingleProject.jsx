@@ -1,26 +1,26 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const SingleProject = ({ project: { slug, frontmatter } }) => {
+const SingleProject = ({ project }) => {
   return (
-    <Link href={`/projects/${slug}`}>
+    <Link href={`/projects/${project.slug}`}>
       <a className='flex flex-col items-center justify-start rounded p-2 transition delay-150 ease-in-out  hover:bg-gray-50 hover:drop-shadow-lg dark:hover:bg-gray-800 sm:w-96 md:hover:scale-105'>
-          <Image
-            src={`/${frontmatter.image}`}
-            alt={frontmatter.title}
-            width={359}
-            height={432}
-            className='cursor-pointer rounded-lg drop-shadow-md'
-            objectPosition='top'
-          />
+        <Image
+          src={`/${project.image}`}
+          alt={project.title}
+          width={359}
+          height={432}
+          className='cursor-pointer rounded-lg drop-shadow-md'
+          objectPosition='top'
+        />
         <h3 className='mx-2 mt-6 text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400'>
-          {frontmatter.type}
+          {project.type}
         </h3>
         <h2 className='my-2 text-xl font-semibold text-indigo-600 dark:text-indigo-400'>
-          {frontmatter.title}
+          {project.title}
         </h2>
         <p className='mx-2 mb-5 flex-wrap text-center text-base text-gray-700 dark:text-white'>
-          {frontmatter.description}
+          {project.description}
         </p>
         <div className='flex items-center'>
           <p className='text-center text-sm font-semibold uppercase tracking-wide text-gray-900 hover:text-blue-600 hover:underline dark:text-gray-300'>

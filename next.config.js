@@ -7,6 +7,7 @@ const nextConfig = {
       // fixes next-mdx-remote: Package path ./jsx-runtime.js is not exported from package react
       // https://github.com/hashicorp/next-mdx-remote/issues/237
       'react/jsx-runtime.js': require.resolve('react/jsx-runtime'),
+      fs: false,
     };
     return config;
   },
