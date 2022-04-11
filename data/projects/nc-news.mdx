@@ -8,19 +8,20 @@ github: https://github.com/benwestondigital/nc-news
 livelink: https://reddit-clone-project.netlify.app/
 date: '2022-03-31'
 tags:
-    - react
-    - frontend
---- 
+  - react
+  - frontend
+---
 
-  <Image
-    alt={`Northcoders News`}
-    src={`/images/redditfront/redditfront.png`}
-    width={359}
-    height={432}
-    priority
-    figcaption='NC News Home Page'
-  /> 
+{' '}
 
+<Image
+  alt={`Northcoders News`}
+  src={`/images/redditfront/redditfront.png`}
+  width={359}
+  height={432}
+  priority
+  figcaption='NC News Home Page'
+/>{' '}
 
 This Front-End project is Reddit-clone built using React.js. The website retrieves information from an external server via a custom API created in an earlier Back-End project. You can find the links at the bottom of this readme. The styling is creating using vanilla css, and incorporates a Loading spinner from React Spinkit.
 
@@ -51,6 +52,18 @@ Managed the form state for comment input with useState.
 
 Asynchronous fetching using the async/await syntax as it is a cleaner style and avoids lengthy promise chains.
 
+```javascript:utils/api.js
+// Function to delete a comment from the database
+export async function deleteComment(comment_id) {
+  try {
+// Sending a delete request to the API
+    return await newsApi.delete(`/comments/${comment_id}`);
+  } catch (err) {
+    throw err;
+  }
+}
+```
+
 - Components and state planned using wireframe and component tree
 
 Before starting work on the app, I planned the structure by creating a wireframe. I split the functionality of the app into different React components to reduce complexity and allow for reusability.
@@ -62,6 +75,21 @@ Using a component tree, I then decided what data the app would need to hold in s
 User state needs to be shared between multiple components, therefore I have handled it using Context. On the profile page users can see the number of articles and comments they have posted, and their karma.
 
 Delete buttons for comments conditionally renders based on the logged in user profile.
+
+```javascript:singlearticle/Comment.jsx
+// Importing the User context
+const { user } = useContext(UserContext);
+
+// Used for conditional rendering of the delete button
+const renderDelete = () => author === user;
+
+return (
+  <div>
+// Delete button is only shown to users that created the comment
+  {renderDelete() && <DeleteButton/>}
+  </div>
+)
+```
 
 - Page Routing
 
@@ -92,6 +120,29 @@ Can't perform state update on an unmounted component
 I ran into issues with a memory leak in my project, caused by the fetch request being unable to render the data if the user left the page before the fetch was completed. To fix this, I had to implement an unsubscribe return function in the useEffect fetch. This fixed the issue by cancelling the request whenever a user left the page.
 
 From this I learnt a lot about React that I wouldn’t have otherwise. I learnt how to fix memory leaks, using cancel tokens to cancel a fetch request on the user leaving a page. I have a deeper understanding of data fetching through dealing with this issue.
+
+```javascript:home/ArticlesContainer.jsx
+useEffect(() => {
+    const source = axios.CancelToken.source();
+    const fetchArticles = async () => {
+      try {
+        setIsError(false);
+        setIsLoading(true);
+// Fetch request to get articles
+        const apiArticles = await getArticles(searchQueries, source);
+        setArticles(apiArticles);
+      } catch (err) {
+        setIsError(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchArticles();
+// Unsubscribing from the data fetch using a cancel token
+    return () => source.cancel('User cancelled operation.');
+  }, [searchQueries]);
+
+```
 
 To handle state in this app I used useState to deal with x,y,z when they were fetched from the backend API.
 Loading state, error state
