@@ -14,19 +14,19 @@ tags:
   - typescript
 ---
 
-  <Image
-    alt={`WhereTo - Climate Travel App`}
-    src={`/images/whereto/whereto.png`}
-    width={359}
-    height={432}
-    priority
-  />
+<Image
+  alt={`WhereTo - Climate Travel App`}
+  src={`/images/whereto/whereto.png`}
+  width={359}
+  height={432}
+  priority
+/>
 
 WhereTo is a travel app that suggests locations with weather similar to your input destination. This was the final project for the Northcoders bootcamp, and was built as a team using agile methodology. It uses a non-relational database to store climate and city data, and external APIs to fetch coordinates, photos and weather data.
 
 A few years ago I saw a fantastic map on Reddit that showed locations that had similar climates. At the time I was working selling wine, and found it so interesting that places like the Hunter Valley in Sydney, Australia had the same climate as Buenos Aires, Argentina. For bootcamp project pitches I immediately thought of this and knew this was a great idea that we could create.
 
-<YoutubeEmbed embedId='-gt7Xot2kDw'/>
+<YoutubeEmbed embedId='-gt7Xot2kDw' />
 
 ## Technology
 
@@ -46,12 +46,15 @@ It was a steep learning curve to take on all this new technology and learn it in
 
 {/* comment to end list */}
 
-  <Image
-    alt={`Co-ordinate Fetching`}
-    src={`/images/whereto/coordfetch.png`}
-    width={1252}
-    height={558}
-  />
+```typescript:components/search.svelte
+	// Fetch call to Google Geocoding API get lat/long co-ords from the place id
+	const coordinateFetch = async (place_id: string): Promise<Coordinates> => {
+		const res = await fetch(`/api/latlng/${place_id}`);
+		const resObject = await res.json();
+		placeName = [resObject.placeName, resObject.country];
+		return resObject.coordinates;
+	};
+```
 
 When the user enters their location, the string is passed into Google Autocomplete API, which returns a place ID. This place ID is used to query the Google Places API to get co-ordinates for the user's input destination.
 
@@ -76,15 +79,15 @@ The co-ordinates are then used to query the MongoDB database to return the array
 		})
 	);
 ```
+
 Inside the Search Results page endpoint, current weather and photos are fetched for each city. These cards are iterated and rendered onto the page.
 
-  <Image
-    alt={`City Card`}
-    src={`/images/whereto/citycard.png`}
-    width={498}
-    height={421}
-  />
-
+<Image
+  alt={`City Card`}
+  src={`/images/whereto/citycard.png`}
+  width={498}
+  height={421}
+/>
 
 ## Problems I faced
 
@@ -116,9 +119,10 @@ I learnt how to use TypeScript, and how useful it is. This will serve me well in
 
 I enjoyed using Svelte, particularly how simple it is to manage state.
 
-```js
+```typescript:components/search.svelte
 on:submit|preventDefault={onConfirmSubmit}
 ```
+
 For example, handling a form submission can be done in such a little amount of code, whereas in React this is a more verbose process.
 
 - Improved Git skills
