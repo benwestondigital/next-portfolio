@@ -52,7 +52,7 @@ It was a steep learning curve to take on all this new technology and learn it in
 ---
 
 ```typescript:components/search.svelte
-	// Fetch call to Google Geocoding API get lat/long co-ords from the place id
+	// Fetch call to Google Geocoding API get lat/long co-ordinates from the place id
 	const coordinateFetch = async (place_id: string): Promise<Coordinates> => {
 		const res = await fetch(`/api/latlng/${place_id}`);
 		const resObject = await res.json();
@@ -67,7 +67,7 @@ When the user enters their location, the string is passed into Google Autocomple
 The co-ordinates are then used to query the MongoDB database to return the array of cities with a similar climate.
 
 ```typescript:searchresults/index.ts
-// Query the database to get an array of similar cities
+// Query the database with the co-ordinates to get an array of similar cities
 	try {
 		cities = await getCitiesSimilarToLocation([lng, lat], { limit: 9 });
 	} catch (error) {
