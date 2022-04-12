@@ -23,7 +23,7 @@ tags:
   figcaption='NC News Home Page'
 />{' '}
 
-This Front-End project is Social news aggregation and discussion site built using React. The website retrieves information from an external server via a custom API that was created in the Northcoders News API back-end project. The styling is creating using vanilla css, and incorporates a Loading spinner from React Spinkit.
+This Front-End project is Social news aggregation and discussion site built using React. The website retrieves information from an external server via a custom API that was created in the Northcoders News API back-end project. The styling is creating using vanilla CSS, and incorporates a Loading spinner from React Spinkit.
 
 ---
 
@@ -32,47 +32,19 @@ This Front-End project is Social news aggregation and discussion site built usin
 - React
 - React Router
 
-This project uses the most commonly used web-framework React, and the highly popular React Router tool. These technologies were chosen as they are massively popular and used by huge companies all across the world such as Netflix, Microsoft, Twitter and more.
+This project uses the widely used web-framework React, and the highly popular React Router tool. These technologies were chosen as they are massively popular and used by huge companies all across the world such as Netflix, Microsoft, Twitter and more.
 
 ---
 
 ## Key Features
 
-- Uses the React Hooks useState, useEffect, useContext and useParams
+- Use of React Hooks
 
-State changes in the app are handled using useState, and data fetching is done using useEffect.
-
-- Controlled Components
-
-Inputs are controlled with React and passed as props to children. For example, comment input is handled via state and updated based on user input. This allows React to be the single source of truth.
-
-Managed the form state for comment input with useState.
-
-- Data fetching with axios
-
-Asynchronous fetching using the async/await syntax as it is a cleaner style and avoids lengthy promise chains.
-
-```javascript:utils/api.js
-// Function to delete a comment from the database
-export async function deleteComment(comment_id) {
-  try {
-// Sending a delete request to the API
-    return await newsApi.delete(`/comments/${comment_id}`);
-  } catch (err) {
-    throw err;
-  }
-}
-```
-
-- Components and state planned using wireframe and component tree
-
-Before starting work on the app, I planned the structure by creating a wireframe. I split the functionality of the app into different React components to reduce complexity and allow for reusability.
-
-Using a component tree, I then decided what data the app would need to hold in state, and where to keep it. I planned to keep the state as low as possible but as high as necessary.
+State changes in the app are handled using useState, and data fetching handled with useEffect.
 
 - User profile switching using React Context
 
-User state needs to be shared between multiple components, therefore I have handled it using Context. On the profile page users can see the number of articles and comments they have posted, and their karma.
+User state needs to be shared between multiple components, therefore I have handled it using Context. On the profile page there is a drop-down to change the logged in user. Stats displayed on the page change based on which user is logged in. Users can see the number of articles and comments they have posted, and their karma.
 
 Delete buttons for comments conditionally renders based on the logged in user profile.
 
@@ -93,42 +65,132 @@ return (
 
 - Page Routing
 
-React Router is used to create different page routes using client side routing. The useParams hook returns dynamic parameters from the current URL that are then used to fetch the correct data for the page.
+React Router is used to create different page routes with client side routing. The useParams hook returns dynamic parameters from the current URL that are then used to fetch the correct data for the page.
 
-- Responsive Design
+- Data fetching with axios
 
-The app was built with a mobile first design, and scales depending on screen size.
+Axios is a data-fetching library that is an alternative to using the built in fetch API. It operates in a similar way but offers some nice quality of life features, like automatically parsing JSON.
 
-- Effect cleanup using a Cancel Token
+Asynchronous fetching in this project is done using the async/await syntax as it is a cleaner style and avoids lengthy promise chains.
 
-Unused API requests are cancelled to prevent memory leaks.
+```javascript:utils/api.js
+import axios from 'axios';
+
+const newsApi = axios.create({
+  baseURL: 'https://ben-reddit-project.herokuapp.com/api',
+});
+
+// Function to delete a comment from the database
+export async function deleteComment(comment_id) {
+  try {
+// Sending a delete request to the API
+    return await newsApi.delete(`/comments/${comment_id}`);
+  } catch (err) {
+    throw err;
+  }
+}
+```
 
 - Optimistic Rendering
 
 User votes are rendered before the back end request is made, this improves UX by giving the user immediate feedback on their action. Error handling is in place to revert the change if the server request is unsuccessful.
 
-- Sorting
+- Components and state planned using wireframe and component tree
 
-The sort queries are set up as a useEffect dependency. Therefore a new request is made to the server to return the data sorted in the correct order when a user changes the sort type.
+Before starting work on the app, I planned the structure by creating a wireframe. I split the functionality of the app into different React components to reduce complexity and allow for reusability.
+
+Using a component tree, I then decided what data the app would need to hold in state, and where to keep it. I planned to keep the state as low as possible but as high as necessary to prevent unnecessary component refreshes.
+
+<Image
+  alt={`Project Component Tree`}
+  src={`/images/redditfront/nc-news-wireframe.png`}
+  width={1104}
+  height={756}
+  priority
+  figcaption='Project component tree showing parent-child relationships and where state is being held'
+/>
+
+- Effect cleanup using a Cancel Token
+
+Unused API requests are cancelled to prevent memory leaks.
+
+- Sorting & Filtering by Topic
+
+The sort and topic queries are set up as a useEffect dependency. Therefore when the user changes sort or topic type, a new request is made to the server and the returned data is sorted or filtered (or both!) in the correct order.
+
+```javascript:utils/api.js
+export async function getArticles(queries, source) {
+try {
+  const {
+    data: { articles },
+  } = await newsApi.get(
+    '/articles',
+    {
+// Sort and topic queries are included with the request
+      params: queries,
+    },
+    {
+      cancelToken: source.token,
+    }
+  );
+  return articles;
+} catch (err) {
+  throw err;
+}
+}
+```
+
+- Responsive Design
+
+The app was built with a mobile first design, and scales depending on screen size.
+
+- Controlled Components
+
+Inputs are controlled with React and passed as props to children. For example, comment input is handled via state and updated based on user input. This allows React to be the single source of truth.
+
+```javascript:singlearticle/CommentContainer
+const CommentsContainer = ({ article_id }) => {
+// Comment state held in CommentsContainer to ensure single source of truth
+  const [comments, setComments] = useState([]);
+
+  return (
+    <section id='comments' className='CommentsContainer'>
+// State passed down to children as props
+      <PostComment article_id={article_id} setComments={setComments} />
+      {comments.map(comment => {
+        return (
+          <Comment
+            key={comment.comment_id}
+            data={comment}
+// State passed down to children as props
+            setComments={setComments}
+            comments={comments}
+          />
+        );
+      })}
+    </section>
+
+```
 
 ---
 
 ## Problems I faced
 
-Can't perform state update on an unmounted component
 
-I ran into issues with a memory leak in my project, caused by the fetch request being unable to render the data if the user left the page before the fetch was completed. To fix this, I had to implement an unsubscribe return function in the useEffect fetch. This fixed the issue by cancelling the request whenever a user left the page.
+
+I ran into issues with a memory leak in my project, caused by the fetch request being unable to render the data if the user left the page before the fetch was completed an error was shown in the console - "Can't perform state update on an unmounted component". To fix this, I implemented an unsubscribe return function in the useEffect hook. This addressed the issue by cancelling the request whenever a user left the page.
 
 From this I learnt a lot about React that I wouldn’t have otherwise. I learnt how to fix memory leaks, using cancel tokens to cancel a fetch request on the user leaving a page. I have a deeper understanding of data fetching through dealing with this issue.
 
 ```javascript:home/ArticlesContainer.jsx
 useEffect(() => {
+// Initializing cancel token
     const source = axios.CancelToken.source();
     const fetchArticles = async () => {
       try {
         setIsError(false);
         setIsLoading(true);
-// Fetch request to get articles
+// Fetch request to get articles (passing in token)
         const apiArticles = await getArticles(searchQueries, source);
         setArticles(apiArticles);
       } catch (err) {
@@ -144,16 +206,13 @@ useEffect(() => {
 
 ```
 
-To handle state in this app I used useState to deal with x,y,z when they were fetched from the backend API.
-Loading state, error state
-
-For styling, the app uses vanilla css
-
 ---
 
 ## What I learnt
 
 As the project progressed I became much more comfortable using conditional rendering and ternary operators to display the required elements.
+
+It improved my skills with data fetching, handling state, and splitting code out into components when required.
 
 I learnt the importance of writing concise code, refactoring as I went along to improve readability.
 
@@ -161,4 +220,10 @@ I learnt the importance of writing concise code, refactoring as I went along to 
 
 ## What I would improve
 
-My next steps on this project would be to create custom hooks to separate concerns and extract the logic into a separate file. I would add increased functionality e.g. the ability to post new articles and potentially use a CSS framework like Chakra UI to improve the styling of the app. Pagination would also improve the app.
+My next steps on this project would be to create custom hooks to separate concerns and extract the logic into a separate file.
+
+I would add increased functionality e.g. the ability to post new articles and potentially use a CSS framework like Chakra UI to improve the styling of the app.
+
+I would add more CSS styling to make the app feel more 'alive' - transitions and other indicators to make using it a more engaging experience.
+
+I would like to add infinite scrolling to further mimic Reddit's functionality.
