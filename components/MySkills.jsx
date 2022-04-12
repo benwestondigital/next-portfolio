@@ -13,7 +13,7 @@ const Tech = () => {
           I am always looking to learn new technology, so in addition to my
           bootcamp I have completed a number of online courses such as{' '}
           <a
-            className='font-semibold no-underline hover:text-indigo-300'
+            className='font-semibold no-underline hover:text-indigo-300 hover:underline'
             href='https://www.codecademy.com/learn/learn-html'
             target='_blank'
             rel='noreferrer'
@@ -22,7 +22,7 @@ const Tech = () => {
           </a>
           ,{' '}
           <a
-            className='font-semibold no-underline hover:text-indigo-300'
+            className='font-semibold no-underline hover:text-indigo-300 hover:underline'
             href='https://www.codecademy.com/learn/introduction-to-javascript'
             target='_blank'
             rel='noreferrer'
@@ -31,7 +31,7 @@ const Tech = () => {
           </a>{' '}
           and{' '}
           <a
-            className='font-semibold no-underline hover:text-indigo-300'
+            className='font-semibold no-underline hover:text-indigo-300 hover:underline'
             href='https://www.codecademy.com/learn/learn-typescript'
             target='_blank'
             rel='noreferrer'
