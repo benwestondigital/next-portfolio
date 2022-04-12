@@ -1,5 +1,7 @@
 # Ben Weston Portfolio Site
 
+![nextjs](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+
 ## Built by Ben Weston [github](https://github.com/benwestondigital)
 
 ## Technology Used
