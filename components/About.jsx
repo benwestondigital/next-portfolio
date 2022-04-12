@@ -31,7 +31,7 @@ const About = () => {
           </p>
           <p>
             While having an amazing time on a working holiday in Australia, I
-            got sick of working dead-end jobs. I always interested in tech, the
+            got sick of working low-skill jobs. I always interested in tech, the
             future of work and how A.I. & machine learning would impact our
             world. I read &apos;Homo Deus&apos; by Yuval Noah Harari and decided
             I wanted to change my career to be a part of this revolution. At
@@ -42,11 +42,11 @@ const About = () => {
             Consult. I learnt so much during this period and it developed so
             many of my soft skills, and also how to make analytical, data-driven
             decisions. I was always making tools to speed up my work, and was
-            extremely interested Google Ad&apos;s scripts and website tagging,
+            extremely interested Google Ad&apos;s scripts and website tagging -
             that are both implemented with JavaScript.
           </p>
           <p>
-            I completed the Learn JavaScript Codecademy course during the Winter
+            I completed the Learn JavaScript Codecademy course during the winter
             of 2020 and enjoyed it so much that I decided to leave my job in
             March 2021 and fully commit to becoming a software developer. After
             studying on my own for several months, I enrolled in the{' '}
@@ -54,7 +54,7 @@ const About = () => {
               href='https://northcoders.com/'
               target='_blank'
               rel='noreferrer'
-              className='font-semibold no-underline hover:text-indigo-300'
+              className='font-semibold no-underline hover:text-indigo-300 hover:underline'
             >
               Northcoders
             </a>{' '}
