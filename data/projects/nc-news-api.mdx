@@ -44,7 +44,7 @@ These tools are all extremely popular with developers and employers, all ranking
 
 - Testing
 
-The app is thoroughly tested with Jest and Supertest. There are two separate testing files - app.test.js and utils.test.js. App is connected to the database, while utils is for non-database helper functions, such as ensuring the correct formatting before seeding.
+The app is tested with Jest and Supertest. There are two separate testing files - app.test.js and utils.test.js. The app.test.js file is connected to the database, while utils.test.js is for non-database helper functions - e.g. formatting data before seeding.
 
 ```javascript:__tests__/app.test.js
 // Testing a GET request to the /api/topics endpoint with Supertest
@@ -102,7 +102,6 @@ const getArticles = async (req, res, next) => {
     next(err);
   }
 
-
 /* 3. Model queries the database and returns matching articles
    (simplified example for brevity) */
   const selectArticles = async (sort_by, order) => {
@@ -137,13 +136,16 @@ app.use((err, req, res, next) => {
   } else next(err);
 });
 ```
+
 ---
 
 ## Problems I faced
 
-I was having trouble with one of my tests failing. The test logic looked good and the behaviour was inconsistent, sometimes it would pass and other times it would fail.
+While testing the project, I was having trouble with one of my tests failing. The test logic looked good and the behaviour was inconsistent, sometimes it would pass and other times it would fail.
 
 I had two testing files set up – an app file for the endpoints, and a utils file for utility functions e.g. ones that would transform data before seeding. I eventually figured out that in one of my utility functions I needed a connection to the database, but I hadn’t set it up in that file. This led to inconsistent behaviour, where if I ran both test files at the same time it would work (due to the connection in the app file) and separately the utils file would fail.
+
+This taught me to be careful with how I separate test functions into files, and checking which data they might need to access to successfully run.
 
 ---
 
@@ -151,13 +153,21 @@ I had two testing files set up – an app file for the endpoints, and a utils fi
 
 - Creating a relational database, setting up tables and inserting data
 
+When creating the tables, I had to consider the order to create them, with tables that referenced others being created later. It was important to establish the data type for each row, and which rows required constraints, such as the slug and description rows below being specified as 'NOT NULL'. Rows that reference another table are set up as foreign keys. This process has helped to improved my SQL skills.
+
 ```javascript:seeds/seed.js
 // Creation of the topics table
 await db.query(`CREATE TABLE topics (
     slug VARCHAR(50) PRIMARY KEY NOT NULL,
     description VARCHAR(500) NOT NULL
   );`);
+```
 
+- How to seed database
+
+The database connection was set up using connection pooling. Raw data was mapped to the required format, and then inserted into the table.
+
+```javascript:seeds/seed.js
 // Formatting data pre-insertion (in utils.js)
 formattedTopics = topicData => {
   return topicData.map(topic => {
@@ -179,16 +189,10 @@ formattedTopics = topicData => {
   }
 ```
 
-- How to seed database
-
-- How to use Heroku hosting
-
-- Using Express to set up a RESTful API
-
-to be careful with how I separate test functions into files, and checking which data they might need to access to run.
-
 ---
 
 ## What I would improve
 
-add more functionality e.g. voting on comments, post article, delete article
+I would add more functionality to the project - some additional features to implement would be voting on comments, posting and deleting articles.
+
+Setting up pagination would be a great next step, and would improve the front end functionality of the site.
