@@ -53,6 +53,7 @@ describe('/api/topics', () => {
     test('200 - responds with an array of topic objects', async () => {
       const test = await request(app).get('/api/topics').expect(200);
       const topics = test.body.topics;
+// Testing the shape of the returned array
       expect(topics).toBeInstanceOf(Array);
       expect(topics).toHaveLength(3);
       topics.forEach(topic => {
@@ -69,6 +70,14 @@ describe('/api/topics', () => {
 - CI / CD
 
 Set up using Github Actions. A workflow (pipeline) is set up to run tests each time the main branch is pushed. Once the integration tests have passed, the app is deployed.
+
+<Image
+  alt={`Github Actions Test and Deploy`}
+  src={`/images/redditback/ci-cd.png`}
+  width={602}
+  height={209}
+  figcaption='Github Actions successful test and deploy'
+/>
 
 - Model View Controller Pattern
 
@@ -94,7 +103,8 @@ const getArticles = async (req, res, next) => {
   }
 
 
-// 3. Model queries the database and returns matching articles (simplified example for brevity)
+/* 3. Model queries the database and returns matching articles
+   (simplified example for brevity) */
   const selectArticles = async (sort_by, order) => {
   let queryStr = `
   SELECT articles.*, COUNT(comment_id) AS comment_count
@@ -111,8 +121,22 @@ const getArticles = async (req, res, next) => {
 };
 ```
 
-- Use .env files to hide confidential information
+- Error handling middleware
 
+Errors in the project are passed between error-handling blocks with use of next function. This allows useful errors to be sent back to the user.
+
+```javascript:app.js
+/* Example of an error handling block. If matched it will send the status and
+   message to the user, or will pass the error to the next block*/
+app.use((err, req, res, next) => {
+  const psqlErrorCodes = ['22P02', '23502'];
+  if (psqlErrorCodes.includes(err.code)) {
+    res.status(400).send({ msg: 'Bad Request' });
+  } else if (['23503'].includes(err.code)) {
+    res.status(404).send({ msg: 'Resource not found' });
+  } else next(err);
+});
+```
 ---
 
 ## Problems I faced
