@@ -52,14 +52,28 @@ It was a steep learning curve to take on all this new technology and learn it in
 ---
 
 ```typescript:components/search.svelte
-	// Fetch call to Google Geocoding API get lat/long co-ordinates from the place id
-	const coordinateFetch = async (place_id: string): Promise<Coordinates> => {
-		const res = await fetch(`/api/latlng/${place_id}`);
+// User input string is used to query the Google Autocomplete API to get a place id
+const placeIdFetch = async (location: string) => {
+	const res = await fetch(`/api/destination/${location}`);
+	if (res.status === 200) {
 		const resObject = await res.json();
-    // PlaceName and country appended to URL for use on the searchresults page
-		placeName = [resObject.placeName, resObject.country];
-		return resObject.coordinates;
-	};
+// Place predictions are shown to the user in the autocomplete drop down list
+		predictions = resObject.predictions;
+		placeId = resObject.place_id;
+	} else {
+		predictions = TEMPPREDICTION;
+		placeId = 'TEMPPLACEID';
+		}
+};
+
+// Fetch call to Google Geocoding API get lat/long co-ordinates from the place id
+const coordinateFetch = async (place_id: string): Promise<Coordinates> => {
+	const res = await fetch(`/api/latlng/${place_id}`);
+	const resObject = await res.json();
+// PlaceName and country appended to URL for use on the searchresults page
+	placeName = [resObject.placeName, resObject.country];
+	return resObject.coordinates;
+};
 ```
 
 When the user enters their location, the string is passed into Google Autocomplete API, which returns a place ID. This place ID is used to query the Google Places API to get co-ordinates for the user's input destination.
@@ -68,22 +82,22 @@ The co-ordinates are then used to query the MongoDB database to return the array
 
 ```typescript:searchresults/index.ts
 // Query the database with the co-ordinates to get an array of similar cities
-	try {
-		cities = await getCitiesSimilarToLocation([lng, lat], { limit: 9 });
-	} catch (error) {
-		console.log(error);
-	}
+try {
+	cities = await getCitiesSimilarToLocation([lng, lat], { limit: 9 });
+} catch (error) {
+	console.log(error);
+}
 
 // For each city, fetch the weather and a photo
-	const combinedData = await Promise.all(
-		cities.map(async (city) => {
-			const cityWeather = await getWeather(city.city_ascii);
-			const { photo_reference } = await getPhotoRef(city.city_ascii);
-			const src = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo_reference}&key=${process.env['VITE_API_KEY']}`;
+const combinedData = await Promise.all(
+	cities.map(async (city) => {
+		const cityWeather = await getWeather(city.city_ascii);
+		const { photo_reference } = await getPhotoRef(city.city_ascii);
+		const src = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo_reference}&key=${process.env['VITE_API_KEY']}`;
 
-			return { weather: cityWeather, details: city, src } as City;
-		})
-	);
+		return { weather: cityWeather, details: city, src } as City;
+	})
+);
 ```
 
 Inside the Search Results page endpoint, current weather and photos are fetched for each city. These cards are iterated and rendered onto the page.
