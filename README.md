@@ -4,6 +4,8 @@
 ![tailwindcss](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 
+[Live Link](https://www.benweston.dev)
+
 ## Built by Ben Weston [Github](https://github.com/benwestondigital)
 
 ## Technology Used
