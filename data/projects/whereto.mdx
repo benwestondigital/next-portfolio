@@ -25,10 +25,21 @@ tags:
 
 WhereTo is a travel app that suggests locations with weather similar to your input destination. This was the final project for the Northcoders bootcamp, and was built as a team using agile methodology. It uses a non-relational database to store climate and city data, and external APIs to fetch coordinates, photos and weather data.
 
-A few years ago I saw a fantastic map on Reddit that showed locations that had similar climates. At the time I was working selling wine, and found it so interesting that places like the Hunter Valley in Sydney, Australia had the same climate as Buenos Aires, Argentina. For bootcamp project pitches I immediately thought of this and knew this was a great idea that we could create.
-
 <YoutubeEmbed embedId='-gt7Xot2kDw' />
 
+A few years ago I saw a fantastic map on Reddit that showed locations that had similar climates. At the time I was working selling wine, and found it so interesting that places like the Sydney, Australia had the same climate as Buenos Aires, Argentina. For bootcamp project pitches I immediately thought of this and knew this was a great idea that we could create.
+
+As this was a group project, we divided the work using a Trello board and completed our tasks with Agile methodology, having stand ups each day to discuss our progress.
+
+My main contributions were turning the user input into co-ordinates to query the database, fetching information for each city, and creating the location page to display further information for each place.
+
+<Image
+  alt={`Wireframe plan for project`}
+  src={`/images/whereto/climate_project_wireframe.png`}
+  width={1198}
+  height={746}
+  figcaption='Initial component tree during the project planning phase'
+/>
 ---
 
 ## Technology
@@ -114,9 +125,9 @@ Inside the Search Results page endpoint, current weather and photos are fetched 
 
 ## Problems I faced
 
-Using a meta-framework like SvelteKit offered a lot of new possibilities compared to Create React App projects like I had previously made. I found Svelte to be great and intuitive to use, but due to the lack of documentation, and my first time using a meta-framework, I had to re-write some features as I figured out better ways to approach the problem. Originally, I had made fetch requests in the file. Then, I found out about API endpoints, and moved the fetch calls into there. Finally, I learnt about page endpoints and this was the best solution for fetching data. This was a great learning experience and helped me understand how to structure a project like this in the future.
+Using a meta-framework like SvelteKit offered a lot of new possibilities compared to Create React App projects like I had previously made. I found Svelte to be great and intuitive to use, but due to the lack of documentation, and my first time using a meta-framework, I had to re-write some features as I figured out better ways to approach the problem. Originally, I had made fetch requests in the component file. Then, I found out about API endpoints, and moved the fetch calls to there. Finally, I learnt about page endpoints and this was the best solution for fetching data. This was a great learning experience and helped me understand how to structure a project like this in the future.
 
-Creating the home page, in order to take the user input and turn it into coordinates I had to use the Google Autocomplete API to get a full address, and use the place id from this to call the Google Places API, fetching the coordinates needed to query the MongoDB database and grab the cities with a similar climate. Google Maps has two APIs for different purposes – one for client, and one for server side. I spent an evening getting one to work, only for me to realize I had implemented the wrong one and needed the server side API. This really helped me to learn to read the documentation and understand what I need before I start writing code.
+To create the home page, in order to take the user input and turn it into coordinates I had to use the Google Autocomplete API to get a full address from the user's input, and use the place id returned from this to call the Google Places API, fetching the coordinates needed to query the MongoDB database and return the cities with a similar climate. Google Maps has two APIs for different purposes – one for client side, and one for server side. I spent an evening getting one to work, only for me to realize I had implemented the wrong one and needed the server side API. This really helped me to learn to read the documentation and understand what I need before I start writing code.
 
 We used TypeScript on this project because it is highly rated by so many developers. TypeScript can be overwhelming at first, causing a lot of errors (but importantly, before production!). To be able to use it properly I had to spend some extra time in completing the Codecademy TypeScript course to understand how to utilize TypeScript correctly, especially with interfaces and object typing. This was a massive help to me and I will definitely use TypeScript moving forward.
 
@@ -161,8 +172,6 @@ Working in a team on different branches and working with pull requests massively
 
 ## What I would improve
 
-With more time on this project I would add more features to the app, such as flight times, distance to destination, currency exchange rates. The 'my places' and 'my searches' pages are both placeholders so I would finish their functionality.
+With more time on this project I would create additional features such as flight information, distance to destination, currency exchange rates. The 'My Places' and 'My Searches' pages are both placeholders so I would finish their functionality.
 
 Instead of fetching data in multiple places, I would use Svelte Stores to fetch the data once and allow access to it from different places in the app.
-
-On the location page, another API is used to fetch historic data, this is then visualised using Chart.js
