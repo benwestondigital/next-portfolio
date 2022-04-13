@@ -16,7 +16,7 @@ const About = () => {
           smooth={true}
           offset={-100}
           duration={500}
-          className='btn'
+          className='btn cursor-pointer'
         >
           See My Portfolio
         </Link>
