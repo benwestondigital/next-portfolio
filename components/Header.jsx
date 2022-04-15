@@ -7,13 +7,13 @@ import HamBurger from './HamBurger';
 import MobileLinks from './MobileLinks';
 import Link from 'next/link';
 
-const Navbar = () => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const path = router.pathname;
 
   return (
-    <nav className='container fixed z-20 bg-white px-4 dark:bg-gray-900 md:px-8'>
+    <header className='container fixed z-20 bg-white px-4 dark:bg-gray-900 md:px-8'>
       <div className='flex h-20 items-center justify-between'>
         <div className='flex flex-1 items-center justify-start gap-2 lg:gap-6'>
           <Link href='/' passHref>
@@ -50,8 +50,8 @@ const Navbar = () => {
         <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
       <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen} />
-    </nav>
+    </header>
   );
 };
 
-export default Navbar;
+export default Header;

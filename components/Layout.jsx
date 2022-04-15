@@ -1,10 +1,10 @@
-import Navbar from './Navbar';
+import Header from './Header';
 import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
     <div className='container mx-auto font-sans antialiased'>
-      <Navbar />
+      <Header />
       {children}
       <Footer />
     </div>
