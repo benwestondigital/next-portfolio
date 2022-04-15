@@ -15,7 +15,7 @@ const MobileLinks = ({ path, isOpen, setIsOpen }) => {
       leaveFrom='opacity-100 translate-x-0 scale-100'
       leaveTo='opacity-0 scale-95 -translate-x-full'
     >
-      <div className='md:hidden' id='mobile-menu'>
+      <nav className='md:hidden' id='mobile-menu'>
         <div className='w-full space-y-1 bg-white py-4 dark:bg-gray-900'>
           {navLinks.map(link => {
             return (
@@ -50,7 +50,7 @@ const MobileLinks = ({ path, isOpen, setIsOpen }) => {
             <RenderThemeChanger />
           </div>
         </div>
-      </div>
+      </nav>
     </Transition>
   );
 };

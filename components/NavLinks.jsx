@@ -5,7 +5,7 @@ import RenderThemeChanger from './RenderThemeChanger';
 
 const NavLinks = ({ path }) => {
   return (
-    <div className='hidden md:block'>
+    <nav className='hidden md:block'>
       <div className='flex flex-1 items-center gap-2 font-semibold lg:gap-6'>
         {navLinks.map(link => {
           return (
@@ -35,7 +35,7 @@ const NavLinks = ({ path }) => {
         })}
         <div className='pl-3'>{<RenderThemeChanger />}</div>
       </div>
-    </div>
+    </nav>
   );
 };
 
