@@ -2,12 +2,10 @@ import { MDXRemote } from 'next-mdx-remote';
 import { Element } from 'react-scroll';
 import Head from 'next/head';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { BsInfoCircle } from 'react-icons/bs';
 import { AiFillGithub } from 'react-icons/ai';
 import MDXComponents from '../../components/MDXComponents';
 import { getFileBySlug, getFiles } from '../../lib/mdx';
-
-//TODO: add 4 pictures for each project
-//TODO: add error page
 
 const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
   return (
@@ -41,6 +39,16 @@ const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
               className='hover:animate-wiggle hover:font-semibold hover:text-blue-600'
             >
               <FaExternalLinkAlt className='m-1 h-10 w-10 p-1 text-gray-900 hover:text-orange-400 dark:text-white dark:hover:text-orange-400' />
+            </a>
+          )}
+          {frontMatter.northcoderslink && (
+            <a
+              href={frontMatter.northcoderslink}
+              target='_blank'
+              rel='noreferrer'
+              className='hover:animate-wiggle hover:font-semibold hover:text-blue-600'
+            >
+              <BsInfoCircle className='m-1 h-10 w-10 p-1 text-gray-900 hover:text-orange-400 dark:text-white dark:hover:text-orange-400' />
             </a>
           )}
         </div>
