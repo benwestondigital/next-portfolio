@@ -34,6 +34,8 @@ As this was a group project, we divided the work using a Trello board and had da
 
 My main contributions were turning the user input into co-ordinates to query the database, fetching information for each city, and creating the location page to display further information for each place.
 
+Since completing the course I have continued to work on the app, re-introducing the seeding feature for people to seed their own database when running locally, and fixing bugs to allow for hosting with Vercel.
+
 <Image
   alt={`Wireframe plan for project`}
   src={`/images/whereto/where-to-wireframe.png`}
@@ -176,3 +178,5 @@ Working in a team on different branches and working with pull requests massively
 With more time on this project I would create additional features such as flight information, distance to destination, currency exchange rates. The 'My Places' and 'My Searches' pages are both placeholders so I would finish their functionality.
 
 Instead of fetching data in multiple places, I would use Svelte Stores to fetch the data once and allow access to it from different places in the app.
+
+There was a geolocation feature which we didn't have time to fully implement, I would like to finish this functionality by using the co-ordinates to autofill the user location through [reverse geocoding](https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding).
