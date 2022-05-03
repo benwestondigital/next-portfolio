@@ -47,7 +47,7 @@ State changes in the app are handled using useState, and data fetching handled w
 
 User state needs to be shared between multiple components, therefore I have handled it using Context to avoid prop drilling. On the profile page there is a drop-down to change the logged in user. Stats displayed on the page change based on which user is logged in. Users can see the number of articles and comments they have posted, and their karma.
 
-Delete buttons for comments conditionally renders based on the logged in user profile.
+The delete buttons for comments conditionally renders based on the logged in user profile.
 
 ```javascript:singlearticle/Comment.jsx
 // Importing the User context
