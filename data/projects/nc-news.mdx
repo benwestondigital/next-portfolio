@@ -179,7 +179,7 @@ const CommentsContainer = ({ article_id }) => {
 
 
 
-I ran into issues with a memory leak in my project, caused by the fetch request being unable to render the data if the user left the page before the fetch was completed an error was shown in the console - "Can't perform state update on an unmounted component". To fix this, I implemented an unsubscribe return function in the useEffect hook. This addressed the issue by cancelling the request whenever a user left the page.
+I ran into issues with a memory leak in my project, caused by the fetch request being unable to render the data if the user left the page before the fetch was completed. This caused an error to be shown in the console - "Can't perform state update on an unmounted component". To fix this, I implemented an unsubscribe return function in the useEffect hook. This addressed the issue by cancelling the request whenever a user left the page.
 
 From this I learnt a lot about React that I wouldn’t have otherwise. I learnt how to fix memory leaks, using cancel tokens to cancel a fetch request on the user leaving a page. I have a deeper understanding of data fetching through dealing with this issue.
 
