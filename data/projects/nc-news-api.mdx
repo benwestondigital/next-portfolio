@@ -146,7 +146,7 @@ While testing the project, I was having trouble with one of my tests failing. Th
 
 I had two testing files set up – an app file for the endpoints, and a utils file for utility functions e.g. ones that would transform data before seeding. I eventually figured out that in one of my utility functions I needed a connection to the database, but I hadn’t set it up in that file. This led to inconsistent behaviour, where if I ran both test files at the same time it would work (due to the connection in the app file) and separately the utils file would fail.
 
-This taught me to be careful with how I separate test functions into files, and checking which data they might need to access to successfully run.
+This taught me to be careful with how I separate functions into test files, and checking which data they might need to access to successfully run.
 
 ---
 
