@@ -63,10 +63,10 @@ const About = () => {
             fundamentals, front-end, and back-end development from their great
             tutors.
           </p>
-          <p>
+{/*           <p>
             I am now seeking a great full-time role based in London where I can
             help a company achieve their goals and continue my learning journey.
-          </p>
+          </p> */}
         </div>
       </section>
     </Element>
