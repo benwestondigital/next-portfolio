@@ -21,6 +21,7 @@ const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
           <h1 className='my-5 text-4xl font-bold md:text-center'>
             {frontMatter.title}
           </h1>
+          <h3 className='text-lg font-semibold text-blue-500'>Completion Date: {frontMatter.date}</h3>
         </div>
         <div className='mb-5 flex animate-fadeInUp flex-row justify-between self-start text-gray-700 md:items-center md:gap-x-10 md:self-center'>
           <a
