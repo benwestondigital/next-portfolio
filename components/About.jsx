@@ -6,10 +6,10 @@ const About = () => {
     <Element
       id='about'
       name='about'
-      className='flex flex-col justify-center items-center px-2'
+      className='flex flex-col items-center justify-center px-2'
     >
       <Hero />
-      <section className='flex flex-1 flex-col justify-center items-center mt-10 md:w-4/5'>
+      <section className='mt-10 flex flex-1 flex-col items-center justify-center md:w-4/5'>
         <Link
           activeClass='projects'
           to='projects'
@@ -20,7 +20,7 @@ const About = () => {
         >
           See My Portfolio
         </Link>
-        <div className='prose lg:prose-xl dark:prose-invert flex-wrap mb-5 px-2'>
+        <div className='prose mb-5 flex-wrap px-2 dark:prose-invert lg:prose-xl'>
           <p className='pt-16'>
             I first became interested in coding through playing online games
             when I was a teenager. I saw people creating programs to automate
@@ -30,26 +30,18 @@ const About = () => {
             further than that.
           </p>
           <p>
-            While having an amazing time on a working holiday in Australia, I
-            got sick of working low-skill jobs. I always interested in tech, the
-            future of work and how A.I. & machine learning would impact our
-            world. I read &apos;Homo Deus&apos; by Yuval Noah Harari and decided
-            I wanted to change my career to be a part of this revolution. At
-            Cluey Learning I worked with some extremely talented software
-            developers, and I was incredibly interested in their work. Through
-            self-directed learning I got involved in Digital Marketing, and
-            worked my way into being a Senior Paid Media Executive at Click
-            Consult. I learnt so much during this period and it developed so
-            many of my soft skills, and also how to make analytical, data-driven
-            decisions. I was always making tools to speed up my work, and was
-            extremely interested Google Ad&apos;s scripts and website tagging -
-            that are both implemented with JavaScript.
+            While having a fantastic time on a working holiday in Australia, I
+            became interested in the future of work and how A.I. & Machine
+            Learning would impact our world. I decided to change my career to be
+            a part of this revolution. I got involved in Digital Marketing, and
+            worked my way into being a Senior Paid Media Executive. I learnt so
+            much during this period and it developed many of my soft skills like
+            stakeholder management, and how to make analytical, data-driven
+            decisions.
           </p>
           <p>
-            I completed the Learn JavaScript Codecademy course during the winter
-            of 2020 and enjoyed it so much that I decided to leave my job in
-            March 2021 and fully commit to becoming a software developer. After
-            studying on my own for several months, I enrolled in the{' '}
+            During 2021 I fully committed to becoming a Software Developer.
+            After studying on my own for several months, I enrolled in the{' '}
             <a
               href='https://northcoders.com/'
               target='_blank'
@@ -58,15 +50,31 @@ const About = () => {
             >
               Northcoders
             </a>{' '}
-            software development bootcamp. I finished in March 2022, one year
-            after I started this journey. I have learnt so much about coding
-            fundamentals, front-end, and back-end development from their great
-            tutors.
+            Software Development bootcamp. I finished in March 2022, and for the
+            past year I have been working as a Software Engineer on Basket,
+            Checkout & Payment microservices for a large e-commerce website
+            exceeding £10m in monthly revenue.
           </p>
-{/*           <p>
-            I am now seeking a great full-time role based in London where I can
-            help a company achieve their goals and continue my learning journey.
-          </p> */}
+          <p>
+            I have been using React, Next.js, Node, Express, and Playwright on a
+            daily basis and I&apos;ve really enjoyed working with such
+            intelligent people. The technical skills I have learnt, and the soft
+            skills I&apos;ve gained from my Digital Marketing experience have
+            helped me quickly become an important member of the team.
+          </p>
+          <p>
+            Please take a look at the Projects section to see detailed descriptions of
+            a few of my projects, and my{' '}
+            <a
+              href='https://github.com/benwestondigital/'
+              target='_blank'
+              rel='noreferrer'
+              className='font-semibold no-underline hover:text-indigo-300 hover:underline'
+            >
+              Github
+            </a>{' '}
+            to see current projects I am working on.
+          </p>
         </div>
       </section>
     </Element>
