@@ -10,8 +10,11 @@ const Tech = () => {
           My Skills
         </h1>
         <p className='prose my-5 flex-wrap text-center dark:prose-invert md:w-2/3 lg:prose-xl lg:w-1/2'>
-          Through my employer I have had access to Udemy and Frontend Masters, so I have continued to study a number of courses on things such as Dev Ops pipelines, Postman, TypeScript, automated testing and more. Here are some of the courses I have completed:
-          <br/>
+          Through my employer I have had access to Udemy and Frontend Masters,
+          so I have continued to study a number of courses on topics such as
+          CI/CD pipelines, Postman, TypeScript, automated testing and more. Here
+          are some of the courses I have completed:
+          <br />
           <a
             className='font-semibold no-underline hover:text-indigo-300 hover:underline'
             href='https://frontendmasters.com/courses/testing-practices-principles/'
@@ -19,26 +22,26 @@ const Tech = () => {
             rel='noreferrer'
           >
             JavaScript Testing Practices and Principles by Kent C. Dodds
-          </a>
-          {' '}from Frontend Masters, and{' '}
+          </a>{' '}
+          from Frontend Masters, and{' '}
           <a
             className='font-semibold no-underline hover:text-indigo-300 hover:underline'
-            href='https://www.codecademy.com/learn/introduction-to-javascript'
+            href='https://www.udemy.com/course/gitlab-ci-pipelines-ci-cd-and-devops-for-beginners/'
             target='_blank'
             rel='noreferrer'
           >
-            Learn JavaScript
+            GitLab CI: Pipelines, CI/CD and DevOps for Beginners
           </a>{' '}
           &{' '}
           <a
             className='font-semibold no-underline hover:text-indigo-300 hover:underline'
-            href='https://www.codecademy.com/learn/learn-typescript'
+            href='https://www.udemy.com/course/understanding-typescript/'
             target='_blank'
             rel='noreferrer'
           >
-            Learn TypeScript
+            Understanding TypeScript
           </a>{' '}
-          from Codecademy.
+          from Udemy.
         </p>
 
         {tech.map(type => {
