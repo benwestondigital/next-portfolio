@@ -20,15 +20,9 @@ import {
 import { AiFillHtml5 } from 'react-icons/ai';
 import { FaGit } from 'react-icons/fa';
 import { DiLinux } from 'react-icons/di';
-import { IconType } from 'react-icons';
+import { TechCategory } from '@/types/Tech';
 
-type TechDomain = 'frontend' | 'backend' | 'other';
 
-type TechCategory = {
-  domain: TechDomain;
-  technologies: TechIconsAndNames[];
-};
-export type TechIconsAndNames = { techName: string; icon: IconType };
 
 const frontEnd: TechCategory = {
   domain: 'frontend',
@@ -102,7 +96,7 @@ const other: TechCategory = {
   ],
 };
 
-export const technologyNamesAndIcons = [frontEnd, backEnd, other];
+export const techCategories = [frontEnd, backEnd, other];
 
 export const navLinks = [
   {

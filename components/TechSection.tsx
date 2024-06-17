@@ -1,8 +1,7 @@
-import { TechType } from '@/types/Tech';
-import { TechIconsAndNames } from '@/utils';
+import { TechCategory } from '@/types/Tech';
 
 type IProps = {
-  tech: TechType;
+  tech: TechCategory;
 };
 
 export const TechSection = ({ tech }: IProps) => {
@@ -17,7 +16,7 @@ export const TechSection = ({ tech }: IProps) => {
           {domain}
         </h2>
         <div className="flex flex-1 shrink flex-wrap items-start justify-center">
-          {technologies.map((item: TechIconsAndNames) => {
+          {technologies.map((item) => {
             const Icon = item.icon;
             return (
               <div

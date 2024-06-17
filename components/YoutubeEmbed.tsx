@@ -1,4 +1,8 @@
-const YoutubeEmbed = ({ embedId }) => (
+type IProps = {
+  embedId: string;
+}
+
+export const YoutubeEmbed = ({ embedId }: IProps) => (
   <div className='relative h-0 overflow-hidden pb-[56.25%]'>
     <iframe
       width='853'
@@ -12,5 +16,3 @@ const YoutubeEmbed = ({ embedId }) => (
     />
   </div>
 );
-
-export default YoutubeEmbed;

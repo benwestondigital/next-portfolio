@@ -1,6 +1,6 @@
 import { Element } from 'react-scroll';
 import { TechSection } from './TechSection';
-import { technologyNamesAndIcons } from '../utils';
+import { techCategories } from '../utils';
 
 export const MySkills = () => (
   <Element id="tech" name="tech" className="scroll-mt-24">
@@ -43,7 +43,7 @@ export const MySkills = () => (
         from Udemy.
       </p>
 
-      {technologyNamesAndIcons.map((tech) => {
+      {techCategories.map((tech) => {
         return <TechSection key={tech.domain} tech={tech} />;
       })}
     </section>

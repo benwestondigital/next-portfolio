@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import YoutubeEmbed from './YoutubeEmbed';
+import { YoutubeEmbed } from './YoutubeEmbed';
 
 type RoundedImage = {
   alt: string;
