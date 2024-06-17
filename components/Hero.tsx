@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from 'react';
 import avatar from '../public/images/avatar.png';
 
-const Hero = () => {
+export const Hero = () => {
   const [effect, setEffect] = useState(false);
   return (
     <section className='h-auto'>
@@ -33,5 +33,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;

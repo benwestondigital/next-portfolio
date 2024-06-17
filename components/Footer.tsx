@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className='mt-16 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900'>
       <h3 className='pt-4 text-xl'>
@@ -50,5 +50,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;
