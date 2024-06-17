@@ -16,7 +16,7 @@ const Header = () => {
     <header className='container fixed z-20 bg-white px-4 dark:bg-gray-900 md:px-8'>
       <div className='flex h-20 items-center justify-between'>
         <div className='flex flex-1 items-center justify-start gap-2 lg:gap-6'>
-          <Link href='/' passHref>
+          <Link href='/' passHref legacyBehavior>
             <h1 className='animate-slideIn cursor-pointer text-2xl font-bold md:text-2xl'>
               Ben <span className='text-blue-600'>Weston</span>
             </h1>

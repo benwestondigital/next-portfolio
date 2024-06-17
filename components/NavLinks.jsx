@@ -23,12 +23,15 @@ const NavLinks = ({ path }) => {
                   {link.name}
                 </ScrollLink>
               ) : (
-                <Link key={link.path} href={`/#${link.path}`}>
-                  <a className='text-md cursor-pointer px-3 py-2 hover:text-blue-600'>
-                    {' '}
-                    {link.name}
-                  </a>
-                </Link>
+                (<Link
+                  key={link.path}
+                  href={`/#${link.path}`}
+                  className='text-md cursor-pointer px-3 py-2 hover:text-blue-600'>
+
+                  {' '}
+                  {link.name}
+
+                </Link>)
               )}
             </div>
           );

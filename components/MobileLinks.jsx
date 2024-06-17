@@ -34,14 +34,14 @@ const MobileLinks = ({ path, isOpen, setIsOpen }) => {
                     {link.name}
                   </ScrollLink>
                 ) : (
-                  <Link href={`/#${link.path}`}>
-                    <a
-                      onClick={() => setIsOpen(false)}
-                      className='block cursor-pointer rounded-md px-3 py-2 font-semibold text-black hover:bg-blue-600 hover:text-white dark:text-white'
-                    >
-                      {link.name}
-                    </a>
-                  </Link>
+                  (<Link
+                    href={`/#${link.path}`}
+                    onClick={() => setIsOpen(false)}
+                    className='block cursor-pointer rounded-md px-3 py-2 font-semibold text-black hover:bg-blue-600 hover:text-white dark:text-white'>
+
+                    {link.name}
+
+                  </Link>)
                 )}
               </div>
             );
