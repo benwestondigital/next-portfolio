@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from 'react-scroll';
 import Link from 'next/link';
 import { navLinks } from '../utils';
-import RenderThemeChanger from './RenderThemeChanger';
+import { RenderThemeChanger } from './RenderThemeChanger';
 
 type IProps = {
   path: string;

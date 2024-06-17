@@ -1,5 +1,5 @@
 import { Element } from 'react-scroll';
-import SingleProject from './SingleProject';
+import { SingleProject } from './SingleProject';
 import { Project } from '@/types/Project';
 
 type IProps = {

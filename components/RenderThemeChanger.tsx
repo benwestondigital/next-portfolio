@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 
-const RenderThemeChanger = () => {
+export const RenderThemeChanger = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -32,5 +32,3 @@ const RenderThemeChanger = () => {
     );
   }
 };
-
-export default RenderThemeChanger;
