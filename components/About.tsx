@@ -1,7 +1,7 @@
 import { Element, Link } from 'react-scroll';
 import Hero from './Hero';
 
-const About = () => {
+export const About = () => {
   return (
     <Element
       id='about'
@@ -80,5 +80,3 @@ const About = () => {
     </Element>
   );
 };
-
-export default About;

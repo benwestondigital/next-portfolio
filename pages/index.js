@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import About from '../components/About';
+import { About } from '@/components/About';
 import MySkills from '@/components/MySkills';
 import Projects from '../components/Projects';
 import { Contact } from '@/components/Contact';
