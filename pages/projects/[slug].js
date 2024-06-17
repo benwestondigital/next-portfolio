@@ -8,10 +8,12 @@ import MDXComponents from '../../components/MDXComponents';
 import { getFileBySlug, getFiles } from '../../lib/mdx';
 
 const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
+  const title = `Ben Weston | ${frontMatter.title}`
+  
   return (
     <Element id='projectpage' name='projectpage'>
       <Head>
-        <title>Ben Weston | {frontMatter.title}</title>
+        <title>{title}</title>
       </Head>
       <article className='flex flex-col items-center justify-between px-4 pt-20 md:pt-28'>
         <div className='mb-4 mt-24 flex h-32 flex-col justify-center md:items-center'>
