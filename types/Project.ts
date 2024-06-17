@@ -6,7 +6,7 @@ export type Project = {
   image: string;
   github: string;
   livelink: string;
-  northcodersLink: string;
+  northcodersLink?: string;
   date: string;
   tags: string[];
   slug: string;

@@ -10,13 +10,13 @@ import Link from 'next/link';
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const path = router.pathname;
+  const { pathname } = router;
 
   return (
     <header className="container fixed z-20 bg-white px-4 dark:bg-gray-900 md:px-8">
       <div className="flex h-20 items-center justify-between">
         <div className="flex flex-1 items-center justify-start gap-2 lg:gap-6">
-          <Link href="/" passHref legacyBehavior>
+          <Link href="/" passHref>
             <h1 className="animate-slideIn cursor-pointer text-2xl font-bold md:text-2xl">
               Ben <span className="text-blue-600">Weston</span>
             </h1>
@@ -46,10 +46,10 @@ export const Header = () => {
             </a>
           </div>
         </div>
-        <NavLinks path={path} />
+        <NavLinks path={pathname} />
         <HamBurger isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <MobileLinks path={path} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileLinks path={pathname} isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 };

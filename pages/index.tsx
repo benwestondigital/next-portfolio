@@ -5,8 +5,13 @@ import { Projects } from '@/components/Projects';
 import { Contact } from '@/components/Contact';
 import { useEffect } from 'react';
 import { getAllFilesFrontMatter } from '../lib/mdx';
+import { Project } from '@/types/Project';
 
-export default function Home({ projects }) {
+type IProps = {
+  projects: Project[];
+}
+
+export default function Home({ projects }: IProps) {
   useEffect(() => {
     console.log(`
     This website was created by

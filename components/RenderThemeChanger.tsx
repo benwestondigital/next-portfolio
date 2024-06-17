@@ -14,21 +14,17 @@ export const RenderThemeChanger = () => {
 
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
-  if (currentTheme === 'dark') {
-    return (
-      <SunIcon
-        className='h-7 w-7 hover:text-orange-300'
-        role='button'
-        onClick={() => setTheme('light')}
-      />
-    );
-  } else {
-    return (
-      <MoonIcon
-        className='h-7 w-7 hover:text-gray-400'
-        role='button'
-        onClick={() => setTheme('dark')}
-      />
-    );
-  }
+  return currentTheme === 'dark' ? (
+    <SunIcon
+      className="h-7 w-7 hover:text-orange-300"
+      role="button"
+      onClick={() => setTheme('light')}
+    />
+  ) : (
+    <MoonIcon
+      className="h-7 w-7 hover:text-gray-400"
+      role="button"
+      onClick={() => setTheme('dark')}
+    />
+  );
 };

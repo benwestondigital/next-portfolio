@@ -1,14 +1,6 @@
 import Image from 'next/image';
 import { YoutubeEmbed } from './YoutubeEmbed';
-
-type RoundedImage = {
-  alt: string;
-  src: string;
-  width: number;
-  height: number;
-  priority: boolean;
-  figcaption: string;
-};
+import { type RoundedImage } from '@/types/RoundedImage';
 
 const RoundedImage = (props: RoundedImage) => (
   <figure>
