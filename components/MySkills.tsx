@@ -43,9 +43,9 @@ export const MySkills = () => (
         from Udemy.
       </p>
 
-      {techCategories.map((tech) => {
-        return <TechSection key={tech.domain} tech={tech} />;
-      })}
+      {techCategories.map((tech) => (
+        <TechSection key={tech.domain} tech={tech} />
+      ))}
     </section>
   </Element>
 );

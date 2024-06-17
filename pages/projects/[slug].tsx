@@ -1,4 +1,4 @@
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { Element } from 'react-scroll';
 import Head from 'next/head';
 import { FaExternalLinkAlt } from 'react-icons/fa';
@@ -6,8 +6,17 @@ import { BsInfoCircle } from 'react-icons/bs';
 import { AiFillGithub } from 'react-icons/ai';
 import { MDXComponents } from '@/components/MDXComponents';
 import { getFileBySlug, getFiles } from '@/lib/mdx';
+import { Project } from '@/types/Project';
 
-const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
+type IProps = {
+  project: { mdxSource: MDXRemoteSerializeResult; frontMatter: Project };
+};
+
+type ParamsStaticProps = {
+  params: { slug: string };
+};
+
+const ProjectPage = ({ project: { mdxSource, frontMatter } }: IProps) => {
   const title = `Ben Weston | ${frontMatter.title}`;
 
   return (
@@ -36,7 +45,7 @@ const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
           >
             <AiFillGithub className="m-1 h-11 w-11 p-1 text-gray-900 hover:animate-wiggle hover:text-orange-400 dark:text-white dark:hover:text-orange-400" />
           </a>
-          {frontMatter.livelink && (
+          {frontMatter?.livelink && (
             <a
               href={frontMatter.livelink}
               target="_blank"
@@ -46,9 +55,9 @@ const ProjectPage = ({ project: { mdxSource, frontMatter } }) => {
               <FaExternalLinkAlt className="m-1 h-10 w-10 p-1 text-gray-900 hover:text-orange-400 dark:text-white dark:hover:text-orange-400" />
             </a>
           )}
-          {frontMatter.northcoderslink && (
+          {frontMatter?.northcodersLink && (
             <a
-              href={frontMatter.northcoderslink}
+              href={frontMatter.northcodersLink}
               target="_blank"
               rel="noreferrer"
               className="hover:animate-wiggle hover:font-semibold hover:text-blue-600"
@@ -78,7 +87,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+
+export async function getStaticProps({ params: { slug } }: ParamsStaticProps) {
   const project = await getFileBySlug('projects', slug);
 
   return {
