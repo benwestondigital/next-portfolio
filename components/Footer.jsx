@@ -4,15 +4,15 @@ const Footer = () => {
   return (
     <div className='mt-16 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900'>
       <h3 className='pt-4 text-xl'>
-        <Link href='/'>
-          <a className='cursor-pointer font-semibold hover:opacity-60'>
-            <span className='dark:hover:text-white'>
-              Ben
-            </span>{' '}
-            <span className='text-blue-600 hover:text-indigo-900 dark:hover:text-indigo-500'>
-              Weston
-            </span>
-          </a>
+        <Link href='/' className='cursor-pointer font-semibold hover:opacity-60' passHref>
+
+          <span className='dark:hover:text-white'>
+            Ben
+          </span>{' '}
+          <span className='text-blue-600 hover:text-indigo-900 dark:hover:text-indigo-500'>
+            Weston
+          </span>
+
         </Link>
       </h3>
       <p className='prose pt-2 pb-4 text-sm dark:prose-invert'>

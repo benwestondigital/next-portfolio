@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import { useState } from 'react';
 import avatar from '../public/images/avatar.png';
 
@@ -11,15 +11,17 @@ const Hero = () => {
           <Image
             src={avatar}
             alt='hero'
-            layout='fill'
-            objectFit='contain'
             priority
             className={`${
               effect && 'animate-wiggleShort'
             } hidden cursor-pointer rounded-full md:block`}
             onClick={() => setEffect(true)}
             onAnimationEnd={() => setEffect(false)}
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "contain"
+            }} />
         </div>
         <div className='mx-10 mt-10 flex flex-1 flex-col md:ml-20 md:w-3/5 lg:w-1/2'>
           <h1 className='mb-5 text-left text-5xl font-bold md:text-6xl'>
