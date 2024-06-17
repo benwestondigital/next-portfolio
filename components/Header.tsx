@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { DiGithubBadge } from 'react-icons/di';
 import { useRouter } from 'next/router';
-import NavLinks from './NavLinks';
+import { NavLinks } from './NavLinks';
 import { HamBurger } from './HamBurger';
-import MobileLinks from './MobileLinks';
+import { MobileLinks } from './MobileLinks';
 import Link from 'next/link';
 
 export const Header = () => {

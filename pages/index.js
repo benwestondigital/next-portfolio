@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { About } from '@/components/About';
-import MySkills from '@/components/MySkills';
-import Projects from '../components/Projects';
+import { MySkills } from '@/components/MySkills';
+import { Projects } from '@/components/Projects';
 import { Contact } from '@/components/Contact';
 import { useEffect } from 'react';
 import { getAllFilesFrontMatter } from '../lib/mdx';
@@ -33,5 +33,6 @@ export default function Home({ projects }) {
 
 export async function getStaticProps() {
   const projects = await getAllFilesFrontMatter('projects');
+  console.log(projects, 'projects');
   return { props: { projects } };
 }

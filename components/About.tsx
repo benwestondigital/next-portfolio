@@ -1,27 +1,27 @@
 import { Element, Link } from 'react-scroll';
-import Hero from './Hero';
+import { Hero } from './Hero';
 
 export const About = () => {
   return (
     <Element
-      id='about'
-      name='about'
-      className='flex flex-col items-center justify-center px-2'
+      id="about"
+      name="about"
+      className="flex flex-col items-center justify-center px-2"
     >
       <Hero />
-      <section className='mt-10 flex flex-1 flex-col items-center justify-center md:w-4/5'>
+      <section className="mt-10 flex flex-1 flex-col items-center justify-center md:w-4/5">
         <Link
-          activeClass='projects'
-          to='projects'
+          activeClass="projects"
+          to="projects"
           smooth={true}
           offset={-100}
           duration={500}
-          className='btn cursor-pointer'
+          className="btn cursor-pointer"
         >
           See My Portfolio
         </Link>
-        <div className='prose mb-5 flex-wrap px-2 dark:prose-invert lg:prose-xl'>
-          <p className='pt-16'>
+        <div className="prose mb-5 flex-wrap px-2 dark:prose-invert lg:prose-xl">
+          <p className="pt-16">
             I first became interested in coding through playing online games
             when I was a teenager. I saw people creating programs to automate
             their character&apos;s progress and the possibilities of doing this
@@ -43,10 +43,10 @@ export const About = () => {
             During 2021 I fully committed to becoming a Software Developer.
             After studying on my own for several months, I enrolled in the{' '}
             <a
-              href='https://northcoders.com/'
-              target='_blank'
-              rel='noreferrer'
-              className='font-semibold no-underline hover:text-indigo-300 hover:underline'
+              href="https://northcoders.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold no-underline hover:text-indigo-300 hover:underline"
             >
               Northcoders
             </a>{' '}
@@ -63,13 +63,13 @@ export const About = () => {
             helped me quickly become an important member of the team.
           </p>
           <p>
-            Please take a look at the Projects section to see detailed descriptions of
-            a few of my projects, and my{' '}
+            Please take a look at the Projects section to see detailed
+            descriptions of a few of my projects, and my{' '}
             <a
-              href='https://github.com/benwestondigital/'
-              target='_blank'
-              rel='noreferrer'
-              className='font-semibold no-underline hover:text-indigo-300 hover:underline'
+              href="https://github.com/benwestondigital/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold no-underline hover:text-indigo-300 hover:underline"
             >
               Github
             </a>{' '}
