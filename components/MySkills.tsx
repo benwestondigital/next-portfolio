@@ -9,38 +9,11 @@ export const MySkills = () => (
         My Skills
       </h1>
       <p className="prose my-5 flex-wrap text-center dark:prose-invert md:w-2/3 lg:prose-xl lg:w-1/2">
-        Through my employer I have had access to Udemy and Frontend Masters, so
-        I have continued to study a number of courses on topics such as CI/CD
-        pipelines, Postman, TypeScript, automated testing and more. Here are
-        some of the courses I have completed:
-        <br />
-        <a
-          className="font-semibold no-underline hover:text-indigo-300 hover:underline"
-          href="https://frontendmasters.com/courses/testing-practices-principles/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          JavaScript Testing Practices and Principles by Kent C. Dodds
-        </a>{' '}
-        from Frontend Masters, and{' '}
-        <a
-          className="font-semibold no-underline hover:text-indigo-300 hover:underline"
-          href="https://www.udemy.com/course/gitlab-ci-pipelines-ci-cd-and-devops-for-beginners/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitLab CI: Pipelines, CI/CD and DevOps for Beginners
-        </a>{' '}
-        &{' '}
-        <a
-          className="font-semibold no-underline hover:text-indigo-300 hover:underline"
-          href="https://www.udemy.com/course/understanding-typescript/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Understanding TypeScript
-        </a>{' '}
-        from Udemy.
+        I am a strong learner and always want to hone my skills. I&apos;ve been lucky
+        enough to work in QA which gave me a lot of experience creating
+        automated tests using Playwright. My current focus is on developing my
+        knowledge of React and Typescript. In the near future I want to pick up
+        Go and learn to build more performant backend servers.
       </p>
 
       {techCategories.map((tech) => (

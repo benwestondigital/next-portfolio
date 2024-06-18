@@ -17,62 +17,38 @@ export const About = () => (
         duration={500}
         className="btn cursor-pointer"
       >
-        See My Portfolio
+        See My Projects
       </Link>
       <div className="prose mb-5 flex-wrap px-2 dark:prose-invert lg:prose-xl">
         <p className="pt-16">
-          I first became interested in coding through playing online games when
-          I was a teenager. I saw people creating programs to automate their
-          character&apos;s progress and the possibilities of doing this blew me
-          away. I tried my hand at learning and thought I was a wizard changing
-          the colour of pages with CSS, but I didn&apos;t get any further than
-          that.
+          I work as a Frontend Software Engineer in the Payments team for
+          Holland & Barrett. The website receives over £10m revenue per month,
+          so there is a strong emphasis on releasing safe code, and including
+          error handling and robust logging for observability using Datadog.
         </p>
         <p>
-          While having a fantastic time on a working holiday in Australia, I
-          became interested in the future of work and how A.I. & Machine
-          Learning would impact our world. I decided to change my career to be a
-          part of this revolution. I got involved in Digital Marketing, and
-          worked my way into being a Senior Paid Media Executive. I learnt so
-          much during this period and it developed many of my soft skills like
-          stakeholder management, and how to make analytical, data-driven
-          decisions.
+          My role involves creating React components for our UI, and managing a
+          backend-for-frontend Node Express service that interacts with our
+          Payment Orchestration service, other internal micro-services, and
+          external APIs.
         </p>
         <p>
-          During 2021 I fully committed to becoming a Software Developer. After
-          studying on my own for several months, I enrolled in the{' '}
-          <a
-            href="https://northcoders.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold no-underline hover:text-indigo-300 hover:underline"
-          >
-            Northcoders
-          </a>{' '}
-          Software Development bootcamp. I finished in March 2022, and for the
-          past year I have been working as a Software Engineer on Basket,
-          Checkout & Payment microservices for a large e-commerce website
-          exceeding £10m in monthly revenue.
+          I have strong TypeScript skills and like to work in a type-safe
+          manner. On an average day I may be working on a new React component
+          via Storybook, debugging an Express middleware chain, extracting some
+          logic into a custom hook, or styling a component based on Figma
+          designs.
         </p>
         <p>
-          I have been using React, Next.js, Node, Express, and Playwright on a
-          daily basis and I&apos;ve really enjoyed working with such intelligent
-          people. The technical skills I have learnt, and the soft skills
-          I&apos;ve gained from my Digital Marketing experience have helped me
-          quickly become an important member of the team.
+          Some of the projects I have done are adding new payment methods such
+          as Riverty, upgrading the Saved Payments functionality to use
+          Adyen&apos;s &apos;sessions&apos; architecture, redesigning the Mini
+          Basket for a brand refresh.
         </p>
         <p>
-          Please take a look at the Projects section to see detailed
-          descriptions of a few of my projects, and my{' '}
-          <a
-            href="https://github.com/benwestondigital/"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold no-underline hover:text-indigo-300 hover:underline"
-          >
-            Github
-          </a>{' '}
-          to see current projects I am working on.
+          I actively contribute to the squad dynamic and share my opinions in
+          team meetings. By planting a seed of an idea, I may help someone to
+          imagine a new feature.
         </p>
       </div>
     </section>
