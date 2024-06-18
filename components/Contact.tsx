@@ -1,7 +1,7 @@
 import { Element } from 'react-scroll';
-import { Spinner } from './Spinner';
 import ConfettiExplosion from 'react-confetti-explosion';
 import { useContactForm } from '@/hooks/useContactForm';
+import { Loader } from './Loader';
 
 export const Contact = () => {
   const {
@@ -106,22 +106,11 @@ export const Contact = () => {
                   </svg>
                 </span>
                 <span className="duration-400 relative w-full text-center transition-colors ease-in-out group-hover:text-white">
-                  {isLoading ? (
-                    <span className="flex items-center gap-2">
-                      <Spinner />
-                      <p>Submitting...</p>
-                    </span>
-                  ) : (
-                    buttonText
-                  )}
+                  {isLoading ? <Loader /> : buttonText}
                 </span>
               </button>
               {isSubmitted && (
-                <ConfettiExplosion
-                  force={0.4}
-                  height={250}
-                  width={500}
-                />
+                <ConfettiExplosion force={0.4} height={250} width={500} />
               )}
             </div>
             {isSubmitted && (

@@ -23,29 +23,29 @@ export const MobileLinks = ({ path, isOpen, setIsOpen }: IProps) => (
   >
     <nav className="md:hidden" id="mobile-menu">
       <div className="w-full space-y-1 bg-white py-4 dark:bg-gray-900">
-        {navLinks.map((link) => {
+        {navLinks.map(({name, urlPath}) => {
           return (
-            <div key={link.path}>
+            <div key={urlPath}>
               {path === '/' ? (
                 <ScrollLink
-                  href={`/${link.path}`}
-                  activeClass={link.path}
-                  to={link.path}
+                  href={`/${urlPath}`}
+                  activeClass={urlPath}
+                  to={urlPath}
                   smooth={true}
                   offset={-100}
                   duration={500}
                   className="block cursor-pointer rounded-md px-3 py-2 font-semibold text-black hover:bg-blue-600 hover:text-white dark:text-white"
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.name}
+                  {name}
                 </ScrollLink>
               ) : (
                 <Link
-                  href={`/#${link.path}`}
+                  href={`/#${urlPath}`}
                   onClick={() => setIsOpen(false)}
                   className="block cursor-pointer rounded-md px-3 py-2 font-semibold text-black hover:bg-blue-600 hover:text-white dark:text-white"
                 >
-                  {link.name}
+                  {name}
                 </Link>
               )}
             </div>

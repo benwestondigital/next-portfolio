@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import { IconType } from 'react-icons';
 
 type TechDomain = 'frontend' | 'backend' | 'other';
 
@@ -8,3 +8,5 @@ export type TechCategory = {
   domain: TechDomain;
   technologies: TechIconsAndNames[];
 };
+
+export type NavLinks = { name: string; urlPath: string }[];

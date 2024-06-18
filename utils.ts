@@ -20,9 +20,7 @@ import {
 import { AiFillHtml5 } from 'react-icons/ai';
 import { FaGit } from 'react-icons/fa';
 import { DiLinux } from 'react-icons/di';
-import { TechCategory } from '@/types/Tech';
-
-
+import { NavLinks, TechCategory } from '@/types/Tech';
 
 const frontEnd: TechCategory = {
   domain: 'frontend',
@@ -98,15 +96,15 @@ const other: TechCategory = {
 
 export const techCategories = [frontEnd, backEnd, other];
 
-export const navLinks = [
+export const navLinks: NavLinks = [
   {
     name: 'About',
-    path: 'about',
+    urlPath: 'about',
   },
-  { name: 'Projects', path: 'projects' },
+  { name: 'Projects', urlPath: 'projects' },
   {
     name: 'Skills',
-    path: 'tech',
+    urlPath: 'tech',
   },
-  { name: 'Contact', path: 'contact' },
+  { name: 'Contact', urlPath: 'contact' },
 ];
