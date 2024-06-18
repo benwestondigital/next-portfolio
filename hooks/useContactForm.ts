@@ -44,6 +44,7 @@ export const useContactForm = () => {
       setIsLoading(false);
       setIsSubmitted(true);
     } catch (err) {
+      console.log(err, 'err');
       setIsError(true);
       setIsLoading(false);
     }

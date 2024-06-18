@@ -1,6 +1,6 @@
 import { Element } from 'react-scroll';
 import { Spinner } from './Spinner';
-import ConfettiExplosion from '@reonomy/react-confetti-explosion';
+import ConfettiExplosion from 'react-confetti-explosion';
 import { useContactForm } from '@/hooks/useContactForm';
 
 export const Contact = () => {
@@ -119,8 +119,8 @@ export const Contact = () => {
               {isSubmitted && (
                 <ConfettiExplosion
                   force={0.4}
-                  floorHeight={250}
-                  floorWidth={500}
+                  height={250}
+                  width={500}
                 />
               )}
             </div>
