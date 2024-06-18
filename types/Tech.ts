@@ -1,6 +1,6 @@
 import { IconType } from 'react-icons';
 
-type TechDomain = 'Front-End' | 'Back-End' | 'Other';
+type TechDomain = 'Front-End' | 'Back-End' | 'Misc';
 
 export type TechIconsAndNames = { techName: string; icon: IconType };
 
