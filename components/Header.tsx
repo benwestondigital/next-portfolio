@@ -13,7 +13,7 @@ export const Header = () => {
   const { pathname } = router;
 
   return (
-    <header className="container fixed z-20 bg-white px-4 dark:bg-gray-900 md:px-8">
+    <header className="container fixed z-20 bg-white dark:bg-gray-900">
       <div className="flex h-20 items-center justify-between">
         <div className="flex flex-1 items-center justify-start gap-2 lg:gap-6">
           <Link href="/" passHref>
