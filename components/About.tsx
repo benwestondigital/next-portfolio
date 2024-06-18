@@ -41,9 +41,9 @@ export const About = () => (
         </p>
         <p>
           Some of the projects I have done are adding new payment methods such
-          as Riverty, upgrading the Saved Payments functionality to use Adyen's
-          'sessions' architecture, redesigning the Mini Basket for a brand
-          refresh.
+          as Riverty, upgrading the Saved Payments functionality to use
+          Adyen&apos;s &apos;sessions&apos; architecture, redesigning the Mini
+          Basket for a brand refresh.
         </p>
         <p>
           I actively contribute to the squad dynamic and share my opinions in
