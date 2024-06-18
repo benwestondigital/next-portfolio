@@ -3,6 +3,7 @@ import { useState, useRef, type FormEvent, type ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { Spinner } from './Spinner';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
+import { ContactDetails } from '@/types/ContactDetails';
 
 export const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -10,7 +11,7 @@ export const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const [contactDetails, setContactDetails] = useState({
+  const [contactDetails, setContactDetails] = useState<ContactDetails>({
     name: '',
     email: '',
     message: '',
