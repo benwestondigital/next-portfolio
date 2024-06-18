@@ -23,7 +23,7 @@ import { DiLinux } from 'react-icons/di';
 import { NavLinks, TechCategory } from '@/types/Tech';
 
 const frontEnd: TechCategory = {
-  domain: 'frontend',
+  domain: 'Front-End',
   technologies: [
     {
       techName: 'JavaScript',
@@ -48,7 +48,7 @@ const frontEnd: TechCategory = {
 };
 
 const backEnd: TechCategory = {
-  domain: 'backend',
+  domain: 'Back-End',
   technologies: [
     {
       techName: 'PostgreSQL',
@@ -73,7 +73,7 @@ const backEnd: TechCategory = {
   ],
 };
 const other: TechCategory = {
-  domain: 'other',
+  domain: 'Other',
   technologies: [
     { techName: 'Jest', icon: SiJest },
     {
