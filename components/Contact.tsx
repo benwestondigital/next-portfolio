@@ -1,63 +1,20 @@
 import { Element } from 'react-scroll';
-import { useState, useRef, type FormEvent, type ChangeEvent } from 'react';
-import emailjs from '@emailjs/browser';
 import { Spinner } from './Spinner';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
-import { ContactDetails } from '@/types/ContactDetails';
+import { useContactForm } from '@/hooks/useContactForm';
 
 export const Contact = () => {
-  const form = useRef<HTMLFormElement>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isError, setIsError] = useState(false);
-
-  const [contactDetails, setContactDetails] = useState<ContactDetails>({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const {
+    form,
+    isLoading,
+    isSubmitted,
+    isError,
+    contactDetails,
+    handleChange,
+    onSubmit,
+  } = useContactForm();
 
   const buttonText = isSubmitted ? 'Submitted!' : 'Submit';
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setContactDetails({
-      ...contactDetails,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    setIsError(false);
-    setIsLoading(true);
-    e.preventDefault();
-    try {
-      if (!form.current) return;
-      const sendEmail = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-        form.current,
-        process.env.NEXT_PUBLIC_USER_ID
-      );
-      console.log(sendEmail.text);
-      setContactDetails({
-        name: '',
-        email: '',
-        message: '',
-      });
-      setIsLoading(false);
-      setIsSubmitted(true);
-    } catch (err) {
-      setIsError(true);
-      setIsLoading(false);
-      setContactDetails({
-        name: '',
-        email: '',
-        message: '',
-      });
-    }
-  };
 
   return (
     <Element id="contact" name="contact" className="scroll-mt-8">
