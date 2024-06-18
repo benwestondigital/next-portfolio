@@ -5,10 +5,10 @@ export const About = () => (
   <Element
     id="about"
     name="about"
-    className="flex flex-col items-center justify-center px-2"
+    className="flex flex-col items-center justify-center"
   >
     <Hero />
-    <section className="mt-10 flex flex-1 flex-col items-center justify-center md:w-4/5">
+    <section className="mt-10 flex flex-1 flex-col items-center justify-center">
       <Link
         activeClass="projects"
         to="projects"
@@ -19,7 +19,7 @@ export const About = () => (
       >
         See My Projects
       </Link>
-      <div className="prose mb-5 flex-wrap px-2 dark:prose-invert lg:prose-xl">
+      <div className="prose mb-5 flex-wrap dark:prose-invert lg:prose-xl">
         <p className="pt-16">
           I work as a Frontend Software Engineer in the Payments team for
           Holland & Barrett. The website receives over £10m revenue per month,
