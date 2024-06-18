@@ -26,34 +26,20 @@ const frontEnd: TechCategory = {
   domain: 'Front-End',
   technologies: [
     {
-      techName: 'JavaScript',
-      icon: DiJsBadge,
-    },
-    {
       techName: 'TypeScript',
       icon: SiTypescript,
     },
     { techName: 'React', icon: DiReact },
-    { techName: 'Svelte', icon: SiSvelte },
     {
-      techName: 'Tailwind CSS',
-      icon: SiTailwindcss,
+      techName: 'Next.js',
+      icon: SiNextdotjs,
     },
-    {
-      techName: 'HTML',
-      icon: AiFillHtml5,
-    },
-    { techName: 'CSS', icon: DiCss3 },
   ],
 };
 
 const backEnd: TechCategory = {
   domain: 'Back-End',
   technologies: [
-    {
-      techName: 'PostgreSQL',
-      icon: DiPostgresql,
-    },
     {
       techName: 'Express',
       icon: SiExpress,
@@ -62,24 +48,12 @@ const backEnd: TechCategory = {
       techName: 'Node.js',
       icon: SiNodedotjs,
     },
-    {
-      techName: 'SvelteKit',
-      icon: SiSvelte,
-    },
-    {
-      techName: 'Next.js',
-      icon: SiNextdotjs,
-    },
   ],
 };
 const other: TechCategory = {
-  domain: 'Other',
+  domain: 'Misc',
   technologies: [
     { techName: 'Jest', icon: SiJest },
-    {
-      techName: 'GitHub',
-      icon: DiGithubBadge,
-    },
     { techName: 'Git', icon: FaGit },
     {
       techName: 'Google Analytics',
@@ -89,8 +63,6 @@ const other: TechCategory = {
       techName: 'Google Tag Manager',
       icon: SiGoogletagmanager,
     },
-    { techName: 'Heroku', icon: DiHeroku },
-    { techName: 'Linux', icon: DiLinux },
   ],
 };
 

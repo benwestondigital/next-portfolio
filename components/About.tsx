@@ -42,11 +42,13 @@ export const About = () => (
         <p>
           Some of the projects I have done are adding new payment methods such
           as Riverty, upgrading the Saved Payments functionality to use Adyen's
-          async 'sessions' architecture, redesigning the Mini Basket for a brand
+          'sessions' architecture, redesigning the Mini Basket for a brand
           refresh.
         </p>
         <p>
-         I actively contribute to the squad dynamic and share my opinions in team meetings. By planting a seed of an idea, I may help someone to imagine a new feature.
+          I actively contribute to the squad dynamic and share my opinions in
+          team meetings. By planting a seed of an idea, I may help someone to
+          imagine a new feature.
         </p>
       </div>
     </section>
