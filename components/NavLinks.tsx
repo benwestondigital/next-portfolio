@@ -11,12 +11,12 @@ export const NavLinks = ({ path }: IProps) => (
   <nav className="hidden md:block">
     <div className="flex flex-1 items-center gap-2 font-semibold lg:gap-6">
       {navLinks.map((link) => (
-        <div key={link.path}>
+        <div key={link.urlPath}>
           {path === '/' ? (
             <ScrollLink
-              key={link.path}
-              activeClass={link.path}
-              to={link.path}
+              key={link.urlPath}
+              activeClass={link.urlPath}
+              to={link.urlPath}
               smooth={true}
               offset={-100}
               duration={500}
@@ -26,8 +26,8 @@ export const NavLinks = ({ path }: IProps) => (
             </ScrollLink>
           ) : (
             <Link
-              key={link.path}
-              href={`/#${link.path}`}
+              key={link.urlPath}
+              href={`/#${link.urlPath}`}
               className="text-md cursor-pointer px-3 py-2 hover:text-blue-600"
             >
               {' '}
